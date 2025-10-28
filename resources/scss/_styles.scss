@@ -1,0 +1,18 @@
+html, * { 
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body { 
+    min-width: 320px 
+}
+
+button, input[type=submit]{
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}

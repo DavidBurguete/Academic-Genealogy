@@ -1,0 +1,105 @@
+nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    top: 4.3125rem;
+    padding: 1rem 1.25rem;
+    transition: 200ms ease-in-out;
+    transform-origin: top;
+    background-color: white;
+    box-shadow: 0px 4px 4px 0px #0000004A;
+    z-index: 12;
+
+    &.deploy_nav--active {
+        transform: scaleY(1.0);
+    }
+
+    &.deploy_nav--non_active {
+        transform: scaleY(0.0);
+    }
+
+    &.header--nav {
+        display: none;
+    }
+
+    a {
+        color: #000000;
+        font-family: "Oswald";
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0;
+        text-decoration: none;
+        text-align: left;
+        align-self: flex-start;
+        margin-block: 0.5rem;
+    }
+}
+
+.nav--campus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background-image: url('/img/campus.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 85%);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    nav {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        top: 0;
+        padding: 0;
+
+        &.deploy_nav--active,
+        &.deploy_nav--non_active {
+            display: none;
+        }
+
+        &.header--nav {
+            display: flex;
+            position: relative;
+            width: 40%;
+            left: 0;
+            padding: 0;
+            background-color: white;
+            box-shadow: none;
+            z-index: 12;
+
+            a {
+                display: inline-block;
+                margin: 0 auto;
+                height: 100%;
+                width: 25%;
+                align-content: center;
+            }
+        }
+
+        a {
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1051px) {
+
+    nav {
+
+        &.header--nav {
+            left: 3rem;
+        }
+    }
+}

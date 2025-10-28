@@ -1,0 +1,194 @@
+@import 'burger_menu';
+@import 'nav';
+
+@mixin header_buttons {
+    @include button;
+    margin-block: 1.4rem;
+    margin-right: 1rem;
+    line-height: 0;
+
+    @media screen and (min-width: 1000px) {
+        margin: 0.4375rem 0 0.4375rem 1.25rem;
+        padding: 1.25rem;
+        border: 1px solid #8585854D;
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: 0;
+    background-color: $sciences;
+    z-index: 99;
+    text-shadow: 0px 0px 10px #000000FF;
+}
+
+.logo {
+    display: flex;
+    align-self: center;
+    font-family: "Merriweather";
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2.6px;
+    color: $theology;
+
+    h1 {
+        align-self: center;
+        font-size: 0.8rem;
+        width: 6.5rem;
+        margin-left: 0.5rem;
+        transition: 0.5s ease-in-out;
+    }
+
+    img {
+        height: 3rem;
+        box-shadow: 0px 14px 24px 0px #8B8B8B40;
+    }
+}
+
+.search-bar {
+    position: absolute;
+    align-self: center;
+    width: calc(100% - 13.75rem);
+    height: 2rem;
+    margin-left: 6.5rem;
+    border: 0;
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 1.6px;
+    color: $theology;
+    background-color: transparent;
+    border-bottom: 1px solid $theology;
+    transform: translateY(-4.25rem);
+    transition: 0.5s ease-in-out;
+
+    &::placeholder {
+        color: $theology;
+        letter-spacing: 1.6px;
+    }
+
+    &:focus-visible {
+        outline-width: 0;
+    }
+}
+
+.header_buttons {
+    margin-left: auto;
+    display: flex;
+
+    &--user,
+    &--search,
+    &--languages_selector {
+        @include header_buttons;
+    }
+
+    &--search{
+        z-index: 2;
+    }
+
+    &--languages_selector {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 0.5rem;
+        width: 3.25rem;
+
+        & .selected {
+            position: relative;
+            z-index: 99;
+        }
+
+        & .not-selected {
+            &1 {
+                transform: translateY(2rem);
+            }
+
+            &2 {
+                transform: translateY(4rem);
+            }
+
+            &-collapsed {
+                transform: translateY(0rem);
+            }
+        }
+
+        &__languages {
+            &>* {
+                width: 2rem;
+                height: 1.375rem;
+                transition: 0.5s ease-in-out;
+            }
+
+            & :not(.selected) {
+                position: absolute;
+                right: 1.75rem;
+            }
+        }
+    }
+
+    &--dropdown {
+        width: 0.875rem;
+        height: 0.875rem;
+        transition: 0.5s ease-in-out;
+        transform-origin: center;
+    }
+
+    .toggled {
+        transform: scaleY(-1);
+    }
+}
+
+@media screen and (min-width:1000px) {
+
+    header {
+        position: relative;
+        background-color: #222222;
+        height: 6.25rem;
+    }
+
+    .desktop_header {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        padding: 0.6875rem 0;
+        width: 74%;
+    }
+
+    .header--wrapper {
+        position: relative;
+        margin: 0 auto;
+        padding: 1.25rem;
+        width: 74%;
+        height: 7.5rem;
+        box-shadow: none;
+    }
+
+    .logo {
+
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        img {
+            order: 1;
+            width: 5rem;
+            height: 5rem;
+            box-shadow: 0px 14px 24px 0px #8B8B8B40;
+        }
+    }
+
+    .header_buttons {
+        position: relative;
+        right: 0;
+    }
+}
+
+@media screen and (min-width: 1246px) {
+    .header_buttons {
+        position: relative;
+        right: 10%;
+    }
+}

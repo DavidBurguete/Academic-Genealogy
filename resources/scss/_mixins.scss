@@ -1,0 +1,21 @@
+$confirm : #06EF38;
+$cancel: #DE1919;
+$blur: #222222;
+$unav: #8F2724;
+
+$engineering-and-arquitecture: #8B4720;
+$sciences: #003DA5;
+$law: #FF0000;
+$communication: #7C878E;
+$canon: #007749;
+$philosophy-literature-education: #62B5E5;
+$economy: #FA4616;
+$nursing: #C1C6C8;
+$pharmacy-nutrition: #5C068C;
+$medicine: #FFC72C;
+$theology: #FFFFFF;
+
+@mixin button{
+    background-color: transparent;
+    border: none;
+}
