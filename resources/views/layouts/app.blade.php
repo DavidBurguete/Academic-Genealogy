@@ -61,12 +61,12 @@
     </header>
 
 
-    <main>
+    <main class="main">
         @yield('content')
     </main>
 
     <footer>
-        <form action="" method="post" class="suggest">
+        <form action="" method="post" class="suggest" id="suggest">
             <p>Do you have anything you'd like to suggest or ask? Dont' hesitate to write!</p>
             <input id="name" type="text" autocomplete="off" placeholder="Full name">
             <input id="email" type="text" autocomplete="off" placeholder="Email address">
