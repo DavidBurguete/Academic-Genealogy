@@ -15,8 +15,8 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="burger_menu">
+    <header class="header @yield('faculty-color')">
+        <div class="burger_menu box-shadow">
             <div class="burger_menu--first"></div>
             <div class="burger_menu--middle"></div>
             <div class="burger_menu--last"></div>
@@ -25,26 +25,32 @@
             <img src="img/logoUNAV.png">
             <h1 id="title">ACADEMIC GENEALOGY</h1>
         </a>
-        <input type="text" name="search-bar" id="search-bar" class="search-bar" placeholder="Search...">
         <nav class="nav header--nav">
             @yield('nav')
         </nav>
-        <div class="header_buttons">
-            <button class="header_buttons--search" id="search">
-                <img src="img/magnifyingglass.svg" alt="magnifying glass icon">
-            </button>
-            <button class="header_buttons--user">
-                <img src="img/user.svg" alt="user icon">
-            </button>
-            <button class="header_buttons--languages_selector" id="languages">
-                <div class="header_buttons--languages_selector__languages">
-                    <img src="/img/spanish.png" alt="spanish language" class="not-selected1 not-selected-collapsed">
-                    <img src="/img/english.png" alt="english language" class="selected">
-                    <img src="/img/french.png" alt="french language" class="not-selected2 not-selected-collapsed">
-                </div>
-                <img src="/img/caret-down.png" alt="dropdown" class="header_buttons--dropdown" id="select-language">
-            </button>
-        </div>
+        <form action="/search" method="post">
+            <input type="text" name="search-bar" id="search-bar" class="search-bar box-shadow" placeholder="Search...">
+            <div class="header_buttons">
+                <div class="header_buttons--display" id="display"></div>
+                <button class="header_buttons--search" id="search" type="submit">
+                    <img src="img/magnifyingglass.svg" alt="search icon" class="box-shadow">
+                </button>
+                <button class="header_buttons--close collapse" id="close" type="button">
+                    <img src="img/cross.svg" alt="close search bar icon" class="box-shadow">
+                </button>
+                <a href="/login" class="header_buttons--user">
+                    <img src="img/user.svg" alt="user icon" class="box-shadow">
+                </a>
+                <button class="header_buttons--languages_selector" id="languages" type="button">
+                    <div class="header_buttons--languages_selector__languages">
+                        <img src="/img/spanish.png" alt="spanish language" class="not-selected1 not-selected-collapsed">
+                        <img src="/img/english.png" alt="english language" class="selected">
+                        <img src="/img/french.png" alt="french language" class="not-selected2 not-selected-collapsed">
+                    </div>
+                    <img src="/img/caret-down.png" alt="dropdown" class="header_buttons--dropdown box-shadow" id="select-language">
+                </button>
+            </div>
+        </form>
     </header>
     <nav class="nav deploy_nav--non_active" id="deployNav">
         @yield('nav')

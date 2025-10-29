@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="css/introduction.css">
 @endsection
 
+@section('faculty-color')
+sciences
+@endsection
+
 @section('nav')
     <a href="/about-directors">About the directors</a>
     <a href="/methodology">Methodology</a>
