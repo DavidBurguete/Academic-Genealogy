@@ -7,9 +7,12 @@
     <link rel="shortcut icon" href="img/logoUNAV.png" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
-    <script src="js/toggle_burger_menu.js"></script>
-    <script src="js/change_language.js"></script>
-    <script src="js/toggle_search.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
+    <script src="/js/toggle_burger_menu.js"></script>
+    <script src="/js/change_language.js"></script>
+    <script src="/js/toggle_search.js"></script>
+    <script src="/js/hover-send.js"></script>
     @yield('css-js')
     <title>Genealogía académica</title>
 </head>
@@ -51,14 +54,34 @@
                 </button>
             </div>
         </form>
+        <nav class="nav deploy_nav--non_active" id="deployNav">
+            @yield('nav')
+            <div class="nav--campus">
+        </nav>
     </header>
-    <nav class="nav deploy_nav--non_active" id="deployNav">
-        @yield('nav')
-        <div class="nav--campus">
-    </nav>
+
+
     <main>
         @yield('content')
     </main>
+
+    <footer>
+        <form action="" method="post" class="suggest">
+            <p>Do you have anything you'd like to suggest or ask? Dont' hesitate to write!</p>
+            <input id="name" type="text" autocomplete="off" placeholder="Full name">
+            <input id="email" type="text" autocomplete="off" placeholder="Email address">
+            <input id="subject" type="text" placeholder="Subject">
+            <textarea id="message" placeholder="Message" rows="11"></textarea>
+            <input id="submit" type="submit" value="Send message to javier@unav.es" class="@yield('faculty-color')">
+        </form>
+        <div class="credits">
+            <p>Created by Javier Burguete (v1.0.0)</p>
+            <p>Improved by <a href="https://linkedin.com/in/david-burguete">David Burguete</a> (v2.0.0+)</p>
+            <p>Version 2.0.0</p>
+            <hr>
+            <p>Universitas Studiorum Navarrensis</p>
+        </div>
+    </footer>
 </body>
 
 </html>

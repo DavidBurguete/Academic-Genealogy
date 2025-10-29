@@ -13,10 +13,12 @@ nav {
     z-index: 12;
 
     &.deploy_nav--active {
+        text-shadow: none;
         transform: scaleY(1.0);
     }
 
     &.deploy_nav--non_active {
+        text-shadow: none;
         transform: scaleY(0.0);
     }
 
