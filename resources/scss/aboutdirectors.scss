@@ -1,0 +1,158 @@
+@import 'mixins';
+@import 'header';
+@import 'footer';
+@import 'styles';
+
+@keyframes stretch {
+    from {
+        transform: scale(0.9, 1.1);
+    }
+
+    to {
+        transform: scale(1.1, 0.9);
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+
+    h2 {
+        margin-bottom: 1rem;
+        font-family: 'Oswald';
+        font-weight: bold;
+        font-size: 2rem;
+        letter-spacing: 0.96px;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-family: 'Archivo';
+        font-size: 1.5rem;
+        text-align: justify;
+        z-index: 2;
+
+        &#biography-1, &#biography-2{
+            text-align: left;
+        }
+
+        .blue-m{
+            color: $sciences;
+        }
+    }
+
+    &__faculties {
+        position: relative;
+        margin-block: 2rem;
+
+        &--top {
+            bottom: 4.5rem;
+            margin-top: 0;
+            margin-bottom: -4rem;
+        }
+
+        &--bottom {
+            top: 6.5rem;
+            margin-bottom: 0;
+            margin-top: -6rem;
+        }
+
+        &__faculty {
+            animation: 10s ease-in-out 1s infinite;
+            animation-name: stretch;
+            animation-direction: alternate;
+            border: 0.5rem solid;
+            border-radius: 2rem;
+            background-color: transparent;
+
+            &.philosophy-literature-education {
+                border-color: $philosophy-literature-education;
+                width: 50%;
+                height: 8rem;
+                animation-delay: -7s;
+            }
+
+            &.law {
+                position: absolute;
+                border-color: $law;
+                width: 70%;
+                height: 4rem;
+                bottom: 4rem;
+                left: 30%;
+                animation-delay: -11s;
+            }
+
+            &.communication {
+                border-color: $communication;
+                width: 90%;
+                height: 8.75rem;
+                animation-delay: -4s;
+            }
+
+            &.sciences{
+                position: absolute;
+                border-color: $sciences;
+                width: 60%;
+                height: 10rem;
+                left: 40%;
+                bottom: 1rem;
+                animation-delay: -13s;
+            }
+
+            &.medicine{
+                border-color: $medicine;
+                width: 70%;
+                height: 7.5rem;
+                animation-delay: -1s;
+            }
+
+            &.engineering-and-arquitecture{
+                position: absolute;
+                border-color: $engineering-and-arquitecture;
+                width: 45%;
+                height: 7rem;
+                left: 55%;
+                bottom: 3rem;
+                animation-delay: -8s;
+            }
+
+            &.economy{
+                position: relative;
+                border-color: $economy;
+                bottom: 2rem;
+                width: 50%;
+                height: 12.5rem;
+                animation-delay: -13s;
+            }
+
+            &.nursing{
+                position: absolute;
+                border-color: $nursing;
+                width: 80%;
+                height: 10rem;
+                left: 20%;
+                bottom: 0;
+                animation-delay: -3s;
+            }
+
+            &.canon{
+                border-color: $canon;
+                width: 75%;
+                height: 12rem;
+                animation-delay: -15s;
+            }
+
+            &.pharmacy-nutrition{
+                position: absolute;
+                border-color: $pharmacy-nutrition;
+                width: 75%;
+                height: 6rem;
+                left: 25%;
+                bottom: 2rem;
+                animation-delay: -8s;
+            }
+        }
+    }
+}

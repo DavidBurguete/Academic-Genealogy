@@ -9,6 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <script src="/js/toggle_burger_menu.js"></script>
     <script src="/js/change_language.js"></script>
     <script src="/js/toggle_search.js"></script>

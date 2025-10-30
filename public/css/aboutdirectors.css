@@ -1,0 +1,613 @@
+.engineering-and-arquitecture {
+  background-color: #8B4720;
+}
+
+.sciences {
+  background-color: #003DA5;
+}
+
+.law {
+  background-color: #FF0000;
+}
+
+.communication {
+  background-color: #7C878E;
+}
+
+.canon {
+  background-color: #007749;
+}
+
+.philosophy-literature-education {
+  background-color: #62B5E5;
+}
+
+.economy {
+  background-color: #FA4616;
+}
+
+.nursing {
+  background-color: #C1C6C8;
+}
+
+.pharmacy-nutrition {
+  background-color: #5C068C;
+}
+
+.medicine {
+  background-color: #FFC72C;
+}
+
+.theology {
+  background-color: #FFFFFF;
+}
+
+.burger_menu {
+  position: relative;
+  margin: 1.25rem;
+  width: 1.25rem;
+  height: 0.75rem;
+  align-self: center;
+}
+.burger_menu div {
+  position: relative;
+  height: 0.125rem;
+  width: 1.25rem;
+  background-color: #FFFFFF;
+}
+.burger_menu .burger_menu--first {
+  transition: 500ms;
+  top: 0;
+}
+.burger_menu .burger_menu--first--crossed {
+  top: 0.3125rem;
+  rotate: 45deg;
+}
+.burger_menu .burger_menu--middle {
+  transition: 500ms;
+  justify-self: center;
+  top: 0.1875rem;
+}
+.burger_menu .burger_menu--middle--crossed {
+  width: 0%;
+}
+.burger_menu .burger_menu--last {
+  transition: 500ms;
+  top: 0.375rem;
+}
+.burger_menu .burger_menu--last--crossed {
+  top: 0.0625rem;
+  rotate: -45deg;
+}
+
+@media screen and (min-width: 1000px) {
+  .burger_menu {
+    display: none;
+  }
+}
+nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  left: 0;
+  top: 4.3125rem;
+  padding: 1rem 1.25rem;
+  transition: 200ms ease-in-out;
+  transform-origin: top;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2901960784);
+  z-index: 12;
+}
+nav.deploy_nav--active {
+  text-shadow: none;
+  transform: scaleY(1);
+}
+nav.deploy_nav--non_active {
+  text-shadow: none;
+  transform: scaleY(0);
+}
+nav.header--nav {
+  display: none;
+}
+nav a {
+  color: #000000;
+  font-family: "Oswald";
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-align: left;
+  align-self: flex-start;
+  margin-block: 0.5rem;
+}
+
+.nav--campus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background-image: url("/img/campus.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.nav--campus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 85%);
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    padding: 0;
+  }
+  nav.deploy_nav--active, nav.deploy_nav--non_active {
+    display: none;
+  }
+  nav.header--nav {
+    display: flex;
+    position: relative;
+    width: 40%;
+    left: 0;
+    padding: 0;
+    background-color: white;
+    box-shadow: none;
+    z-index: 12;
+  }
+  nav.header--nav a {
+    display: inline-block;
+    margin: 0 auto;
+    height: 100%;
+    width: 25%;
+    align-content: center;
+  }
+  nav a {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1051px) {
+  nav.header--nav {
+    left: 3rem;
+  }
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2901960784);
+}
+.header form {
+  display: flex;
+  margin-left: auto;
+}
+
+.box-shadow {
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+.logo {
+  display: flex;
+  align-self: center;
+  font-family: "Merriweather";
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2.6px;
+  color: #FFFFFF;
+}
+.logo h1 {
+  align-self: center;
+  font-size: 0.8rem;
+  width: 6.5rem;
+  margin-left: 0.5rem;
+  transition: 0.5s ease-in-out;
+}
+.logo img {
+  height: 3rem;
+}
+
+.search-bar {
+  position: absolute;
+  align-self: center;
+  width: calc(100% - 13.75rem);
+  height: 2rem;
+  right: 7.25rem;
+  border: 0;
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 1.6px;
+  color: #FFFFFF;
+  background-color: transparent;
+  border-bottom: 1px solid #FFFFFF;
+  transform: translateY(-4.25rem);
+  transition: 0.5s ease-in-out;
+}
+.search-bar::placeholder {
+  color: #FFFFFF;
+  letter-spacing: 1.6px;
+}
+.search-bar:focus-visible {
+  outline-width: 0;
+}
+
+.header_buttons {
+  display: flex;
+}
+.header_buttons--user, .header_buttons--search, .header_buttons--close, .header_buttons--display, .header_buttons--languages_selector {
+  background-color: transparent;
+  border: none;
+  margin-block: 1.4rem;
+  margin-right: 1rem;
+  line-height: 0;
+}
+@media screen and (min-width: 1000px) {
+  .header_buttons--user, .header_buttons--search, .header_buttons--close, .header_buttons--display, .header_buttons--languages_selector {
+    margin: 0.4375rem 0 0.4375rem 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(133, 133, 133, 0.3019607843);
+  }
+}
+.header_buttons--display {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0;
+  z-index: 3;
+}
+.header_buttons--search {
+  transition: 0.5s ease-in-out;
+  z-index: 2;
+}
+.header_buttons--close {
+  position: absolute;
+  right: 6.25rem;
+  transform: translateY(-4.25rem);
+  transition: 0.5s ease-in-out;
+  z-index: 4;
+}
+.header_buttons--languages_selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.5rem;
+  width: 3.25rem;
+}
+.header_buttons--languages_selector .selected {
+  position: relative;
+  z-index: 99;
+}
+.header_buttons--languages_selector__languages > * {
+  width: 2rem;
+  height: 1.375rem;
+  transition: 0.5s ease-in-out;
+}
+.header_buttons--languages_selector__languages :not(.selected) {
+  position: absolute;
+  right: 1.75rem;
+}
+.header_buttons--dropdown {
+  width: 0.875rem;
+  height: 0.875rem;
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
+}
+.header_buttons .toggled {
+  transform: scaleY(-1);
+}
+
+@media screen and (min-width: 1000px) {
+  header {
+    position: relative;
+    background-color: #222222;
+    height: 6.25rem;
+  }
+  .desktop_header {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 0.6875rem 0;
+    width: 74%;
+  }
+  .header--wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 1.25rem;
+    width: 74%;
+    height: 7.5rem;
+    box-shadow: none;
+  }
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+  .logo img {
+    order: 1;
+    width: 5rem;
+    height: 5rem;
+    box-shadow: 0px 14px 24px 0px rgba(139, 139, 139, 0.2509803922);
+  }
+  .header_buttons {
+    position: relative;
+    right: 0;
+  }
+}
+@media screen and (min-width: 1246px) {
+  .header_buttons {
+    position: relative;
+    right: 10%;
+  }
+}
+.suggest {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 4rem 1.25rem;
+  font-family: "Archivo";
+  font-weight: bold;
+  color: #FFFFFF;
+  background-image: url("/img/central.jpg");
+  background-position-x: center;
+  background-position-y: -4rem;
+  background-color: rgba(34, 34, 34, 0.5);
+  background-blend-mode: darken;
+  background-size: 500%;
+}
+.suggest input[type=text],
+.suggest textarea {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0;
+  border-radius: 0.5rem;
+  color: inherit;
+}
+.suggest input[type=text]::placeholder,
+.suggest textarea::placeholder {
+  color: inherit;
+  opacity: 0.8;
+}
+.suggest input[type=text]#name, .suggest input[type=text]#email, .suggest input[type=text]#subject, .suggest input[type=text]#message,
+.suggest textarea#name,
+.suggest textarea#email,
+.suggest textarea#subject,
+.suggest textarea#message {
+  background-repeat: no-repeat;
+  background-position-x: 1rem;
+  background-position-y: center;
+}
+.suggest input[type=text]#name,
+.suggest textarea#name {
+  background-image: url("/img/form-name.svg");
+}
+.suggest input[type=text]#email,
+.suggest textarea#email {
+  background-image: url("/img/form-email.svg");
+}
+.suggest input[type=text]#subject,
+.suggest textarea#subject {
+  background-image: url("/img/form-subject.svg");
+}
+.suggest input[type=text]#message,
+.suggest textarea#message {
+  background-position-y: 1rem;
+  background-image: url("/img/form-message.svg");
+}
+.suggest input[type=submit] {
+  width: min-content;
+  padding: 1rem 2rem 1rem 4rem;
+  border: 0;
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 4px black;
+  background-image: url("/img/send.svg");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position-x: 1rem;
+  background-position-y: 1rem;
+}
+@keyframes moveBackground {
+  0% {
+    background-position-x: 1rem;
+  }
+  30% {
+    background-position-x: 2rem;
+  }
+  70% {
+    background-position-x: 0.5rem;
+  }
+  100% {
+    background-position-x: 1rem;
+  }
+}
+.suggest .send-animation {
+  animation: moveBackground 0.5s ease-in-out;
+}
+
+.credits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.75rem 3.25rem;
+  width: 100%;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 1rem;
+  color: #FFFFFF;
+  text-align: center;
+  letter-spacing: 0;
+  background-color: #8F2724;
+}
+.credits hr {
+  width: 2rem;
+  margin: 1rem auto;
+  border: 1px solid #FFFFFF;
+}
+
+html, * {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-margin-top: 4.375rem;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+button, input[type=submit] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+@keyframes stretch {
+  from {
+    transform: scale(0.9, 1.1);
+  }
+  to {
+    transform: scale(1.1, 0.9);
+  }
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
+}
+.main h2 {
+  margin-bottom: 1rem;
+  font-family: "Oswald";
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 0.96px;
+  text-transform: uppercase;
+}
+.main p {
+  margin-bottom: 1rem;
+  font-family: "Archivo";
+  font-size: 1.5rem;
+  text-align: justify;
+  z-index: 2;
+}
+.main p#biography-1, .main p#biography-2 {
+  text-align: left;
+}
+.main p .blue-m {
+  color: #003DA5;
+}
+.main__faculties {
+  position: relative;
+  margin-block: 2rem;
+}
+.main__faculties--top {
+  bottom: 4.5rem;
+  margin-top: 0;
+  margin-bottom: -4rem;
+}
+.main__faculties--bottom {
+  top: 6.5rem;
+  margin-bottom: 0;
+  margin-top: -6rem;
+}
+.main__faculties__faculty {
+  animation: 10s ease-in-out 1s infinite;
+  animation-name: stretch;
+  animation-direction: alternate;
+  border: 0.5rem solid;
+  border-radius: 2rem;
+  background-color: transparent;
+}
+.main__faculties__faculty.philosophy-literature-education {
+  border-color: #62B5E5;
+  width: 50%;
+  height: 8rem;
+  animation-delay: -7s;
+}
+.main__faculties__faculty.law {
+  position: absolute;
+  border-color: #FF0000;
+  width: 70%;
+  height: 4rem;
+  bottom: 4rem;
+  left: 30%;
+  animation-delay: -11s;
+}
+.main__faculties__faculty.communication {
+  border-color: #7C878E;
+  width: 90%;
+  height: 8.75rem;
+  animation-delay: -4s;
+}
+.main__faculties__faculty.sciences {
+  position: absolute;
+  border-color: #003DA5;
+  width: 60%;
+  height: 10rem;
+  left: 40%;
+  bottom: 1rem;
+  animation-delay: -13s;
+}
+.main__faculties__faculty.medicine {
+  border-color: #FFC72C;
+  width: 70%;
+  height: 7.5rem;
+  animation-delay: -1s;
+}
+.main__faculties__faculty.engineering-and-arquitecture {
+  position: absolute;
+  border-color: #8B4720;
+  width: 45%;
+  height: 7rem;
+  left: 55%;
+  bottom: 3rem;
+  animation-delay: -8s;
+}
+.main__faculties__faculty.economy {
+  position: relative;
+  border-color: #FA4616;
+  bottom: 2rem;
+  width: 50%;
+  height: 12.5rem;
+  animation-delay: -13s;
+}
+.main__faculties__faculty.nursing {
+  position: absolute;
+  border-color: #C1C6C8;
+  width: 80%;
+  height: 10rem;
+  left: 20%;
+  bottom: 0;
+  animation-delay: -3s;
+}
+.main__faculties__faculty.canon {
+  border-color: #007749;
+  width: 75%;
+  height: 12rem;
+  animation-delay: -15s;
+}
+.main__faculties__faculty.pharmacy-nutrition {
+  position: absolute;
+  border-color: #5C068C;
+  width: 75%;
+  height: 6rem;
+  left: 25%;
+  bottom: 2rem;
+  animation-delay: -8s;
+}
+
+/*# sourceMappingURL=aboutdirectors.css.map */
