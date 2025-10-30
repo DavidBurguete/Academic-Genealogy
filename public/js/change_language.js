@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     let indexOfSelected = Array.prototype.indexOf.call(languagesSelector.children[0].children, selected);
 
     for (let i = 0; i < notSelected.length; i++) {
-        if (indexOfSelected + 1 <= i) {
+        if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
             notSelected[i].style = "transform: translateY(-1.4rem);";
         }
         else {
@@ -34,7 +34,7 @@ window.addEventListener("load", () => {
         if (isDropdownToggled) {
             dropdown.classList.add("toggled");
             for (let i = 0; i < notSelected.length; i++) {
-                if (indexOfSelected + 1 <= i) {
+                if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
                     notSelected[i].style = "transform: translateY(" + ((i + 1) * 2 - 1.5) + "rem);";
                 }
                 else {
@@ -45,7 +45,7 @@ window.addEventListener("load", () => {
         else {
             dropdown.classList.remove("toggled");
             for (let i = 0; i < notSelected.length; i++) {
-                if (indexOfSelected + 1 <= i) {
+                if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
                     notSelected[i].style = "transform: translateY(-1.4rem);";
                 }
                 else {
