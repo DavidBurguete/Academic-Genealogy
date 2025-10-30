@@ -287,15 +287,6 @@ nav a {
   position: relative;
   z-index: 99;
 }
-.header_buttons--languages_selector .not-selected1 {
-  transform: translateY(2rem);
-}
-.header_buttons--languages_selector .not-selected2 {
-  transform: translateY(4rem);
-}
-.header_buttons--languages_selector .not-selected-collapsed {
-  transform: translateY(0rem);
-}
 .header_buttons--languages_selector__languages > * {
   width: 2rem;
   height: 1.375rem;

@@ -127,20 +127,6 @@
             z-index: 99;
         }
 
-        & .not-selected {
-            &1 {
-                transform: translateY(2rem);
-            }
-
-            &2 {
-                transform: translateY(4rem);
-            }
-
-            &-collapsed {
-                transform: translateY(0rem);
-            }
-        }
-
         &__languages {
             &>* {
                 width: 2rem;

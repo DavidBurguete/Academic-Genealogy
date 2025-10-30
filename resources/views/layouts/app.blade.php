@@ -46,9 +46,9 @@
                 </a>
                 <button class="header_buttons--languages_selector" id="languages" type="button">
                     <div class="header_buttons--languages_selector__languages">
-                        <img src="/img/spanish.png" alt="spanish language" class="not-selected1 not-selected-collapsed">
+                        <img src="/img/spanish.png" alt="spanish language">
                         <img src="/img/english.png" alt="english language" class="selected">
-                        <img src="/img/french.png" alt="french language" class="not-selected2 not-selected-collapsed">
+                        <img src="/img/french.png" alt="french language">
                     </div>
                     <img src="/img/caret-down.png" alt="dropdown" class="header_buttons--dropdown box-shadow" id="select-language">
                 </button>
