@@ -65,9 +65,9 @@ sciences
         "to him I owe who I am or who I might become, for his encouragment and aid directed the activity of my intellect along the path of scientific research" <a href="#biography-2">[2]</a>.
     </p>
     <p>
-        El segundo es Pierre-Ernest Weiss, que fué el que influyó más sobre Blas Cabrera para dirigir su investigación futura hacia el magnetismo. 
-        Fué en su visita de 1912 cuando entablaron relación, y como decía D. Blas Cabrera: "...el libro y aún la monografía escrita [...] son realmente obras muertas.
-        [...] Sólo el comercio directo con el maestro es modo seguro para educar al investigador...".
+        The second is Pierre-Ernest Weiss, who was the one that influenced more over Blas Cabrera to guide his future research towards magnetism.
+        It was on his visit on 1912 when the established relationship, and as Mr. Blas Cabrera said: "...the book and the written monograph [...] are truly dead works.
+        [...] Only direct trade with the master is a safe method to educate the researcher...".
     </p>
     <div class="main__faculties">
         <div class="main__faculties__faculty economy"></div>

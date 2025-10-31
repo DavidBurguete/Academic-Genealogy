@@ -1,0 +1,143 @@
+@import 'mixins';
+@import 'header';
+@import 'footer';
+@import 'styles';
+
+@keyframes move {
+    from {
+        offset-distance: 0%;
+    }
+
+    to {
+        offset-distance: 100%;
+    }
+}
+
+@keyframes visibility {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+
+    h2 {
+        margin-bottom: 1rem;
+        font-family: 'Oswald';
+        font-weight: bold;
+        font-size: 2rem;
+        letter-spacing: 0.96px;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        font-family: 'Archivo';
+        font-size: 1.5rem;
+        text-align: justify;
+        z-index: 2;
+
+        &#biography-1,
+        &#biography-2 {
+            text-align: left;
+        }
+
+        .blue-m {
+            color: $sciences;
+        }
+    }
+
+    &__faculties {
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+        margin-block: 2rem;
+
+        &--top {
+            bottom: 2rem;
+            margin-top: 0;
+            margin-bottom: -2rem;
+        }
+
+        &--bottom {
+            top: 1rem;
+            margin-bottom: 0;
+            margin-top: -1rem;
+        }
+
+        &__faculty {
+            offset-path: path("M100,100 C200,0 200,200 100,100 C0,0 0,200 100,100z");
+            offset-rotate: 0deg;
+            width: 10rem;
+            height: 10rem;
+            animation: move 15s linear infinite, visibility 10s ease-in-out infinite alternate;
+
+            &.medicine {
+                background: radial-gradient($medicine 10%, transparent 70%);
+                animation-delay: -9s;
+            }
+
+            &.sciences {
+                top: 0;
+                left: 40%;
+                background: radial-gradient($sciences 10%, transparent 70%);
+                animation-delay: -3s;
+            }
+
+            &.communication {
+                background: radial-gradient($communication 10%, transparent 70%);
+                animation-delay: -14s;
+            }
+
+            &.law {
+                top: 0;
+                left: 40%;
+                background: radial-gradient($law 10%, transparent 70%);
+                animation-delay: -8s;
+            }
+
+            &.philosophy-literature-education {
+                background: radial-gradient($philosophy-literature-education 10%, transparent 70%);
+                animation-delay: -21s;
+            }
+
+            &.pharmacy-nutrition {
+                top: 0;
+                left: 40%;
+                background: radial-gradient($pharmacy-nutrition 10%, transparent 70%);
+                animation-delay: -11s;
+            }
+
+            &.engineering-and-arquitecture {
+                background: radial-gradient($engineering-and-arquitecture 10%, transparent 70%);
+                animation-delay: -4s;
+            }
+
+            &.canon {
+                top: 0;
+                left: 40%;
+                background: radial-gradient($canon 10%, transparent 70%);
+                animation-delay: -43s;
+            }
+
+            &.economy {
+                background: radial-gradient($economy 10%, transparent 70%);
+                animation-delay: -1s;
+            }
+
+            &.nursing {
+                top: 0;
+                left: 40%;
+                background: radial-gradient($nursing 10%, transparent 70%);
+                animation-delay: -13s;
+            }
+        }
+    }
+}
