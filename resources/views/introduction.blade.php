@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css-js')
-    <link rel="stylesheet" href="css/introduction.css">
+    <link rel="stylesheet" href="{{ asset('css/introduction.css') }}">
 @endsection
 
 @section('faculty-color')
@@ -24,7 +24,7 @@ sciences
             <br>
             <span>&emsp;&emsp;(Excerpt from the ceremony for the conferral of honoris causa doctorates)</span>
         </p>
-        <img src="/img/biretta.png" alt="An image of a biretta from the sciences faculty">
+        <img src="{{ asset('img/biretta.png') }}" alt="An image of a biretta from the sciences faculty">
     </div>
     <div class="main__description">
         <p>
@@ -33,8 +33,8 @@ sciences
             so this genealogy is shared by many of the members of this department and many of its old doctorates.
         </p>
         <div class="main__description__images">
-            <img src="/img/JavierBurgueteMas.jpg" alt="Front picture of doctor Javier Burguete">
-            <img src="/img/CarlosPerezGarcia.jpg" alt="Front picture of doctor Carlos Perez">
+            <img src="{{ asset('img/JavierBurgueteMas.jpg') }}" alt="Front picture of doctor Javier Burguete">
+            <img src="{{ asset('img/CarlosPerezGarcia.jpg') }}" alt="Front picture of doctor Carlos Perez">
         </div>
         <p>
             From this seed we've been developing the ramifications that have been appearing, that links us with other spanish and european universities.
@@ -49,3 +49,4 @@ sciences
         </p>
     </div>
 @endsection
+@include('layouts.common')

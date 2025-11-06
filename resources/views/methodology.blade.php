@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css-js')
-<link rel="stylesheet" href="css/methodology.css">
+<link rel="stylesheet" href="{{ asset('css/methodology.css') }}">
 @endsection
 
 @section('faculty-color')
@@ -62,3 +62,4 @@ sciences
         <div class="main__faculties__faculty nursing"></div>
     </div>
 @endsection
+@include('layouts.common')

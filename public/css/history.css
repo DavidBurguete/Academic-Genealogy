@@ -1,0 +1,617 @@
+.engineering-and-arquitecture {
+  background-color: #8B4720;
+}
+
+.sciences {
+  background-color: #003DA5;
+}
+
+.law {
+  background-color: #FF0000;
+}
+
+.communication {
+  background-color: #7C878E;
+}
+
+.canon {
+  background-color: #007749;
+}
+
+.philosophy-literature-education {
+  background-color: #62B5E5;
+}
+
+.economy {
+  background-color: #FA4616;
+}
+
+.nursing {
+  background-color: #C1C6C8;
+}
+
+.pharmacy-nutrition {
+  background-color: #5C068C;
+}
+
+.medicine {
+  background-color: #FFC72C;
+}
+
+.theology {
+  background-color: #FFFFFF;
+}
+
+.burger_menu {
+  position: relative;
+  margin: 1.25rem;
+  width: 1.25rem;
+  height: 0.75rem;
+  align-self: center;
+}
+.burger_menu div {
+  position: relative;
+  height: 0.125rem;
+  width: 1.25rem;
+  background-color: #FFFFFF;
+}
+.burger_menu .burger_menu--first {
+  transition: 500ms;
+  top: 0;
+}
+.burger_menu .burger_menu--first--crossed {
+  top: 0.3125rem;
+  rotate: 45deg;
+}
+.burger_menu .burger_menu--middle {
+  transition: 500ms;
+  justify-self: center;
+  top: 0.1875rem;
+}
+.burger_menu .burger_menu--middle--crossed {
+  width: 0%;
+}
+.burger_menu .burger_menu--last {
+  transition: 500ms;
+  top: 0.375rem;
+}
+.burger_menu .burger_menu--last--crossed {
+  top: 0.0625rem;
+  rotate: -45deg;
+}
+
+@media screen and (min-width: 1000px) {
+  .burger_menu {
+    display: none;
+  }
+}
+nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  left: 0;
+  top: 4.3125rem;
+  padding: 1rem 1.25rem;
+  transition: 200ms ease-in-out;
+  transform-origin: top;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2901960784);
+  z-index: 12;
+}
+nav.deploy_nav--active {
+  text-shadow: none;
+  transform: scaleY(1);
+}
+nav.deploy_nav--non_active {
+  text-shadow: none;
+  transform: scaleY(0);
+}
+nav.header--nav {
+  display: none;
+}
+nav a {
+  color: #000000;
+  font-family: "Oswald";
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-align: left;
+  align-self: flex-start;
+  margin-block: 0.5rem;
+}
+
+.nav--campus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background-image: url("/img/campus.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.nav--campus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 60%, rgb(255, 255, 255) 85%);
+}
+
+@media screen and (min-width: 1000px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    padding: 0;
+  }
+  nav.deploy_nav--active, nav.deploy_nav--non_active {
+    display: none;
+  }
+  nav.header--nav {
+    display: flex;
+    position: relative;
+    width: 40%;
+    left: 0;
+    padding: 0;
+    background-color: white;
+    box-shadow: none;
+    z-index: 12;
+  }
+  nav.header--nav a {
+    display: inline-block;
+    margin: 0 auto;
+    height: 100%;
+    width: 25%;
+    align-content: center;
+  }
+  nav a {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1051px) {
+  nav.header--nav {
+    left: 3rem;
+  }
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  text-shadow: 0px 0px 5px black;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2901960784);
+}
+.header form {
+  display: flex;
+  margin-left: auto;
+}
+
+.box-shadow {
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+.logo {
+  display: flex;
+  align-self: center;
+  font-family: "Merriweather";
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2.6px;
+  color: #FFFFFF;
+}
+.logo h1 {
+  align-self: center;
+  font-size: 0.8rem;
+  width: 6.5rem;
+  margin-left: 0.5rem;
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+}
+.logo img {
+  height: 3rem;
+}
+
+.search-bar {
+  position: absolute;
+  align-self: center;
+  width: calc(100% - 13.75rem);
+  height: 2rem;
+  right: 7.25rem;
+  border: 0;
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 1.6px;
+  color: #FFFFFF;
+  background-color: transparent;
+  border-bottom: 1px solid #FFFFFF;
+  transform: translateY(-4.25rem);
+  transition: 0.5s ease-in-out;
+}
+.search-bar::placeholder {
+  color: #FFFFFF;
+  letter-spacing: 1.6px;
+}
+.search-bar:focus-visible {
+  outline-width: 0;
+}
+
+.header_buttons {
+  display: flex;
+}
+.header_buttons--user, .header_buttons--search, .header_buttons--close, .header_buttons--display, .header_buttons--languages_selector {
+  background-color: transparent;
+  border: none;
+  margin-block: 1.4rem;
+  margin-right: 1rem;
+  line-height: 0;
+}
+@media screen and (min-width: 1000px) {
+  .header_buttons--user, .header_buttons--search, .header_buttons--close, .header_buttons--display, .header_buttons--languages_selector {
+    margin: 0.4375rem 0 0.4375rem 1.25rem;
+    padding: 1.25rem;
+    border: 1px solid rgba(133, 133, 133, 0.3019607843);
+  }
+}
+.header_buttons--display {
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0;
+  z-index: 3;
+}
+.header_buttons--search {
+  transition: 0.5s ease-in-out;
+  z-index: 2;
+}
+.header_buttons--close {
+  position: absolute;
+  right: 6.25rem;
+  transform: translateY(-4.25rem);
+  transition: 0.5s ease-in-out;
+  z-index: 4;
+}
+.header_buttons--languages_selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 0.5rem;
+  width: 3.25rem;
+}
+.header_buttons--languages_selector .selected {
+  position: relative;
+  z-index: 99;
+}
+.header_buttons--languages_selector__languages > * {
+  width: 2rem;
+  height: 1.375rem;
+  transition: 0.5s ease-in-out;
+}
+.header_buttons--languages_selector__languages :not(.selected) {
+  position: absolute;
+  right: 1.75rem;
+}
+.header_buttons--dropdown {
+  width: 0.875rem;
+  height: 0.875rem;
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
+}
+.header_buttons .toggled {
+  transform: scaleY(-1);
+}
+
+@media screen and (min-width: 1000px) {
+  header {
+    position: relative;
+    background-color: #222222;
+    height: 6.25rem;
+  }
+  .desktop_header {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding: 0.6875rem 0;
+    width: 74%;
+  }
+  .header--wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 1.25rem;
+    width: 74%;
+    height: 7.5rem;
+    box-shadow: none;
+  }
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+  .logo img {
+    order: 1;
+    width: 5rem;
+    height: 5rem;
+    box-shadow: 0px 14px 24px 0px rgba(139, 139, 139, 0.2509803922);
+  }
+  .header_buttons {
+    position: relative;
+    right: 0;
+  }
+}
+@media screen and (min-width: 1246px) {
+  .header_buttons {
+    position: relative;
+    right: 10%;
+  }
+}
+.suggest {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 4rem 1.25rem;
+  font-family: "Archivo";
+  font-weight: bold;
+  color: #FFFFFF;
+  background-image: url("/img/central.jpg");
+  background-position-x: center;
+  background-position-y: -4rem;
+  background-color: rgba(34, 34, 34, 0.5);
+  background-blend-mode: darken;
+  background-size: 500%;
+}
+.suggest input[type=text],
+.suggest textarea {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0;
+  border-radius: 0.5rem;
+  color: inherit;
+}
+.suggest input[type=text]::placeholder,
+.suggest textarea::placeholder {
+  color: inherit;
+  opacity: 0.8;
+}
+.suggest input[type=text]#name, .suggest input[type=text]#email, .suggest input[type=text]#subject, .suggest input[type=text]#message,
+.suggest textarea#name,
+.suggest textarea#email,
+.suggest textarea#subject,
+.suggest textarea#message {
+  background-repeat: no-repeat;
+  background-position-x: 1rem;
+  background-position-y: center;
+}
+.suggest input[type=text]#name,
+.suggest textarea#name {
+  background-image: url("/img/form-name.svg");
+}
+.suggest input[type=text]#email,
+.suggest textarea#email {
+  background-image: url("/img/form-email.svg");
+}
+.suggest input[type=text]#subject,
+.suggest textarea#subject {
+  background-image: url("/img/form-subject.svg");
+}
+.suggest input[type=text]#message,
+.suggest textarea#message {
+  background-position-y: 1rem;
+  background-image: url("/img/form-message.svg");
+}
+.suggest input[type=submit] {
+  width: min-content;
+  padding: 1rem 2rem 1rem 4rem;
+  border: 0;
+  border-radius: 0.5rem;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 4px black;
+  background-image: url("/img/send.svg");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position-x: 1rem;
+  background-position-y: 1rem;
+}
+@keyframes moveBackground {
+  0% {
+    background-position-x: 1rem;
+  }
+  30% {
+    background-position-x: 2rem;
+  }
+  70% {
+    background-position-x: 0.5rem;
+  }
+  100% {
+    background-position-x: 1rem;
+  }
+}
+.suggest .send-animation {
+  animation: moveBackground 0.5s ease-in-out;
+}
+
+.credits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.75rem 3.25rem;
+  width: 100%;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 1rem;
+  color: #FFFFFF;
+  text-align: center;
+  letter-spacing: 0;
+  background-color: #8F2724;
+}
+.credits hr {
+  width: 2rem;
+  margin: 1rem auto;
+  border: 1px solid #FFFFFF;
+}
+
+html, * {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-margin-top: 4.375rem;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+button, input[type=submit] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+@keyframes move {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+@keyframes visibility {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.main > :not(.swiper) {
+  margin: 0 1rem;
+}
+.main h2 {
+  margin-top: 2rem !important;
+}
+.main h2,
+.main h3 {
+  margin-bottom: 2rem !important;
+  font-family: "Oswald";
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 0.96px;
+  text-transform: uppercase;
+}
+.main p {
+  margin-bottom: 1rem;
+  font-family: "Archivo";
+  font-size: 1.5rem;
+  text-align: justify;
+}
+.main__cards {
+  display: flex;
+  flex-direction: column;
+}
+.main__cards__text-card, .main__cards__image-card {
+  margin-bottom: 2rem;
+  height: 13.625rem;
+  overflow: hidden;
+}
+.main__cards__text-card {
+  align-content: center;
+  padding: 2rem 1.75rem;
+  box-shadow: 0px 8px 16px 0px rgba(34, 34, 34, 0.25);
+}
+.main__cards__text-card p {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.main__cards__image-card {
+  align-content: center;
+  height: auto;
+  max-width: 30rem;
+  margin: 0 auto 2rem auto;
+}
+.main__cards__image-card img {
+  position: relative;
+  width: 100%;
+}
+.main__cards__image-card img.center-physicists {
+  bottom: 1.5rem;
+}
+.main .research-main-text {
+  margin-bottom: 1rem;
+}
+.main .swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+.main .swiper-slide .time-image {
+  margin-block: 2rem 3.5rem;
+  width: 100%;
+  border-radius: 99rem;
+  mask-image: radial-gradient(circle, black 60%, transparent 70%);
+}
+.main .swiper-slide .time {
+  font-family: "Merriweather";
+  font-weight: normal;
+  font-size: 6rem;
+  text-align: center;
+}
+.main .swiper-slide img {
+  transform: translateX(calc(-50% + 50vw));
+}
+.main .swiper-slide img.timeline-start {
+  transform: translateX(calc(-50% + 50vw - 0.5rem));
+}
+.main .swiper-slide img.timeline-end {
+  transform: translateX(calc(-50% + 50vw + 0.5rem)) rotate(180deg);
+}
+.main .swiper-slide.timeline-text {
+  margin: 2rem auto;
+  height: 25rem;
+  font-family: "Archivo";
+  font-size: 1.5rem;
+  overflow-y: auto;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 1%, black 92%, transparent 100%);
+}
+.main .swiper-slide-active.timeline-text {
+  opacity: 1;
+}
+.main .swiper--timeline-images, .main .swiper--timeline-content {
+  margin: 0 1rem;
+}
+.main .swiper--timeline-images img, .main .swiper--timeline-content img {
+  transform: none;
+}
+.main .swiper--timeline-images {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 30rem;
+}
+.main .swiper--timeline-header {
+  margin-bottom: 3rem;
+  background: linear-gradient(to bottom, #ffffff 12%, #f4f4f4 25%, #e8e8e8 50%, #f4f4f4 75%, #ffffff 88%);
+}
+.main .swiper__buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3.5rem;
+}
+.main .swiper__buttons--prev, .main .swiper__buttons--next {
+  width: 5rem;
+  height: 5rem;
+}
+.main .swiper__buttons--next {
+  transform: rotate(180deg);
+}
+
+/*# sourceMappingURL=history.css.map */

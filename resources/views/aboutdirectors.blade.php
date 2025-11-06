@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css-js')
-<link rel="stylesheet" href="css/aboutdirectors.css">
+<link rel="stylesheet" href="{{ asset('css/aboutdirectors.css') }}">
 @endsection
 
 @section('faculty-color')
@@ -84,3 +84,4 @@ sciences
         <div class="main__faculties__faculty pharmacy-nutrition"></div>
     </div>
 @endsection
+@include('layouts.common')
