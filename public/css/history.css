@@ -545,6 +545,9 @@ a {
 .main__cards__image-card img.center-physicists {
   bottom: 1.5rem;
 }
+.main__cards--background {
+  display: none;
+}
 .main .research-main-text {
   margin-bottom: 1rem;
 }
@@ -612,6 +615,27 @@ a {
 }
 .main .swiper__buttons--next {
   transform: rotate(180deg);
+}
+.main__thesis-history {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+.main__thesis-history__arch {
+  align-self: center;
+  width: 40rem;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.main__thesis-history__year {
+  position: absolute;
+  top: 1rem;
+  transform: translateX(calc(50vw - 70% + 0.5rem));
+  font-family: "Merriweather";
+  font-weight: bold;
+  font-size: 3rem;
+  color: #FFFFFF;
 }
 
 /*# sourceMappingURL=history.css.map */

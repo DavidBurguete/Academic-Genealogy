@@ -86,6 +86,10 @@
                 }
             }
         }
+
+        &--background {
+            display: none;
+        }
     }
 
     .research-main-text {
@@ -155,7 +159,7 @@
             }
         }
 
-        &--timeline-images{
+        &--timeline-images {
             margin: 0 auto;
             padding: 0 1rem;
             max-width: 30rem;
@@ -185,6 +189,34 @@
             &--next {
                 transform: rotate(180deg);
             }
+        }
+    }
+
+    &__thesis-history {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0 !important;
+        overflow-x: hidden;
+
+        &__arch {
+            align-self: center;
+            width: 40rem;
+            mask-image: linear-gradient(to right,
+                    transparent 0%,
+                    black 10%,
+                    black 90%,
+                    transparent 100%);
+        }
+
+        &__year {
+            position: absolute;
+            top: 1rem;
+            transform: translateX(calc(50vw - 70% + 0.5rem));
+            font-family: 'Merriweather';
+            font-weight: bold;
+            font-size: 3rem;
+            color: $theology;
         }
     }
 }

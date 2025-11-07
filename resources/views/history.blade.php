@@ -2,7 +2,7 @@
 
 @section('css-js')
 <link rel="stylesheet" href="{{ asset('css/history.css') }}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{{ asset('js/timeline.js') }}"></script>
 @endsection
@@ -40,6 +40,7 @@ sciences
         <div class="main__cards__image-card">
             <img src="{{ asset('img/physicists.png') }}" alt="An image of the 1930 Solvay conference" class="center-physicists">
         </div>
+        <div class="main__cards--background"></div>
     </div>
     <h3>The Research on Physics in Spain</h3>
     <p class="research-main-text">
@@ -69,23 +70,23 @@ sciences
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <p class="time">1559</p>
-                <img src="{{ asset('img/timeline-corner.png') }}" class="timeline-start">
+                <img src="{{ asset('img/timeline-corner.svg') }}" class="timeline-start">
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XVIII</p>
-                <img src="{{ asset('img/timeline.png') }}">
+                <img src="{{ asset('img/timeline.svg') }}">
             </div>
             <div class="swiper-slide">
                 <p class="time">1857</p>
-                <img src="{{ asset('img/timeline.png') }}">
+                <img src="{{ asset('img/timeline.svg') }}">
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XIX</p>
-                <img src="{{ asset('img/timeline.png') }}">
+                <img src="{{ asset('img/timeline.svg') }}">
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XX</p>
-                <img src="{{ asset('img/timeline-corner.png') }}" class="timeline-end">
+                <img src="{{ asset('img/timeline-corner.svg') }}" class="timeline-end">
             </div>
         </div>
         <div class="swiper__buttons">
@@ -154,5 +155,16 @@ sciences
             </div>
         </div>
     </div>
+    <section class="main__thesis-history">
+        <img src="{{ asset('img/arch.svg') }}" class="main__thesis-history__arch">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main__thesis-history__year">
+            <defs>
+                <path id="textPath" d="M20 70 Q250 10 280 70" />
+            </defs>
+            <text fill="white">
+                <textPath startOffset="50%" xlink:href="#textPath">1847</textPath>
+            </text>
+        </svg>
+    </section>
 @endsection
 @include('layouts.common')
