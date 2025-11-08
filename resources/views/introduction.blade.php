@@ -18,11 +18,11 @@ sciences
 @section('content')
     <div class="main__card">
         <p>
-            Recive the book of science which is your duty to teach and advance,
+            Receive the book of science which is your duty to teach and advance,
             and let it be a symbol and reminder that, however great your intellect may be,
             you muts show respect and reverence to the teachings of your masters and predecesors
             <br>
-            <span>&emsp;&emsp;(Excerpt from the ceremony for the conferral of honoris causa doctorates)</span>
+            <span>&emsp;&emsp;(Excerpt from the ceremony for the conferral of honoris causa doctoral students)</span>
         </p>
         <img src="{{ asset('img/biretta.png') }}" alt="An image of a biretta from the sciences faculty">
     </div>
@@ -30,7 +30,7 @@ sciences
         <p>
             This project began as a search of the scientific records of my thesis director, professor Carlos Pérez García.
             As founder of the Physics and Applied Mathematics, he has been the director of many of the actual professors,
-            so this genealogy is shared by many of the members of this department and many of its old doctorates.
+            so this genealogy is shared by many of the members of this department and many of its old doctoral students.
         </p>
         <div class="main__description__images">
             <img src="{{ asset('img/JavierBurgueteMas.jpg') }}" alt="Front picture of doctor Javier Burguete">

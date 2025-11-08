@@ -32,8 +32,8 @@ sciences
     </div>
     <p>
         However, even if I'm an amateur I have tried to verify each of the facts included here and not just settle with a "fact" that could appear on a website.
-        Whenever it's been possible, I tried to consult the original sources (thesis or first hand testimonies) and when not,
-        either written sources (necrologics of scientifics societies, biographies or homages) or databases (for modern thesis, TESEO,
+        Whenever it's been possible, I tried to consult the original sources (theses or first hand testimonies) and when not,
+        either written sources (necrologics of scientifics societies, biographies or homages) or databases (for modern theses, TESEO,
         for the very old of the Central University, the PARES database of the ministry and the National Historic Archive).
     </p>
     <div class="main__faculties">

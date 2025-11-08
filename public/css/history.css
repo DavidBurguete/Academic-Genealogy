@@ -620,7 +620,7 @@ a {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0 !important;
+  margin: 3rem 0 0 !important;
   overflow-x: hidden;
 }
 .main__thesis-history__arch {
@@ -631,11 +631,42 @@ a {
 .main__thesis-history__year {
   position: absolute;
   top: 1rem;
-  transform: translateX(calc(50vw - 70% + 0.5rem));
+  transform: translateX(calc(50vw - 70% + 0.25rem));
   font-family: "Merriweather";
   font-weight: bold;
   font-size: 3rem;
   color: #FFFFFF;
+}
+.main__thesis-history__text {
+  margin: 0 2rem;
+}
+.main h5 {
+  font-family: "Oswald";
+  font-weight: 600;
+  font-size: 1.75rem;
+}
+.main h5 img {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
+}
+.main h5 img.toggled {
+  transform: scaleY(-1);
+}
+.main__bibliography {
+  margin: 1rem 1rem !important;
+  padding-left: 1rem;
+  max-height: 0;
+  font-family: "Archivo";
+  font-size: 1rem;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.5s ease-in-out;
+}
+.main__bibliography.toggled {
+  max-height: 25rem;
+  transform: scaleY(1);
 }
 
 /*# sourceMappingURL=history.css.map */

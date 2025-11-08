@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="{{ asset('js/timeline.js') }}"></script>
+<script src="{{ asset('js/dropdown.js') }}"></script>
 @endsection
 
 @section('faculty-color')
@@ -110,7 +111,7 @@ sciences
                 <p>
                     This led a strong inertia in the university faculty that couldn't move to other countries to learn the newest theories,
                     but instead had to be content with studying translations that, in many cases, arrived decades late. As Blas Cabrerar very well said
-                    (6), "...the book and the written monograph [...] are truly dead works.[...]
+                    <a href="#bibliography-6">(6)</a>, "...the book and the written monograph [...] are truly dead works.[...]
                     Only direct trade with the master is a safe method to educate the researcher...".
                     The Science in Spain was reducted in great measure to text study about foreign theories,
                     but without trying to recreate the experiments and without contributing new ideas.
@@ -159,12 +160,96 @@ sciences
         <img src="{{ asset('img/arch.svg') }}" class="main__thesis-history__arch">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main__thesis-history__year">
             <defs>
-                <path id="textPath" d="M20 70 Q250 10 280 70" />
+                <path id="textPath1847" d="M20 70 Q250 10 280 70" />
             </defs>
             <text fill="white">
-                <textPath startOffset="50%" xlink:href="#textPath">1847</textPath>
+                <textPath startOffset="50%" xlink:href="#textPath1847">1847</textPath>
             </text>
         </svg>
+        <div class="main__thesis-history__text">
+            <p>
+                It's in the year 1847 when the thesis figure appears for the first time. In that year's regulations,
+                in the article 339 specifies that the candidate "will write a thesis about any point of the faculty or science",
+                therefore, it does not have to be research in the current sense, not even an original one. There wasn't even a grade.
+                Even despite the existence of the thesis, it is worth noting that this act was more social than academic. E.g., 
+                it could happen that if two brothers wanted to obtain the doctor degree, it was sufficient for one of them to read his thesis, and both would have obtained the degree.
+                It was first in 1859 when the thesis was first graded, but it's theme is limited to a list of 40ish themes selected every year by the faculty.
+            </p>
+        </div>
     </section>
+    <section class="main__thesis-history">
+        <img src="{{ asset('img/arch.svg') }}" class="main__thesis-history__arch">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main__thesis-history__year">
+            <defs>
+                <path id="textPath1880s" d="M-25 80 Q250 10 300 67" />
+            </defs>
+            <text fill="white">
+                <textPath startOffset="50%" xlink:href="#textPath1880s">1880s</textPath>
+            </text>
+        </svg>
+        <div class="main__thesis-history__text">
+            <p>
+                Between the years 1883 and 1886 the doctorate of the different faculties is reformed, establishing that the doctoral student will choose freely
+                the theme "about a doctrinal theme or practical research". This is the first time that explicitly appears the possibility of an original thesis.
+                In the 1900 reform appears explicitly that the Deans "must provide the equipment and resources possible to do the research duty regarding the doctoral thesis",
+                but undoubtedly "having to pay for the damage they may cause and the expenses of the equipment they use".
+            </p>
+            <p>
+                It's in this moment, when the thesis contains original research, when the director's figure forms. Appears in 1918,
+                when it was stablished that "the doctoral theses of the Sciences Faculty will be represented and supported by a professor [...]
+                with right to be part of the magistrates court".
+            </p>
+        </div>
+    </section>
+    <section class="main__thesis-history">
+        <img src="{{ asset('img/arch.svg') }}" class="main__thesis-history__arch">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main__thesis-history__year">
+            <defs>
+                <path id="textPathSXX" d="M20 75 Q250 10 280 64" />
+            </defs>
+            <text fill="white">
+                <textPath startOffset="50%" xlink:href="#textPathSXX">s.XX</textPath>
+            </text>
+        </svg>
+        <div class="main__thesis-history__text">
+            <p>
+                With the 1907 constitution of the Council for the Expansion of Studies it was given the endorsment to launch the research in Spain.
+                Many of the laboratories that were then formed watch suddenly cutted their evolution with the arrival of the Civil War.
+                A lot of scientists, specially in Physics, such as Blas Cabrera or Arturo Duperier, were forced into exile.
+            </p>
+            <p>
+                It wasn't until the 1950s that the Physics in Spain made a comeback, mainly thanks to spaniards that 
+                learned abroad, and the labor of some like Julio Palacios that enhanced it in the post-war period.
+                Some of the exiled returned, like Arturo Duperier, but without being able to develop their own school.
+            </p>
+        </div>
+    </section>
+    <h5>
+        Bibliography
+        <img src="{{ asset('img/dropdown.png') }}" alt="dropdown" id="show-bibliography">
+    </h5>
+    <ol class="main__bibliography" id="bibliography">
+        <li id="bibliography-1">
+            La Universidad Central y su distrito: Fondos documentales en el Archivo Histórico Nacional. María Carmona de los Santos, Boletín ANABAD, XLVI (1996) num.1
+        </li>
+        <li id="bibliography-2">
+            El doctorado español en matemáticas entre 1900 y 1921. JJ Escribano Benito, L Español Gonzalez y M.A. Martinez García, ILUIL, vol. 29, 2006, pp 37-50 ISSN 0210-8615
+        </li>
+        <li id="bibliography-3">
+            Los estudios de doctorado y el inicio de la tesis doctoral en España. 1847-1900. Aurora Miguel Alonso
+        </li>
+        <li id="bibliography-4">
+            Las Ciencias Físico-matemáticas en la España del siglo XIX, José Manuel Sánchez-Ron, AYER, 7 (1992) pp. 51-84
+        </li>
+        <li id="bibliography-5">
+            Ciencia y Técnica en España de 1898 a 1945: Cabrera, Cajal, Torres Quevedo. Actas del IV simposio. Amigos de la Cultura Científica (2004) ISBN 84-87635-35-0
+        </li>
+        <li id="bibliography-6">
+            En el cententario de Blas Cabrera, Universidad Internacional de Canaria Perez-Galdós, 1979. ISBN 84-600-1442-8
+        </li>
+        <li id="bibliography-7">
+            Historia de la Universidad Española, Alberto Jimenez Fraud, 1971, Alianza Editorial.
+        </li>
+    </ol>
 @endsection
 @include('layouts.common')
