@@ -224,9 +224,9 @@ sciences
             </p>
         </div>
     </section>
-    <h5>
+    <h5 id="show-bibliography">
         Bibliography
-        <img src="{{ asset('img/dropdown.png') }}" alt="dropdown" id="show-bibliography">
+        <img src="{{ asset('img/dropdown.png') }}" alt="dropdown">
     </h5>
     <ol class="main__bibliography" id="bibliography">
         <li id="bibliography-1">

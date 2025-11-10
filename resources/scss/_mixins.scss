@@ -15,51 +15,85 @@ $pharmacy-nutrition: #5C068C;
 $medicine: #FFC72C;
 $theology: #FFFFFF;
 
-@mixin button{
+$background: '/img/campus.jpg';
+
+@mixin button {
     background-color: transparent;
     border: none;
 }
 
+@mixin headerbackground ($color) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background-image: url($background);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    z-index: -1;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0) 60%, $color 85%);
+    }
+}
+
 .engineering-and-arquitecture {
     background-color: $engineering-and-arquitecture;
+    color: white;
 }
 
 .sciences {
     background-color: $sciences;
+    color: white;
 }
 
 .law {
     background-color: $law;
+    color: white;
 }
 
 .communication {
     background-color: $communication;
+    color: white;
 }
 
 .canon {
     background-color: $canon;
+    color: white;
 }
 
 .philosophy-literature-education {
     background-color: $philosophy-literature-education;
+    color: white;
 }
 
 .economy {
     background-color: $economy;
+    color: white;
 }
 
 .nursing {
     background-color: $nursing;
+    color: white;
 }
 
 .pharmacy-nutrition {
     background-color: $pharmacy-nutrition;
+    color: white;
 }
 
 .medicine {
     background-color: $medicine;
+    color: white;
 }
 
 .theology {
     background-color: $theology;
+    color: black;
 }

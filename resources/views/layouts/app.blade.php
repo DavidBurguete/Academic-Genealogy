@@ -15,7 +15,7 @@
     <script src="{{ asset('js/toggle_search.js') }}"></script>
     <script src="{{ asset('js/hover-send.js') }}"></script>
     @yield('css-js')
-    <title>@yield('website-name')</title>
+    <title>{{ str_replace('<br>', ' ', trim($__env->yieldContent('website-name'))) }}</title>
 </head>
 
 <body>
@@ -25,8 +25,8 @@
             <div class="burger_menu--middle"></div>
             <div class="burger_menu--last"></div>
         </div>
-        <a href="/" class="logo">
-            <img src="{{ asset('img/logoUNAV.png') }}">
+        <a href="/" class="logo gradient-@yield('faculty-color')">
+            <img src="{{ asset('img/logoUNAV.svg') }}">
             <h1 id="title">@yield('website-name')</h1>
         </a>
         <nav class="nav header--nav">
@@ -43,6 +43,8 @@
             @yield('nav')
             <div class="nav--campus">
         </nav>
+        <div class="header__background gradient-@yield('faculty-color')">
+        </div>
     </header>
 
 

@@ -1,45 +1,56 @@
 .engineering-and-arquitecture {
   background-color: #8B4720;
+  color: white;
 }
 
 .sciences {
   background-color: #003DA5;
+  color: white;
 }
 
 .law {
   background-color: #FF0000;
+  color: white;
 }
 
 .communication {
   background-color: #7C878E;
+  color: white;
 }
 
 .canon {
   background-color: #007749;
+  color: white;
 }
 
 .philosophy-literature-education {
   background-color: #62B5E5;
+  color: white;
 }
 
 .economy {
   background-color: #FA4616;
+  color: white;
 }
 
 .nursing {
   background-color: #C1C6C8;
+  color: white;
 }
 
 .pharmacy-nutrition {
   background-color: #5C068C;
+  color: white;
 }
 
 .medicine {
   background-color: #FFC72C;
+  color: white;
 }
 
 .theology {
   background-color: #FFFFFF;
+  color: black;
 }
 
 .burger_menu {
@@ -99,6 +110,9 @@ nav {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2901960784);
   z-index: 12;
 }
+nav .separator {
+  display: none;
+}
 nav.deploy_nav--active {
   text-shadow: none;
   transform: scaleY(1);
@@ -123,6 +137,7 @@ nav a {
 }
 
 .nav--campus {
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
@@ -132,6 +147,7 @@ nav a {
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  z-index: -1;
 }
 .nav--campus::after {
   content: "";
@@ -148,33 +164,40 @@ nav a {
     top: 0;
     padding: 0;
   }
+  nav .separator {
+    display: block;
+    height: 1.5rem;
+    align-self: center;
+    border: 1px solid white;
+  }
   nav.deploy_nav--active, nav.deploy_nav--non_active {
     display: none;
   }
   nav.header--nav {
     display: flex;
-    position: relative;
+    position: absolute;
+    right: 24rem;
     width: 40%;
-    left: 0;
+    max-width: calc(100% - 44.25rem - 8vw);
+    margin-left: auto;
     padding: 0;
-    background-color: white;
+    background-color: transparent;
     box-shadow: none;
+    transform: translateY(calc(5rem - 50%));
+    transition: 0.5s ease-in-out;
     z-index: 12;
   }
   nav.header--nav a {
     display: inline-block;
+    align-self: center;
     margin: 0 auto;
     height: 100%;
-    width: 25%;
+    width: 24%;
     align-content: center;
+    color: white;
   }
   nav a {
     text-align: center;
-  }
-}
-@media screen and (min-width: 1051px) {
-  nav.header--nav {
-    left: 3rem;
   }
 }
 .header {
@@ -190,11 +213,43 @@ nav a {
   display: flex;
   margin-left: auto;
 }
+.header__background {
+  display: none;
+}
 
 .box-shadow {
   filter: drop-shadow(0px 0px 2px black);
 }
 
+@media screen and (min-width: 1000px) {
+  .header {
+    justify-content: space-between;
+    position: relative;
+    height: 10rem;
+  }
+  .header form {
+    margin-left: 0;
+  }
+  .header__background {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    background-image: url("/img/campus.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    z-index: -1;
+  }
+  .header__background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0) 60%, var(--gradient) 85%);
+  }
+}
 .logo {
   display: flex;
   align-self: center;
@@ -208,14 +263,64 @@ nav a {
 .logo h1 {
   align-self: center;
   font-size: 0.8rem;
-  width: 6.5rem;
+  width: fit-content;
   margin-left: 0.5rem;
+  text-transform: uppercase;
   transition: 0.5s ease-in-out;
 }
 .logo img {
   height: 3rem;
 }
 
+@media screen and (min-width: 1000px) {
+  .logo {
+    position: relative;
+    left: 8vw;
+    padding-right: 1rem;
+    background: linear-gradient(to right, var(--gradient) 95%, transparent 100%);
+    z-index: 20;
+  }
+  .logo h1 {
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+  .logo img {
+    height: 7rem;
+  }
+  .gradient-engineering-and-arquitecture {
+    --gradient: #8B4720;
+  }
+  .gradient-sciences {
+    --gradient: #003DA5;
+  }
+  .gradient-law {
+    --gradient: #FF0000;
+  }
+  .gradient-communication {
+    --gradient: #7C878E;
+  }
+  .gradient-canon {
+    --gradient: #007749;
+  }
+  .gradient-philosophy-literature-education {
+    --gradient: #62B5E5;
+  }
+  .gradient-economy {
+    --gradient: #FA4616;
+  }
+  .gradient-nursing {
+    --gradient: #C1C6C8;
+  }
+  .gradient-pharmacy-nutrition {
+    --gradient: #5C068C;
+  }
+  .gradient-medicine {
+    --gradient: #FFC72C;
+  }
+  .gradient-theology {
+    --gradient: #FFFFFF;
+  }
+}
 .search-bar {
   position: absolute;
   align-self: center;
@@ -241,6 +346,21 @@ nav a {
   outline-width: 0;
 }
 
+@media screen and (min-width: 1000px) {
+  .search-bar {
+    right: 21.5rem;
+    width: 12.5rem;
+    border: none;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: 0.5s ease-in-out;
+    z-index: 99;
+  }
+  .search-bar.toggled {
+    right: 24rem;
+    transform: scaleX(1);
+  }
+}
 .header_buttons {
   display: flex;
 }
@@ -254,8 +374,11 @@ nav a {
 @media screen and (min-width: 1000px) {
   .header_buttons--user, .header_buttons--search, .header_buttons--close, .header_buttons--display, .header_buttons--languages_selector {
     margin: 0.4375rem 0 0.4375rem 1.25rem;
+    width: fit-content;
+    height: fit-content;
     padding: 1.25rem;
-    border: 1px solid rgba(133, 133, 133, 0.3019607843);
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 2px solid rgba(255, 255, 255, 0.5);
   }
 }
 .header_buttons--display {
@@ -264,6 +387,7 @@ nav a {
   height: 1.5rem;
   opacity: 0;
   z-index: 3;
+  cursor: pointer;
 }
 .header_buttons--search {
   transition: 0.5s ease-in-out;
@@ -307,44 +431,57 @@ nav a {
 }
 
 @media screen and (min-width: 1000px) {
-  header {
-    position: relative;
-    background-color: #222222;
-    height: 6.25rem;
-  }
-  .desktop_header {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    padding: 0.6875rem 0;
-    width: 74%;
-  }
-  .header--wrapper {
-    position: relative;
-    margin: 0 auto;
-    padding: 1.25rem;
-    width: 74%;
-    height: 7.5rem;
-    box-shadow: none;
-  }
-  .logo h1 {
-    font-size: 1.6rem;
-  }
-  .logo img {
-    order: 1;
-    width: 5rem;
-    height: 5rem;
-    box-shadow: 0px 14px 24px 0px rgba(139, 139, 139, 0.2509803922);
-  }
   .header_buttons {
     position: relative;
     right: 0;
   }
-}
-@media screen and (min-width: 1246px) {
-  .header_buttons {
-    position: relative;
-    right: 10%;
+  .header_buttons--user, .header_buttons--search, .header_buttons--close, .header_buttons--display, .header_buttons--languages_selector {
+    align-self: center;
+  }
+  .header_buttons--display {
+    width: 4.125rem;
+    height: 4.125rem;
+  }
+  .header_buttons--search {
+    display: flex;
+    justify-content: end;
+    width: 4.25rem;
+  }
+  .header_buttons--search.toggled {
+    padding-right: 4.25rem;
+    width: 20rem;
+    transform: none;
+    transition: 0.5s ease-in-out;
+  }
+  .header_buttons--close {
+    right: 17.25rem;
+    background: none;
+    border: none;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  .header_buttons--close.toggled {
+    transform: scaleX(1);
+  }
+  .header_buttons--languages_selector {
+    margin-inline: 3.5rem;
+    padding: 0;
+    width: auto;
+    background: none;
+    border: none;
+  }
+  .header_buttons--languages_selector__languages > * {
+    width: 3rem;
+    height: 2rem;
+  }
+  .header_buttons--languages_selector__languages :not(.selected) {
+    position: absolute;
+    right: 5.25rem;
+  }
+  .header_buttons--dropdown {
+    margin-left: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 .suggest {
@@ -408,8 +545,6 @@ nav a {
   padding: 1rem 2rem 1rem 4rem;
   border: 0;
   border-radius: 0.5rem;
-  color: #FFFFFF;
-  text-shadow: 0px 0px 4px black;
   background-image: url("/img/send.svg");
   background-repeat: no-repeat;
   background-size: 1rem;
@@ -459,10 +594,12 @@ html, * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-margin-top: 4.375rem;
 }
 
 body {
   min-width: 320px;
+  overflow-x: hidden;
 }
 
 button, input[type=submit] {

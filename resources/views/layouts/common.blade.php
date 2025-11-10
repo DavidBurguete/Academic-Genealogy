@@ -1,5 +1,5 @@
 @section('website-name')
-Academic Genealogy
+Academic<br>Genealogy
 @endsection
 
 @section('search')

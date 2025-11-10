@@ -9,8 +9,11 @@
 
     @media screen and (min-width: 1000px) {
         margin: 0.4375rem 0 0.4375rem 1.25rem;
+        width: fit-content;
+        height: fit-content;
         padding: 1.25rem;
-        border: 1px solid #8585854D;
+        background-color: rgba($color: #FFFFFF, $alpha: 0.25);
+        border: 2px solid rgba($color: #FFFFFF, $alpha: 0.5);
     }
 }
 
@@ -27,10 +30,31 @@
         display: flex;
         margin-left: auto;
     }
+
+    &__background {
+        display: none;
+    }
 }
 
 .box-shadow {
     filter: drop-shadow(0px 0px 2px #000000FF);
+}
+
+@media screen and (min-width:1000px) {
+
+    .header {
+        justify-content: space-between;
+        position: relative;
+        height: 10rem;
+
+        form {
+            margin-left: 0;
+        }
+
+        &__background {
+            @include headerbackground(var(--gradient));
+        }
+    }
 }
 
 .logo {
@@ -46,7 +70,7 @@
     h1 {
         align-self: center;
         font-size: 0.8rem;
-        width: 6.5rem;
+        width: fit-content;
         margin-left: 0.5rem;
         text-transform: uppercase;
         transition: 0.5s ease-in-out;
@@ -54,6 +78,70 @@
 
     img {
         height: 3rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+
+    .logo {
+        position: relative;
+        left: 8vw;
+        padding-right: 1rem;
+        background: linear-gradient(to right, var(--gradient) 95%, transparent 100%);
+        z-index: 20;
+
+        h1 {
+            margin-left: 1rem;
+            font-size: 2rem;
+        }
+
+        img {
+            height: 7rem;
+        }
+    }
+
+    .gradient-engineering-and-arquitecture {
+        --gradient: #8B4720;
+    }
+
+    .gradient-sciences {
+        --gradient: #003DA5;
+    }
+
+    .gradient-law {
+        --gradient: #FF0000;
+    }
+
+    .gradient-communication {
+        --gradient: #7C878E;
+    }
+
+    .gradient-canon {
+        --gradient: #007749;
+    }
+
+    .gradient-philosophy-literature-education {
+        --gradient: #62B5E5;
+    }
+
+    .gradient-economy {
+        --gradient: #FA4616;
+    }
+
+    .gradient-nursing {
+        --gradient: #C1C6C8;
+    }
+
+    .gradient-pharmacy-nutrition {
+        --gradient: #5C068C;
+    }
+
+    .gradient-medicine {
+        --gradient: #FFC72C;
+    }
+
+    .gradient-theology {
+        --gradient: #FFFFFF;
     }
 }
 
@@ -84,6 +172,23 @@
     }
 }
 
+@media screen and (min-width: 1000px) {
+    .search-bar {
+        right: 21.5rem;
+        width: 12.5rem;
+        border: none;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: 0.5s ease-in-out;
+        z-index: 99;
+
+        &.toggled {
+            right: 24rem;
+            transform: scaleX(1);
+        }
+    }
+}
+
 .header_buttons {
     display: flex;
 
@@ -95,12 +200,13 @@
         @include header_buttons;
     }
 
-    &--display{
+    &--display {
         position: absolute;
         width: 1.5rem;
         height: 1.5rem;
         opacity: 0;
         z-index: 3;
+        cursor: pointer;
     }
 
     &--search {
@@ -156,52 +262,73 @@
 
 @media screen and (min-width:1000px) {
 
-    header {
-        position: relative;
-        background-color: #222222;
-        height: 6.25rem;
-    }
-
-    .desktop_header {
-        display: block;
-        position: relative;
-        margin: 0 auto;
-        padding: 0.6875rem 0;
-        width: 74%;
-    }
-
-    .header--wrapper {
-        position: relative;
-        margin: 0 auto;
-        padding: 1.25rem;
-        width: 74%;
-        height: 7.5rem;
-        box-shadow: none;
-    }
-
-    .logo {
-
-        h1 {
-            font-size: 1.6rem;
-        }
-
-        img {
-            order: 1;
-            width: 5rem;
-            height: 5rem;
-            box-shadow: 0px 14px 24px 0px #8B8B8B40;
-        }
-    }
-
     .header_buttons {
         position: relative;
         right: 0;
-    }
-}
 
-@media screen and (min-width: 1246px) {
-    .header_buttons {
-        position: relative;
-        right: 10%;
+        &--user,
+        &--search,
+        &--close,
+        &--display,
+        &--languages_selector {
+            align-self: center;
+        }
+
+        &--display {
+            width: 4.125rem;
+            height: 4.125rem;
+        }
+
+        &--search {
+            display: flex;
+            justify-content: end;
+            width: 4.25rem;
+
+            &.toggled {
+                padding-right: 4.25rem;
+                width: 20rem;
+                transform: none;
+                transition: 0.5s ease-in-out;
+            }
+        }
+
+        &--close {
+            right: 17.25rem;
+            background: none;
+            border: none;
+            transform: scaleX(0);
+            transform-origin: right;
+
+            &.toggled {
+                transform: scaleX(1);
+            }
+        }
+
+        &--languages_selector {
+            margin-inline: 3.5rem;
+            padding: 0;
+            width: auto;
+            background: none;
+            border: none;
+
+            &__languages {
+
+                &>* {
+                    width: 3rem;
+                    height: 2rem;
+                }
+
+                & :not(.selected) {
+                    position: absolute;
+                    right: 5.25rem;
+                }
+            }
+        }
+
+        &--dropdown {
+            margin-left: 0.5rem;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
     }
 }

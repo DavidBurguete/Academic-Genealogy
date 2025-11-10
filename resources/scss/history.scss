@@ -234,10 +234,10 @@
             height: 1.5rem;
             transition: 0.5s ease-in-out;
             transform-origin: center;
+        }
 
-            &.toggled {
-                transform: scaleY(-1);
-            }
+        &.toggled>img{
+            transform: scaleY(-1);
         }
     }
 

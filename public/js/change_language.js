@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+    let screen_width = window.screen.width;
     let isDropdownToggled = false;
     let languagesSelector = document.getElementById("languages");
     let languages = [...languagesSelector.children[0].children];
@@ -8,8 +9,11 @@ window.addEventListener("load", () => {
     let indexOfSelected = Array.prototype.indexOf.call(languagesSelector.children[0].children, selected);
 
     for (let i = 0; i < notSelected.length; i++) {
-        if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
+        if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox") && screen_width < 1000) {
             notSelected[i].style = "transform: translateY(-1.4rem);";
+        }
+        else if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
+            notSelected[i].style = "transform: translateY(-2rem);";
         }
         else {
             notSelected[i].style = "transform: translateY(0);";
@@ -34,19 +38,32 @@ window.addEventListener("load", () => {
         if (isDropdownToggled) {
             dropdown.classList.add("toggled");
             for (let i = 0; i < notSelected.length; i++) {
-                if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
-                    notSelected[i].style = "transform: translateY(" + ((i + 1) * 2 - 1.5) + "rem);";
+                if (screen_width < 1000) {
+                    if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
+                        notSelected[i].style = "transform: translateY(" + ((i + 1) * 2 - 1.5) + "rem);";
+                    }
+                    else {
+                        notSelected[i].style = "transform: translateY(" + (i + 1) * 2 + "rem);";
+                    }
                 }
                 else {
-                    notSelected[i].style = "transform: translateY(" + (i + 1) * 2 + "rem);";
+                    if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
+                        notSelected[i].style = "transform: translateY(" + ((i + 1) * 2.5 - 1.5) + "rem);";
+                    }
+                    else {
+                        notSelected[i].style = "transform: translateY(" + (i + 1) * 2.5 + "rem);";
+                    }
                 }
             }
         }
         else {
             dropdown.classList.remove("toggled");
             for (let i = 0; i < notSelected.length; i++) {
-                if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
+                if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox") && screen_width < 1000) {
                     notSelected[i].style = "transform: translateY(-1.4rem);";
+                }
+                else if (indexOfSelected + 1 <= i && navigator.userAgent.includes("Firefox")) {
+                    notSelected[i].style = "transform: translateY(-2rem);";
                 }
                 else {
                     notSelected[i].style = "transform: translateY(0);";

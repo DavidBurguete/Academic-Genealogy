@@ -651,7 +651,7 @@ a {
   transition: 0.5s ease-in-out;
   transform-origin: center;
 }
-.main h5 img.toggled {
+.main h5.toggled > img {
   transform: scaleY(-1);
 }
 .main__bibliography {
