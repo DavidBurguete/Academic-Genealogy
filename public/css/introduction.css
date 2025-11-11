@@ -684,12 +684,15 @@ a {
   font-size: 1.25rem;
 }
 .main__card img {
+  align-self: center;
   margin: 0 auto;
+  height: 100%;
 }
 .main__description {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  gap: 1rem;
   margin-top: 2rem;
   font-family: "Archivo";
   font-size: 1rem;
@@ -701,10 +704,41 @@ a {
 }
 .main__description__images img {
   width: 47%;
-  margin-block: 1.5rem;
+  margin-block: 0.5rem;
 }
 .main b {
   color: #003DA5;
+}
+
+@media screen and (min-width: 1000px) {
+  .main {
+    width: 60%;
+    margin: 4rem auto;
+  }
+  .main__card {
+    flex-direction: row;
+    padding: 2rem 3.5rem;
+    gap: 3rem;
+  }
+  .main__card p {
+    align-self: center;
+    font-size: 2rem;
+  }
+  .main__card p span {
+    font-size: 1.5rem;
+  }
+  .main__description {
+    font-size: 1.5rem;
+  }
+  .main__description__images {
+    position: absolute;
+    width: 94%;
+    left: 3%;
+  }
+  .main__description__images img {
+    align-self: center;
+    width: 14%;
+  }
 }
 
 /*# sourceMappingURL=introduction.css.map */

@@ -24,7 +24,9 @@
         }
 
         img {
+            align-self: center;
             margin: 0 auto;
+            height: 100%;
         }
     }
 
@@ -32,6 +34,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
+        gap: 1rem;
         margin-top: 2rem;
         font-family: 'Archivo';
         font-size: 1rem;
@@ -43,12 +46,49 @@
 
             img {
                 width: 47%;
-                margin-block: 1.5rem;
+                margin-block: 0.5rem;
             }
         }
     }
 
     b {
         color: $sciences;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main {
+        width: 60%;
+        margin: 4rem auto;
+
+        &__card {
+            flex-direction: row;
+            padding: 2rem 3.5rem;
+            gap: 3rem;
+
+            p {
+                align-self: center;
+                font-size: 2rem;
+
+                span {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        &__description {
+            font-size: 1.5rem;
+
+            &__images {
+                position: absolute;
+                width: 94%;
+                left: 3%;
+
+                img {
+                    align-self: center;
+                    width: 14%;
+                }
+            }
+        }
     }
 }
