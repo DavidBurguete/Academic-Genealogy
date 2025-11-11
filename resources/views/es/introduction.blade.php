@@ -9,46 +9,49 @@ sciences
 @endsection
 
 @section('nav')
-    <a href="/en/about-directors">About the directors</a>
+    <a href="/es/about-directors">Sobre los directores</a>
     <hr class="separator">
-    <a href="/en/methodology">Methodology</a>
+    <a href="/es/methodology">Metodología</a>
     <hr class="separator">
-    <a href="/en/history">A bit of history</a>
+    <a href="/es/history">Algo de historia</a>
     <hr class="separator">
-    <a href="/en/list">List of doctors</a>
+    <a href="/es/list">Listado</a>
 @endsection
 
 @section('content')
     <div class="main__card">
         <p>
-            Receive the book of science which is your duty to teach and advance,
-            and let it be a symbol and reminder that, however great your intellect may be,
-            you muts show respect and reverence to the teachings of your masters and predecesors
+            Recibe el libro de la ciencia que te cumple enseñar y adelantar, 
+            y que él sea para ti significación y aviso de que, por grande que tu ingenio fuere, 
+            debes rendir acatamiento y veneración a la doctrina de tus maestros y predecesores
             <br>
-            <span>&emsp;&emsp;(Excerpt from the ceremony for the conferral of honoris causa doctoral students)</span>
+            <span>&emsp;&emsp;(Extracto de la ceremonia de investidura de doctores honoris causa)</span>
         </p>
-        <img src="{{ asset('img/biretta.png') }}" alt="An image of a biretta from the sciences faculty">
+        <img src="{{ asset('img/biretta.png') }}" alt="Imagen de un birrete de la facultad de ciencias">
     </div>
     <div class="main__description">
         <p>
-            This project began as a search of the scientific records of my thesis director, professor Carlos Pérez García.
-            As founder of the Physics and Applied Mathematics, he has been the director of many of the actual professors,
-            so this genealogy is shared by many of the members of this department and many of its old doctoral students.
+            Este proyecto comenzó como una búsqueda de los antecedentes científicos de mi director de tesis, el profesor <b>Carlos Pérez García</b>.
+            Como fundador del departamento de Física y Matemática Aplicada ha sido el director de muchos de los actuales profesores, 
+            por los que esta genealogía es compartida por muchos de los integrantes de este departamento y muchos de sus antiguos doctorandos.
         </p>
         <div class="main__description__images">
             <img src="{{ asset('img/JavierBurgueteMas.jpg') }}" alt="Front picture of doctor Javier Burguete">
             <img src="{{ asset('img/CarlosPerezGarcia.jpg') }}" alt="Front picture of doctor Carlos Perez">
         </div>
         <p>
-            From this seed we've been developing the ramifications that have been appearing, that links us with other spanish and european universities.
-            As a consequence of the developed investigation in our department, the directors related here have worked in the branch of Condensed Matter Physics.
-            However, this family tree is not restricted to this area. It's open to any doctor.
-            <br><br>
-            Any idea or suggestion is welcome, and can be sent to my address listed <a href="#suggest">below</a>
-            <br><br>
-            Be welcomed, and discover our genealogy!
-            <br><br>
-            &emsp;&emsp;Pamplona, September the 13, 2010
+            Desde ese germen hemos ido desarrollando las ramificaciones que han ido apareciendo, que nos relaciona con otras Universidades españolas y europeas. 
+            Como consecuencia de la investigación desarrollada en nuestro departamento los directores aquí relacionados han trabajado en la rama de la Física de Materia Condensada. 
+            No obstante, este árbol genealógico no se restringe a ese área, sino que está abierto a cualquier doctor.
+        </p>
+        <p>
+            Cualquier idea o sugerencia será bien recibida, y puede ser enviada a mi dirección indicada en la <a href="#suggest">parte inferior</a>.
+        </p>
+        <p>
+            ¡Bienvenido, y descubra nuestra genealogía!
+        </p>
+        <p>
+            &emsp;&emsp;Pamplona, a 13 de septiembre de 2010
         </p>
     </div>
 @endsection

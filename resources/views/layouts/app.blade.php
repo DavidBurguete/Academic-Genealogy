@@ -54,8 +54,10 @@
 
     <footer>
         <form action="" method="post" class="suggest" id="suggest">
-            @yield('form-content')
-            <input id="submit" type="submit" value="@yield('submit-button-content')" class="@yield('faculty-color')">
+            <div>
+                @yield('form-content')
+                <input id="submit" type="submit" value="@yield('submit-button-content')" class="@yield('faculty-color')">
+            </div>
         </form>
         <div class="credits">
             @yield('credits')

@@ -23,12 +23,12 @@
             }
         }
 
-        img{
+        img {
             margin: 0 auto;
         }
     }
 
-    &__description{
+    &__description {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -37,14 +37,18 @@
         font-size: 1rem;
         text-align: justify;
 
-        &__images{
+        &__images {
             display: flex;
             justify-content: space-between;
 
-            img{
+            img {
                 width: 47%;
                 margin-block: 1.5rem;
             }
         }
+    }
+
+    b {
+        color: $sciences;
     }
 }

@@ -34,7 +34,7 @@ Buscar
 @section('form-content')
     <p>¿Tienes alguna cosa que quieras sugerir o preguntar? ¡No dudes en escribir!</p>
     <input id="name" type="text" autocomplete="off" placeholder="Nombre completo">
-    <input id="email" type="text" autocomplete="off" placeholder="Dirección de correo">
+    <input id="email" type="email" autocomplete="off" placeholder="Dirección de correo">
     <input id="subject" type="text" placeholder="Asunto">
     <textarea id="message" placeholder="Mensaje" rows="11"></textarea>
 @endsection
@@ -44,8 +44,10 @@ Enviar mensaje a javier@unav.es
 @endsection
 
 @section('credits')
-    <p>Creado por Javier Burguete (v1.0.0)</p>
+    <p>Creado por <a href="https://linkedin.com/in/javierburguete">Javier Burguete</a> (v1.0.0)</p>
+    <hr class="separator">
     <p>Mejorado por <a href="https://linkedin.com/in/david-burguete">David Burguete</a> (v2.0.0+)</p>
+    <hr class="separator">
     <p>Versión 2.0.0</p>
     <hr>
     <p>Universitas Studiorum Navarrensis</p>

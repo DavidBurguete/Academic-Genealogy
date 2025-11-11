@@ -31,7 +31,7 @@ sciences
     </div>
     <div class="main__description">
         <p>
-            This project began as a search of the scientific records of my thesis director, professor Carlos Pérez García.
+            This project began as a search of the scientific records of my thesis director, professor <b>Carlos Pérez García</b>.
             As founder of the Physics and Applied Mathematics, he has been the director of many of the actual professors,
             so this genealogy is shared by many of the members of this department and many of its old doctoral students.
         </p>
@@ -43,11 +43,14 @@ sciences
             From this seed we've been developing the ramifications that have been appearing, that links us with other spanish and european universities.
             As a consequence of the developed investigation in our department, the directors related here have worked in the branch of Condensed Matter Physics.
             However, this family tree is not restricted to this area. It's open to any doctor.
-            <br><br>
-            Any idea or suggestion is welcome, and can be sent to my address listed <a href="#suggest">below</a>
-            <br><br>
+        </p>
+        <p>
+            Any idea or suggestion is welcome, and can be sent to my address listed <a href="#suggest">below</a>.
+        </p>
+        <p>
             Be welcomed, and discover our genealogy!
-            <br><br>
+        </p>
+        <p>
             &emsp;&emsp;Pamplona, September the 13, 2010
         </p>
     </div>

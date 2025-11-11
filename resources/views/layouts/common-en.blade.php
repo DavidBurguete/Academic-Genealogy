@@ -38,7 +38,7 @@ Search
 @section('form-content')
     <p>Do you have anything you'd like to suggest or ask? Don't hesitate to write!</p>
     <input id="name" type="text" autocomplete="off" placeholder="Full name">
-    <input id="email" type="text" autocomplete="off" placeholder="Email address">
+    <input id="email" type="email" autocomplete="off" placeholder="Email address">
     <input id="subject" type="text" placeholder="Subject">
     <textarea id="message" placeholder="Message" rows="11"></textarea>
 @endsection
@@ -48,8 +48,10 @@ Send message to javier@unav.es
 @endsection
 
 @section('credits')
-    <p>Created by Javier Burguete (v1.0.0)</p>
+    <p>Created by <a href="https://linkedin.com/in/javierburguete">Javier Burguete</a> (v1.0.0)</p>
+    <hr class="separator">
     <p>Improved by <a href="https://linkedin.com/in/david-burguete">David Burguete</a> (v2.0.0+)</p>
+    <hr class="separator">
     <p>Version 2.0.0</p>
     <hr>
     <p>Universitas Studiorum Navarrensis</p>

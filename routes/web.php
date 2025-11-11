@@ -6,6 +6,9 @@ use App\Http\Controllers\Introduction;
 use App\Http\Controllers\Methodology;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect('/en');
+});
 Route::prefix('{locale}')
     ->where(['locale' => 'en|es|fr'])
     ->group(function () {
