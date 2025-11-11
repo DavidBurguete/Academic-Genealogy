@@ -19,3 +19,9 @@ a {
     text-decoration: underline;
     color: inherit;
 }
+
+@media screen and (min-width: 1000px) {
+    html, * {
+        scroll-margin-top: 10rem;
+    }
+}

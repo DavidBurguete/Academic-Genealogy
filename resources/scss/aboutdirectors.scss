@@ -25,6 +25,7 @@
         font-size: 2rem;
         letter-spacing: 0.96px;
         text-transform: uppercase;
+        z-index: 2;
     }
 
     p {
@@ -34,11 +35,12 @@
         text-align: justify;
         z-index: 2;
 
-        &#biography-1, &#biography-2{
+        &#biography-1,
+        &#biography-2 {
             text-align: left;
         }
 
-        .blue-m{
+        .blue-m {
             color: $sciences;
         }
     }
@@ -91,7 +93,7 @@
                 animation-delay: -4s;
             }
 
-            &.sciences{
+            &.sciences {
                 position: absolute;
                 border-color: $sciences;
                 width: 60%;
@@ -101,14 +103,14 @@
                 animation-delay: -13s;
             }
 
-            &.medicine{
+            &.medicine {
                 border-color: $medicine;
                 width: 70%;
                 height: 7.5rem;
                 animation-delay: -1s;
             }
 
-            &.engineering-and-arquitecture{
+            &.engineering-and-arquitecture {
                 position: absolute;
                 border-color: $engineering-and-arquitecture;
                 width: 45%;
@@ -118,7 +120,7 @@
                 animation-delay: -8s;
             }
 
-            &.economy{
+            &.economy {
                 position: relative;
                 border-color: $economy;
                 bottom: 2rem;
@@ -127,7 +129,7 @@
                 animation-delay: -13s;
             }
 
-            &.nursing{
+            &.nursing {
                 position: absolute;
                 border-color: $nursing;
                 width: 80%;
@@ -137,14 +139,14 @@
                 animation-delay: -3s;
             }
 
-            &.canon{
+            &.canon {
                 border-color: $canon;
                 width: 75%;
                 height: 12rem;
                 animation-delay: -15s;
             }
 
-            &.pharmacy-nutrition{
+            &.pharmacy-nutrition {
                 position: absolute;
                 border-color: $pharmacy-nutrition;
                 width: 75%;
@@ -152,6 +154,118 @@
                 left: 25%;
                 bottom: 2rem;
                 animation-delay: -8s;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main {
+        width: 60%;
+        margin: 4rem auto;
+
+        &__faculties {
+            position: absolute;
+            width: 100%;
+            left: 0;
+
+            &--top {
+                bottom: auto;
+                margin-bottom: 0;
+            }
+
+            &--bottom {
+                top: auto;
+                margin-top: 0;
+            }
+
+            &__faculty {
+                position: relative;
+
+                &.philosophy-literature-education {
+                    top: -2rem;
+                    left: -8%;
+                    width: 16%;
+                    height: 20rem;
+                }
+
+                &.law {
+                    position: relative;
+                    top: 7rem;
+                    left: -11.11%;
+                    width: 22.22%;
+                    height: 21rem;
+                }
+
+                &.communication {
+                    top: 44rem;
+                    left: -6.875%;
+                    width: 13.75%;
+                    height: 20.625rem;
+                }
+
+                &.sciences {
+                    position: relative;
+                    top: -13.5rem;
+                    left: -15%;
+                    width: 30%;
+                    height: 24.5rem;
+                }
+
+                &.medicine {
+                    top: 22rem;
+                    left: -17%;
+                    width: 34%;
+                    height: 31.5rem;
+                    z-index: 3;
+                }
+
+                &.engineering-and-arquitecture {
+                    position: relative;
+                    right: calc(8% - 100%);
+                    bottom: 30rem;
+                    left: auto;
+                    width: 16%;
+                    height: 17.5rem;
+                }
+
+                &.economy {
+                    position: relative;
+                    top: 10rem;
+                    bottom: auto;
+                    right: calc(13% - 100%);
+                    width: 26%;
+                    height: 22rem;
+                }
+
+                &.nursing {
+                    position: relative;
+                    right: calc(9% - 100%);
+                    top: 3rem;
+                    left: auto;
+                    bottom: auto;
+                    width: 18%;
+                    height: 21rem;
+                }
+
+                &.canon {
+                    border-color: $canon;
+                    top: 38rem;
+                    right: calc(15% - 100%);
+                    width: 30%;
+                    height: 23.375rem;
+                    z-index: -1;
+                }
+
+                &.pharmacy-nutrition {
+                    position: relative;
+                    left: auto;
+                    bottom: auto;
+                    right: calc(6.1% - 100%);
+                    top: 19rem;
+                    width: 12.2%;
+                    height: 30rem;
+                }
             }
         }
     }

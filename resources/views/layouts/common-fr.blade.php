@@ -2,6 +2,10 @@
 Genealogía<br>Académica
 @endsection
 
+@section('to-introduction')
+/fr
+@endsection
+
 @section('search')
 Buscar
 @endsection

@@ -52,7 +52,7 @@ sciences
     </p>
     <p>
         Mr. León Rosenfeld: He made a thesis under the direction of Marcel Dehalu in 1926 in Lieja's University. However,
-        he soon began collaborating with Niels Bohr, whom he became in his main disciple <a href="#biography-1">[1]</a>. Because of this, both scientists appear as directors.
+        he soon began collaborating with Niels Bohr, whom he became in his main disciple <a href="#biography-1"><sup>[1]</sup></a>. Because of this, both scientists appear as directors.
     </p>
     <p>
         Mr. Blas Cabrera y Felipe: This case it's the most peculiar. He read the thesis in 1901, in Madrid's Central University.
@@ -65,7 +65,7 @@ sciences
     </div>
     <p>
         The first one is Mr. Santiago Ramón y Cajal, who, as Cabrera himself cites in his incorporation speach to the I seat of the Real Academia de la Lengua Española,
-        "to him I owe who I am or who I might become, for his encouragment and aid directed the activity of my intellect along the path of scientific research" <a href="#biography-2">[2]</a>.
+        "to him I owe who I am or who I might become, for his encouragment and aid directed the activity of my intellect along the path of scientific research" <a href="#biography-2"><sup>[2]</sup></a>.
     </p>
     <p>
         The second is Pierre-Ernest Weiss, who was the one that influenced more over Blas Cabrera to guide his future research towards magnetism.
