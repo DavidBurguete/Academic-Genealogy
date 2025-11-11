@@ -43,10 +43,12 @@
         &__images {
             display: flex;
             justify-content: space-between;
+            z-index: -1;
 
             img {
                 width: 47%;
                 margin-block: 0.5rem;
+                z-index: 2;
             }
         }
     }
