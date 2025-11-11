@@ -9,13 +9,13 @@ sciences
 @endsection
 
 @section('nav')
-    <a href="/about-directors">About the directors</a>
+    <a href="/en/about-directors">About the directors</a>
     <hr class="separator">
-    <a href="/methodology">Methodology</a>
+    <a href="/en/methodology">Methodology</a>
     <hr class="separator">
-    <a href="/history">A bit of history</a>
+    <a href="/en/history">A bit of history</a>
     <hr class="separator">
-    <a href="/list">List of doctors</a>
+    <a href="/en/list">List of doctors</a>
 @endsection
 
 @section('content')
@@ -52,4 +52,4 @@ sciences
         </p>
     </div>
 @endsection
-@include('layouts.common')
+@include('layouts.common-es')

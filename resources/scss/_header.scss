@@ -148,9 +148,9 @@
 .search-bar {
     position: absolute;
     align-self: center;
-    width: calc(100% - 13.75rem);
+    width: calc(100% - 18.25rem);
     height: 2rem;
-    right: 7.25rem;
+    right: 11.75rem;
     border: 0;
     font-family: 'Merriweather';
     font-weight: 700;
@@ -235,13 +235,13 @@
         }
 
         &__languages {
-            &>* {
+            & img {
                 width: 2rem;
                 height: 1.375rem;
                 transition: 0.5s ease-in-out;
             }
 
-            & :not(.selected) {
+            & img:not(.selected) {
                 position: absolute;
                 right: 1.75rem;
             }
@@ -313,12 +313,12 @@
 
             &__languages {
 
-                &>* {
+                & img {
                     width: 3rem;
                     height: 2rem;
                 }
 
-                & :not(.selected) {
+                & img:not(.selected) {
                     position: absolute;
                     right: 5.25rem;
                 }

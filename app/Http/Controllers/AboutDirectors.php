@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AboutDirectors extends Controller
 {
-    public function index(){
-        return view("aboutdirectors");
+    public function index($locale){
+        return view("$locale.aboutdirectors");
     }
 }

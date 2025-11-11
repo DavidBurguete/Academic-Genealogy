@@ -9,10 +9,10 @@ sciences
 @endsection
 
 @section('nav')
-<a href="about-directors">About the directors</a>
+<a href="/en/about-directors">About the directors</a>
 <a>Methodology</a>
-<a href="/history">A bit of history</a>
-<a href="/list">List of doctors</a>
+<a href="/en/history">A bit of history</a>
+<a href="/en/list">List of doctors</a>
 @endsection
 
 @section('content')
@@ -62,4 +62,4 @@ sciences
         <div class="main__faculties__faculty nursing"></div>
     </div>
 @endsection
-@include('layouts.common')
+@include('layouts.common-es')

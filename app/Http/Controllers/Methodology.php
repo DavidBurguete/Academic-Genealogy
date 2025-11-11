@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Methodology extends Controller
 {
-    public function index(){
-        return view("methodology");
+    public function index($locale){
+        return view("$locale.methodology");
     }
 }

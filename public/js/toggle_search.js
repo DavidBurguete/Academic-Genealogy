@@ -22,7 +22,7 @@ window.addEventListener("load", () => {
             if (!isToggled) {
                 title.style = "transform: translateY(0);";
                 searchBar.style = "transform:  translateY(-4.25rem);";
-                event.target.parentElement.style = "transform:  translateY(-4.25rem);";
+                close.style = "transform:  translateY(-4.25rem);";
                 search.style = "transform: translateX(0);";
             }
         });
@@ -42,7 +42,7 @@ window.addEventListener("load", () => {
             if (!isToggled) {
                 nav.style = "right: 24rem;";
                 searchBar.classList.remove("toggled");
-                event.target.parentElement.classList.remove("toggled");
+                close.classList.remove("toggled");
                 search.classList.remove("toggled");
             }
         });

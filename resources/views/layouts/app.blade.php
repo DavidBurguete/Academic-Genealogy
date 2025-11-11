@@ -25,7 +25,7 @@
             <div class="burger_menu--middle"></div>
             <div class="burger_menu--last"></div>
         </div>
-        <a href="/" class="logo gradient-@yield('faculty-color')">
+        <a href="@yield('to-introduction')" class="logo gradient-@yield('faculty-color')">
             <img src="{{ asset('img/logoUNAV.svg') }}">
             <h1 id="title">@yield('website-name')</h1>
         </a>

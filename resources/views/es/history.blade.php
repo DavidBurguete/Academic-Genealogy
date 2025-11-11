@@ -13,10 +13,13 @@ sciences
 @endsection
 
 @section('nav')
-<a href="/about-directors">About the directors</a>
-<a href="/methodology">Methodology</a>
+<a href="/en/about-directors">About the directors</a>
+<hr class="separator">
+<a href="/en/methodology">Methodology</a>
+<hr class="separator">
 <a>A bit of history</a>
-<a href="/list">List of doctors</a>
+<hr class="separator">
+<a href="/en/list">List of doctors</a>
 @endsection
 
 @section('content')
@@ -252,4 +255,4 @@ sciences
         </li>
     </ol>
 @endsection
-@include('layouts.common')
+@include('layouts.common-es')

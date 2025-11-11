@@ -10,9 +10,12 @@ sciences
 
 @section('nav')
 <a>About the directors</a>
-<a href="/methodology">Methodology</a>
-<a href="/history">A bit of history</a>
-<a href="/list">List of doctors</a>
+<hr class="separator">
+<a href="/en/methodology">Methodology</a>
+<hr class="separator">
+<a href="/en/history">A bit of history</a>
+<hr class="separator">
+<a href="/en/list">List of doctors</a>
 @endsection
 
 @section('content')
@@ -84,4 +87,4 @@ sciences
         <div class="main__faculties__faculty pharmacy-nutrition"></div>
     </div>
 @endsection
-@include('layouts.common')
+@include('layouts.common-en')
