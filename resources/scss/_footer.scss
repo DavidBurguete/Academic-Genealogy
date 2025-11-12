@@ -41,20 +41,60 @@
         }
 
         &#name {
-            background-image: url('/img/form-name.svg');
+            &.engineering-and-arquitecture { @include form-name( $engineering-and-arquitecture ) }
+            &.sciences { @include form-name( $sciences ) }
+            &.law { @include form-name( $law ) }
+            &.communication { @include form-name( $communication ) }
+            &.canon { @include form-name( $canon ) }
+            &.philosophy-literature-education { @include form-name( $philosophy-literature-education ) }
+            &.economy { @include form-name( $economy ) }
+            &.nursing { @include form-name( $nursing ) }
+            &.pharmacy-nutrition { @include form-name( $pharmacy-nutrition ) }
+            &.medicine { @include form-name( $medicine ) }
+            &.theology { @include form-name( $theology ) }
         }
 
         &#email {
-            background-image: url('/img/form-email.svg');
+            &.engineering-and-arquitecture { @include form-email( $engineering-and-arquitecture ) }
+            &.sciences { @include form-email( $sciences ) }
+            &.law { @include form-email( $law ) }
+            &.communication { @include form-email( $communication ) }
+            &.canon { @include form-email( $canon ) }
+            &.philosophy-literature-education { @include form-email( $philosophy-literature-education ) }
+            &.economy { @include form-email( $economy ) }
+            &.nursing { @include form-email( $nursing ) }
+            &.pharmacy-nutrition { @include form-email( $pharmacy-nutrition ) }
+            &.medicine { @include form-email( $medicine ) }
+            &.theology { @include form-email( $theology ) }
         }
 
         &#subject {
-            background-image: url('/img/form-subject.svg');
+            &.engineering-and-arquitecture { @include form-subject( $engineering-and-arquitecture ) }
+            &.sciences { @include form-subject( $sciences ) }
+            &.law { @include form-subject( $law ) }
+            &.communication { @include form-subject( $communication ) }
+            &.canon { @include form-subject( $canon ) }
+            &.philosophy-literature-education { @include form-subject( $philosophy-literature-education ) }
+            &.economy { @include form-subject( $economy ) }
+            &.nursing { @include form-subject( $nursing ) }
+            &.pharmacy-nutrition { @include form-subject( $pharmacy-nutrition ) }
+            &.medicine { @include form-subject( $medicine ) }
+            &.theology { @include form-subject( $theology ) }
         }
 
         &#message {
             background-position-y: 1rem;
-            background-image: url('/img/form-message.svg');
+            &.engineering-and-arquitecture { @include form-message( $engineering-and-arquitecture ) }
+            &.sciences { @include form-message( $sciences ) }
+            &.law { @include form-message( $law ) }
+            &.communication { @include form-message( $communication ) }
+            &.canon { @include form-message( $canon ) }
+            &.philosophy-literature-education { @include form-message( $philosophy-literature-education ) }
+            &.economy { @include form-message( $economy ) }
+            &.nursing { @include form-message( $nursing ) }
+            &.pharmacy-nutrition { @include form-message( $pharmacy-nutrition ) }
+            &.medicine { @include form-message( $medicine ) }
+            &.theology { @include form-message( $theology ) }
         }
     }
 

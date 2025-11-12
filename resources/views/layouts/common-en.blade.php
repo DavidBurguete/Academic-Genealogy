@@ -37,10 +37,10 @@ Search
 
 @section('form-content')
     <p>Do you have anything you'd like to suggest or ask? Don't hesitate to write!</p>
-    <input id="name" type="text" autocomplete="off" placeholder="Full name">
-    <input id="email" type="email" autocomplete="off" placeholder="Email address">
-    <input id="subject" type="text" placeholder="Subject">
-    <textarea id="message" placeholder="Message" rows="11"></textarea>
+    <input id="name" class="@yield('faculty-color')" type="text" autocomplete="off" placeholder="Full name">
+    <input id="email" class="@yield('faculty-color')" type="email" autocomplete="off" placeholder="Email address">
+    <input id="subject" class="@yield('faculty-color')" type="text" placeholder="Subject">
+    <textarea id="message" class="@yield('faculty-color')" placeholder="Message" rows="11"></textarea>
 @endsection
 
 @section('submit-button-content')
