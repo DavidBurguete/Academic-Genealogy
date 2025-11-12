@@ -9,10 +9,13 @@ sciences
 @endsection
 
 @section('nav')
-<a href="/en/about-directors">About the directors</a>
-<a>Methodology</a>
-<a href="/en/history">A bit of history</a>
-<a href="/en/list">List of doctors</a>
+<a href="/es/about-directors">Sobre los directores</a>
+<hr class="separator">
+<a>Metodología</a>
+<hr class="separator">
+<a href="/es/history">Algo de historia</a>
+<hr class="separator">
+<a href="/es/list">Listado</a>
 @endsection
 
 @section('content')
@@ -20,42 +23,42 @@ sciences
         <div class="main__faculties__faculty medicine"></div>
         <div class="main__faculties__faculty sciences"></div>
     </div>
-    <h2>Methodology</h2>
+    <h2>Metodología</h2>
     <p>
-        First of all, I'd like to say that I'm no historian and I don't intend to be one.
-        I'm just a physicist who in his free time has devoted some time to try rebuilding a bit of history.
-        For that reason, first of all, my apologies to the professionals, because there are and very good in Spain.
+        Ante todo, quisiera decir que no soy historiador ni pretendo serlo. 
+        Sólo soy un físico que en sus ratos libres ha dedicado un tiempo a intentar reconstruir una parte de su historia. 
+        Por eso, lo primero, perdón a los profesionales, que los hay y muy buenos en España.
     </p>
     <div class="main__faculties">
         <div class="main__faculties__faculty communication"></div>
         <div class="main__faculties__faculty law"></div>
     </div>
     <p>
-        However, even if I'm an amateur I have tried to verify each of the facts included here and not just settle with a "fact" that could appear on a website.
-        Whenever it's been possible, I tried to consult the original sources (theses or first hand testimonies) and when not,
-        either written sources (necrologics of scientifics societies, biographies or homages) or databases (for modern theses, TESEO,
-        for the very old of the Central University, the PARES database of the ministry and the National Historic Archive).
+        No obstante, aunque sea un aficionado he intentado verificar cada uno de los datos aquí incluidos y no conformarme con un "dato" que pueda aparecer en una página web. 
+        Cuando ha sido posible, he intentado consultar las fuentes originales (tesis o testimonios de primera mano) y cuando no, 
+        bien fuentes escritas (necrológicas de Sociedades científicas, biografías u homenajes) o bases de datos (para las tesis modernas, TESEO, 
+        para las muy antiguas de la Universidad Central, la base de datos PARES del ministerio y el Archivo Histórico Nacional).
     </p>
     <div class="main__faculties">
         <div class="main__faculties__faculty philosophy-literature-education"></div>
         <div class="main__faculties__faculty pharmacy-nutrition"></div>
     </div>
     <p>
-        The information contained in the section "Brief Biography" is referenced. If in any of those there's no source,
-        please do let me know and I'll add it. The rest of the information comes from the previously cited sources, and should be "easy" to rebuild,
-        except for the cases where the information has been transmited verbally or by email address.
+        La información contenida en la sección "Breve Biografía" está referenciada. Si en alguna de ellas no aparece la fuente, 
+        por favor háganmelo saber y la colocaré. El resto de información proviene de las fuentes arriba citadas, y debería ser "sencillo" de reconstruir, 
+        excepto en los casos en que la información ha sido transmitida verbalmente o por correo electrónico.
     </p>
     <div class="main__faculties">
         <div class="main__faculties__faculty engineering-and-arquitecture"></div>
         <div class="main__faculties__faculty canon"></div>
     </div>
     <p>
-        Obviously, I have to thank the collaboration of a lot of people that has provided me with information and anecdotes, many of them not included here,
-        but have them stored and archived with affection. To all of them, thank you.
+        Obviamente, he de agradecer la colaboración de mucha gente que me ha aportado datos y anécdotas, muchas de ellas no recogidas aquí, 
+        pero que he guardado y archivado con cariño. A todos ellos gracias.
     </p>
     <p>
-        I have to say that for me this labor, developed for the past year (and will probably never leave), has been tremendously awarding.
-        At the same time, it made me realize how hard oter times where, and the greatness of those who preceded us.
+        He de decir que para mí esta labor desarrollada desde hace un año (y que probablemente nunca dejaré) ha sido una labor tremendamente gratificante. 
+        A la vez, me ha hecho darme cuenta de los duros que fueron otros tiempos, y de la grandeza de los que nos precedieron.
     </p>
     <div class="main__faculties main__faculties--bottom">
         <div class="main__faculties__faculty economy"></div>

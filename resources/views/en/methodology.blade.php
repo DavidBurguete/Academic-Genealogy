@@ -10,8 +10,11 @@ sciences
 
 @section('nav')
 <a href="/en/about-directors">About the directors</a>
+<hr class="separator">
 <a>Methodology</a>
+<hr class="separator">
 <a href="/en/history">A bit of history</a>
+<hr class="separator">
 <a href="/en/list">List of doctors</a>
 @endsection
 
