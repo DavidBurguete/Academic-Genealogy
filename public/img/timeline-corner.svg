@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="960" height="100">
-<path d="M0 0 C5.28 0 10.56 0 16 0 C16 13.86 16 27.72 16 42 C169.12 42 322.24 42 480 42 C480 47.28 480 52.56 480 58 C326.88 58 173.76 58 16 58 C16 71.86 16 85.72 16 100 C10.72 100 5.44 100 0 100 C0 67 0 34 0 0 Z " fill="#8F2724" transform="translate(480,0)"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="960"
+   height="100"
+   id="svg1"
+   sodipodi:docname="timeline-corner.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="3.6854167"
+     inkscape:cx="479.86433"
+     inkscape:cy="59.966083"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     d="M -8,0 H 8 L 8,42 H 480 V 58 H 8 v 42 H -8 Z"
+     fill="#8f2724"
+     transform="translate(480)"
+     id="path1"
+     sodipodi:nodetypes="ccccccccc" />
 </svg>

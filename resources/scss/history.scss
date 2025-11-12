@@ -3,26 +3,6 @@
 @import 'footer';
 @import 'styles';
 
-@keyframes move {
-    from {
-        offset-distance: 0%;
-    }
-
-    to {
-        offset-distance: 100%;
-    }
-}
-
-@keyframes visibility {
-    from {
-        opacity: 0.2;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
 .main {
     &>:not(.swiper) {
         margin: 0 1rem;
@@ -55,35 +35,41 @@
 
         &__text-card,
         &__image-card {
+            align-content: center;
             margin-bottom: 2rem;
             height: 13.625rem;
             overflow: hidden;
         }
 
         &__text-card {
-            align-content: center;
             padding: 2rem 1.75rem;
+            background-color: white;
             box-shadow: 0px 8px 16px 0px rgba($color: $blur, $alpha: 0.25);
 
             p {
                 margin: 0;
                 font-size: 1.25rem;
             }
+
+            &.order-works {
+                order: 3;
+            }
         }
 
         &__image-card {
-            align-content: center;
-            height: auto;
+            width: 100%;
             max-width: 30rem;
-            margin: 0 auto 2rem auto;
+            background-image: url('/img/historicaldoctorate.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
 
-            & img {
-                position: relative;
-                width: 100%;
+            &.order-physicists {
+                background-image: url('/img/physicists.png');
+            }
 
-                &.center-physicists {
-                    bottom: 1.5rem;
-                }
+            &.order-physicists {
+                order: 4;
             }
         }
 
@@ -118,15 +104,20 @@
                 text-align: center;
             }
 
-            img {
-                transform: translateX(calc(-50% + 50vw));
+            div {
+                height: 6.25rem;
+                background-image: url('/img/timeline.svg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: repeat no-repeat;
 
                 &.timeline-start {
-                    transform: translateX(calc(-50% + 50vw - 0.5rem));
+                    background-image: url('/img/timeline-corner.svg');
                 }
 
                 &.timeline-end {
-                    transform: translateX(calc(-50% + 50vw + 0.5rem)) rotate(180deg);
+                    background-image: url('/img/timeline-corner.svg');
+                    transform: rotate(180deg);
                 }
             }
 
@@ -234,9 +225,10 @@
             height: 1.5rem;
             transition: 0.5s ease-in-out;
             transform-origin: center;
+            cursor: pointer;
         }
 
-        &.toggled>img{
+        &.toggled>img {
             transform: scaleY(-1);
         }
     }
@@ -254,6 +246,143 @@
         &.toggled {
             max-height: 25rem;
             transform: scaleY(1);
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main {
+        &>:not(.swiper) {
+            margin: 0 auto;
+        }
+
+        h2 {
+            width: 50%;
+        }
+
+        h3,
+        h5,
+        &>p {
+            width: 60%;
+        }
+
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            width: 50%;
+            margin-bottom: 6rem !important;
+
+            &>div {
+                height: auto;
+                min-height: 17rem;
+                margin-bottom: 0;
+            }
+
+            &>div:nth-child(2n-1) {
+                margin-top: 2rem;
+            }
+
+            &>div:nth-child(2n-2) {
+                margin-bottom: 2rem;
+            }
+
+            &__text-card {
+
+                &.order-works {
+                    order: 0;
+                }
+            }
+
+            &__image-card {
+
+                &.order-physicists {
+                    order: 0;
+                }
+            }
+
+            &--background {
+                display: block;
+                position: absolute;
+                left: 40%;
+                width: 100%;
+                height: 31.25rem !important;
+                margin-top: 12rem !important;
+                background-color: #E8E8E8;
+                border-radius: 2rem;
+                z-index: -1;
+            }
+        }
+
+        .swiper {
+
+            &-slide {
+                position: relative;
+                overflow: hidden;
+
+                .time-image {
+                    margin-block: 2rem 0;
+                }
+
+                .time {
+                    margin-top: 4rem;
+                }
+            }
+
+            &--timeline-images {
+                position: absolute;
+                margin: 0 auto 0 6%;
+                width: 30%;
+                max-width: 30rem;
+                z-index: 3;
+            }
+
+            &--timeline-header {
+                overflow: visible;
+                z-index: 2;
+            }
+
+            &__buttons {
+                position: absolute;
+                justify-content: space-around;
+                width: 100%;
+                margin-top: 11rem;
+                z-index: 10;
+                cursor: pointer;
+            }
+        }
+
+        &__thesis-history {
+            width: 50%;
+            margin: 0 auto !important;
+            overflow-x: visible;
+
+            &__arch {
+                margin-top: 2rem;
+                width: 70rem;
+            }
+
+            &__year {
+                position: absolute;
+                top: 5rem;
+                transform: translateX(calc(25vw - 70% + 0.25rem));
+                font-family: 'Merriweather';
+                font-weight: bold;
+                font-size: 3rem;
+                color: $theology;
+            }
+
+            &__text {
+                position: relative;
+                margin: 0;
+                bottom: 2rem;
+            }
+        }
+
+        &__bibliography {
+            width: 60%;
+            margin: 1rem auto !important;
+            font-size: 1.25rem;
         }
     }
 }

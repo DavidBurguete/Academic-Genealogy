@@ -13,60 +13,56 @@ sciences
 @endsection
 
 @section('nav')
-<a href="/en/about-directors">About the directors</a>
+<a href="/es/about-directors">Sobre los directores</a>
 <hr class="separator">
-<a href="/en/methodology">Methodology</a>
+<a href="/es/methodology">Metodología</a>
 <hr class="separator">
-<a>A bit of history</a>
+<a>Algo de historia</a>
 <hr class="separator">
-<a href="/en/list">List of doctors</a>
+<a href="/es/list">Listado</a>
 @endsection
 
 @section('content')
-    <h2>History</h2>
+    <h2>Historia</h2>
     <div class="main__cards">
         <div class="main__cards__text-card">
             <p>
-                This brief historic review aims to provide a summarized view of what has been the doctorate history in Spain,
-                and simultaneously the evolution of Universities and Physics over the last centuries.
+                Esta pequeña reseña histórica pretende dar un vistazo muy resumido de lo que ha sido la historia del doctorado en España, 
+                y simultáneamente la evolución de las Universidades y de la Física en los últimos siglos.
             </p>
         </div>
-        <div class="main__cards__image-card">
-            <img src="{{ asset('img/historicaldoctorate.jpg') }}" alt="A painting of how was the doctorate around the 1800-1900">
-        </div>
-        <div class="main__cards__text-card">
+        <div class="main__cards__image-card"></div>
+        <div class="main__cards__image-card order-physicists"></div>
+        <div class="main__cards__text-card order-works">
             <p>
-                There are really good works that offer a better perspective,
-                and some which I have consulted are referenced at the end of the page.
-                I refer them to whoever this review has sparked their curiosity.
+                Hay trabajos muy buenos en los que se puede obtener una mejor visión, 
+                y algunos de los que yo he consultado aparecen referenciados al final de esta página. 
+                Me remito a ellos para quien esta reseña le haya despertado la curiosidad.
             </p>
-        </div>
-        <div class="main__cards__image-card">
-            <img src="{{ asset('img/physicists.png') }}" alt="An image of the 1930 Solvay conference" class="center-physicists">
         </div>
         <div class="main__cards--background"></div>
     </div>
-    <h3>The Research on Physics in Spain</h3>
+    <h3>La Investigación en Física en España</h3>
     <p class="research-main-text">
-        Those of us who likes Physics have wondered at some time why there's no great people that has contributed in Spain's history.
-        The fact is that there has been great people, but for multiple reasons there wasn't enough enough breeding ground to make them act as catalysts.
+        Todos los que nos gusta la Física nos hemos preguntado alguna vez por qué España no ha producido grandes hombres que hayan contribuido en su historia. 
+        El hecho es que grandes hombres los han habido, pero por múltiples causas no existía el caldo de cultivo necesario que los hiciera actuar como catalizadores.
     </p>
     <div class="swiper swiper--timeline-images">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="{{ asset('img/1559.jpg') }}" alt="Carlos the third, king of Spain" class="time-image">
+                <img src="{{ asset('img/1559.jpg') }}" alt="Carlos tercero, rey de España" class="time-image">
             </div>
             <div class="swiper-slide">
-                <img src="{{ asset('img/sXVIII.jpg') }}" alt="Goya's painting 'El 3 de Mayo en Madrid'" class="time-image">
+                <img src="{{ asset('img/sXVIII.jpg') }}" alt="La pintura de Goya 'El 3 de Mayo en Madrid'" class="time-image">
             </div>
             <div class="swiper-slide">
-                <img src="{{ asset('img/1857.jpg') }}" alt="Claudio Moyano, promoter of the Moyano Law" class="time-image">
+                <img src="{{ asset('img/1857.jpg') }}" alt="Claudio Moyano, promotor de la ley Moyano" class="time-image">
             </div>
             <div class="swiper-slide">
-                <img src="{{ asset('img/sXIX.jpg') }}" alt="Antonio cánovas del Castillo, historian and politician of the 20th Century" class="time-image">
+                <img src="{{ asset('img/sXIX.jpg') }}" alt="Antonio Cánovas del Castillo, historiador y político del siglo 20" class="time-image">
             </div>
             <div class="swiper-slide">
-                <img src="{{ asset('img/sXX.jpg') }}" alt="Santiago Ramón y Cajal, spanish scientist" class="time-image">
+                <img src="{{ asset('img/sXX.jpg') }}" alt="Santiago Ramón y Cajal, científico español" class="time-image">
             </div>
         </div>
     </div>
@@ -74,91 +70,100 @@ sciences
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <p class="time">1559</p>
-                <img src="{{ asset('img/timeline-corner.svg') }}" class="timeline-start">
+                <div class="timeline-start"></div>
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XVIII</p>
-                <img src="{{ asset('img/timeline.svg') }}">
+                <div></div>
             </div>
             <div class="swiper-slide">
                 <p class="time">1857</p>
-                <img src="{{ asset('img/timeline.svg') }}">
+                <div></div>
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XIX</p>
-                <img src="{{ asset('img/timeline.svg') }}">
+                <div></div>
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XX</p>
-                <img src="{{ asset('img/timeline-corner.svg') }}" class="timeline-end">
+                <div class="timeline-end"></div>
             </div>
         </div>
         <div class="swiper__buttons">
-            <img src="{{ asset('img/arrow.svg') }}" alt="previous button" class="swiper__buttons--prev" id="prev">
-            <img src="{{ asset('img/arrow.svg') }}" alt="next button" class="swiper__buttons--next" id="next">
+            <img src="{{ asset('img/arrow.svg') }}" alt="botón anterior" class="swiper__buttons--prev" id="prev">
+            <img src="{{ asset('img/arrow.svg') }}" alt="botón siguiente" class="swiper__buttons--next" id="next">
         </div>
     </div>
     <div class="swiper swiper--timeline-content">
         <div class="swiper-wrapper">
             <div class="swiper-slide timeline-text">
                 <p>
-                    The first hurdle that had the science in Spain it's probably Felipe II's Pragmatic Sanction of november 22, 1559
-                    <a href="https://www.boe.es/biblioteca_juridica/publicacion.php?id=PUB-LH-1993-63">(Novíssima Recopilación, Libro VIII, Tiulo IV, Ley 1)</a>. 
-                    It prohibited, under sentence of exilement, to spanish students and professors to exit to foreign countries because
-                    "Since in these our Kingdoms there are distinguished Universities [...] in which there are very learned and capable persons in all the sciences"
-                    he didn't see any necesity on getting out the country. We have to take into account that it was the times of the Reformation,
-                    and Spain wasn't the only country that closed to foreign ideas. However,
-                    it's true that here took place with special rigor, having this pragmatic in vigor until almost the end of the XVII century. In fact,
-                    it had to wait until the arrival of the Borbons to begin an opening towards Europe.
+                    El primer escollo que tuvo la ciencia en España puede ser probablemente la Pragmática de Felipe II del 22 de noviembre de 1559 
+                    <a href="https://www.boe.es/biblioteca_juridica/publicacion.php?id=PUB-LH-1993-63">(Novíssima Recopilación, Libro VIII, Titulo IV, Ley 1)</a>. 
+                    En ella prohibía bajo pena de destierro el que los estudiantes y profesores españoles salieran al extranjero porque 
+                    "como quiera que en estos nuestros Reinos hay insignes Universidades [...] en las cuales hay personas muy doctas y suficientes en todas las ciencias" 
+                    no veía necesidad de esa salida al exterior. Hay que tener en cuenta que es la época de la Reforma, 
+                    y España no fué el único pais que se cerró a ideas foráneas. No obstante, 
+                    sí que aquí se llevó a cabo con especial rigor perdurando esta pragmática en vigor hasta casi finales del siglo XVII. De hecho, 
+                    hay que esperar hasta la llegada de los Borbones para que comience una apertura hacia Europa.
                 </p>
                 <p>
-                    This led a strong inertia in the university faculty that couldn't move to other countries to learn the newest theories,
-                    but instead had to be content with studying translations that, in many cases, arrived decades late. As Blas Cabrerar very well said
-                    <a href="#bibliography-6">(6)</a>, "...the book and the written monograph [...] are truly dead works.[...]
-                    Only direct trade with the master is a safe method to educate the researcher...".
-                    The Science in Spain was reducted in great measure to text study about foreign theories,
-                    but without trying to recreate the experiments and without contributing new ideas.
-                </p>
-            </div>
-            <div class="swiper-slide timeline-text">
-                <p>
-                    In the times of king Carlos III took place a resurge in the Science of Spain,
-                    but it was shortly cut by the war for Independence and the napoleonic invasions that destroyed many of the incipient institutions
-                    of Science promotion. During the XIX century there was a tremendous agitation in Universities with a fast succession of 
-                    legal frameworks, in many cases conflicting (even bigger than the variability of modern laws)
-                    that impeded the recovery up to the end of the Old Regimen.
+                    Esto indujo una fuerte inercia en el profesorado universitario que no podía desplazarse a otros paises a aprender las nuevas teorías, 
+                    sino que se debía contentar con estudiar traducciones que, en muchos casos, llegaban con décadas de retraso. Como bien dijo Blas Cabrera 
+                    <a href="#bibliography-6">(6)</a>, "...el libro y aún la monografía escrita [...] son realmente obras muertas.[...] 
+                    Sólo el comercio directo con el maestro es modo seguro para educar al investigador..". 
+                    La Ciencia en España se redujo en gran medida al estudio de textos sobre las teorías extranjeras, 
+                    pero sin intentar reproducir los experimentos y sin aportar ideas nuevas.
                 </p>
             </div>
             <div class="swiper-slide timeline-text">
                 <p>
-                    With Moyano's Law of 1857 appear sthe Science faculty spliting from the Philosophy, which becam in Philosophy and Literature.
-                    This is the first time where Physic studies appear, thanks to three sections: Physics-Mathematics, Chemistry and Natural Sciencies.
-                    It wasn't until the year 1900 that the Physics section was founded.
+                    En la época del rey Carlos III se vivió un resurgimiento de la Ciencia en España, 
+                    pero fué rápidamente cortada por la guerra de Independencia y las invasiones napoleónicas que echaron por tierra muchas de las incipientes instituciones 
+                    de promoción de la Ciencia. Durante el siglo XIX hubo una tremenda agitación en las Universidades con una rápida sucesión de 
+                    marcos legales, en muchos casos contradictorios (mayor incluso que la variabilidad de leyes actuales) 
+                    que impidieron la recuperación al nivel de finales del Antiguo Régimen.
                 </p>
             </div>
             <div class="swiper-slide timeline-text">
                 <p>
-                    During the XIX century, however, the Physic researchs in spanish Universities is anecdotic and more the result of 
-                    the enthusiasm of a few isolated people. Actually, there's really neither resources nor will to carry out replica experiments 
-                    of those that took place in Europe. The research train however began to run in this years,
-                    and began to rise voices reporting the delay in Spain on this fields (as in many others).
-                    We have to take into account that the rate of illiteracy in Spain in 1900 it was close to 70%.
+                    Con la Ley Moyano del año 1857 aparece la facultad de Ciencias escindiéndose de la de Filosofía, conviertiéndose esta en Filosofía y Letras. 
+                    Esta es la primera vez en que aparecen estudios de Física, al existir tres secciones: Físico-Matemática, Química y Naturales. 
+                    Habrá que esperar hasta el año 1900 para que se constituya la sección de Físicas.
                 </p>
             </div>
             <div class="swiper-slide timeline-text">
                 <p>
-                    This is the time where Mr. José Echegaray, Mr. Santiago Ramón y Cajal, Mr. Leonardo Torres Quevedo and others arised and
-                    draw the attention over the delay and the inferiority complex assumed by the faculties of spanish universities
-                    before their european equivalent. For example, Mr. José Echegaray draw the attention over this facts creating a big controversy
-                    in the Madrid of the epoch by the agressive tone used.
+                    A lo largo del siglo XIX, no obstante, la investigación en Física en las Universidades españolas es anecdótica y 
+                    fruto más bien del entusiasmo de algunas personas aisladas. Realmente no hay medios ni voluntad formadora para poder realizar ni siquiera 
+                    experimentos réplica de los que se llevan a cabo en Europa. El tren de la investigación no obstante empieza a marchar en estos años, 
+                    y se emipezan a levantar voces denunciando el retraso de España en estas áreas (como en muchas otras). 
+                    Hay que tener en cuenta que el índice de analfabetismo en España en 1900 se aproxima al 70%.
+                </p>
+            </div>
+            <div class="swiper-slide timeline-text">
+                <p>
+                    Es la época en la que surgen D. José Echegaray, D. Santiago Ramón y Cajal, D. Leonardo Torres Quevedo y otros que 
+                    llamaron la atención sobre el retraso y el complejo de inferioridad asumido por parte del profesorado universitario español 
+                    frente a sus homólogos europeos. Por ejemplo, D.José Echegaray llamó la atención sobre estos hechos levantando una gran polémica 
+                    en el Madrid de la época por el tono agresivo empleado.
                 </p>
                 <p>
-                    Another factor that I have not commented but obviously served as an obstacle of development in sciences was the lack
-                    of industry that demanded the services of an academic world at the level of the XIX century Europe.
+                    Otro factor que no he comentado pero que obviamente servía de freno al desarrollo de las ciencias era la carencia 
+                    de industria que demandara los servicios de un mundo académico a la altura de la Europa del XIX.
                 </p>
             </div>
         </div>
     </div>
+    <h3>Breve historia del doctorado</h3>
+    <p>
+        Hoy en día damos por hecho que el acceso al título de doctor lleva asociado el haber realizado una investigación original. 
+        Pues bien, eso no ha sido así en España hasta bien entrado el siglo XX. Esta falta de originalidad, que puede chocar a más de uno, 
+        es un punto menor si se compara con otros hechos. En los sucesivos reglamentos del siglo XIX se prohibía una y otra vez el servir 
+        "refrescos ni obsequios de ninguna clase" (reglamento de 1852 de la Universidad Central). 
+        Y de hecho en el Antiguo Régimen se llegaron a incluir en el acto de investidura de doctores procesiones e incluso corridas de toros. 
+        Todo ello hacía que sólo las clases más pudientes pudieran acceder al doctorado y que la investidura fuera un acto más social que académico.
+    </p>
     <section class="main__thesis-history">
         <img src="{{ asset('img/arch.svg') }}" class="main__thesis-history__arch">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main__thesis-history__year">
@@ -171,12 +176,12 @@ sciences
         </svg>
         <div class="main__thesis-history__text">
             <p>
-                It's in the year 1847 when the thesis figure appears for the first time. In that year's regulations,
-                in the article 339 specifies that the candidate "will write a thesis about any point of the faculty or science",
-                therefore, it does not have to be research in the current sense, not even an original one. There wasn't even a grade.
-                Even despite the existence of the thesis, it is worth noting that this act was more social than academic. E.g., 
-                it could happen that if two brothers wanted to obtain the doctor degree, it was sufficient for one of them to read his thesis, and both would have obtained the degree.
-                It was first in 1859 when the thesis was first graded, but it's theme is limited to a list of 40ish themes selected every year by the faculty.
+                Es en el año 1847 cuando aparece por vez primera la figura de la tesis. En el reglamento de ese año, 
+                en el artículo 339 especifica que el candidato "escribirá una tesis sobre un punto cualquiera de la facultad o ciencia", 
+                por lo que no ha de ser ni investigación al uso actual, ni tan siquiera tiene que ser original. Tampoco había una calificación. 
+                Aun a pesar de la existencia de la tesis, es de reseñar que este acto seguía siendo más social que académico. Por ejemplo, 
+                podía ocurrir que si dos hermanos querían obtener el titulo de doctor, bastaba con que uno leyera su tesis, y los dos obtenían el grado.
+                En 1859 se califica por primera vez la tesis, pero su temática está limitada a una lista de unos 40 temas seleccionado cada año por la facultad.
             </p>
         </div>
     </section>
@@ -192,15 +197,15 @@ sciences
         </svg>
         <div class="main__thesis-history__text">
             <p>
-                Between the years 1883 and 1886 the doctorate of the different faculties is reformed, establishing that the doctoral student will choose freely
-                the theme "about a doctrinal theme or practical research". This is the first time that explicitly appears the possibility of an original thesis.
-                In the 1900 reform appears explicitly that the Deans "must provide the equipment and resources possible to do the research duty regarding the doctoral thesis",
-                but undoubtedly "having to pay for the damage they may cause and the expenses of the equipment they use".
+                Entre los años 1883 y 1886 se reforma el doctorado de las diferentes facultades, quedando establecido que el doctorando elegirá libremente 
+                el tema "sobre un tema doctrinal o de investigación práctica". Esta es la primera vez que aparece explícitamente la posibilidad de una tesis original. 
+                En la reforma de 1900 aparece explicitado que los Decanos "deberán porporcionar los aparatos y recursos que fuere posible para hacer los trabajos de investigación referentes a su tesis doctoral", 
+                pero, eso sí, "debiendo abonar los desperfectos que ocasionen y los gastos del material que emplearen".
             </p>
             <p>
-                It's in this moment, when the thesis contains original research, when the director's figure forms. Appears in 1918,
-                when it was stablished that "the doctoral theses of the Sciences Faculty will be represented and supported by a professor [...]
-                with right to be part of the magistrates court".
+                Es en ese momento, cuando la tesis contiene investigación original, cuando toma forma la figura del director. Aparece en 1918, 
+                en que se estableció que "las tesis doctorales de la Facultad de Ciencias serán presentadas y apadrinadas por un catedrático [...] 
+                con derecho a formar parte del tribunal".
             </p>
         </div>
     </section>
@@ -216,20 +221,20 @@ sciences
         </svg>
         <div class="main__thesis-history__text">
             <p>
-                With the 1907 constitution of the Council for the Expansion of Studies it was given the endorsment to launch the research in Spain.
-                Many of the laboratories that were then formed watch suddenly cutted their evolution with the arrival of the Civil War.
-                A lot of scientists, specially in Physics, such as Blas Cabrera or Arturo Duperier, were forced into exile.
+                Con la constitución en 1907 de la Junta para la Ampliación de Estudios se dió el espaldarazo para lanzar la investigación en España. 
+                Muchos de los laboratorios que entonces se formaron vieron abruptamente cortada su evolución con la llegada de la Guerra Civil. 
+                Gran cantidad de científicos, especialmente en Física, como Blas Cabrera o Arturo Duperier, se vieron obligados a exiliarse.
             </p>
             <p>
-                It wasn't until the 1950s that the Physics in Spain made a comeback, mainly thanks to spaniards that 
-                learned abroad, and the labor of some like Julio Palacios that enhanced it in the post-war period.
-                Some of the exiled returned, like Arturo Duperier, but without being able to develop their own school.
+                Hay que esperar hasta los años 50 para que la Física en España vuelva a resurgir, en gran parte gracias a españoles que 
+                se han formado en el extranjero, y a la labor de algunos como Julio Palacios que la relanzaron en la posguerra. 
+                Algunos de los exiliados retornaron, como Arturo Duperier, pero sin poder llegar a desarrollar su propia escuela.
             </p>
         </div>
     </section>
     <h5 id="show-bibliography">
-        Bibliography
-        <img src="{{ asset('img/dropdown.png') }}" alt="dropdown">
+        Bibliografía
+        <img src="{{ asset('img/dropdown.png') }}" alt="desplegable">
     </h5>
     <ol class="main__bibliography" id="bibliography">
         <li id="bibliography-1">

@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
     let screen_width = window.screen.width;
     let slide_amount = 1;
     if (screen_width > 1000) {
-        slide_amount = 2;
+        slide_amount = 3;
     }
 
     const swiperImages = new Swiper('.swiper--timeline-images', {

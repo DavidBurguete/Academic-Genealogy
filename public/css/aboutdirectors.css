@@ -860,6 +860,7 @@ a {
   font-family: "Archivo";
   font-size: 1.5rem;
   text-align: justify;
+  line-height: 1.65rem;
   z-index: 2;
 }
 .main p#biography-1, .main p#biography-2 {

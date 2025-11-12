@@ -31,18 +31,14 @@ sciences
                 and simultaneously the evolution of Universities and Physics over the last centuries.
             </p>
         </div>
-        <div class="main__cards__image-card">
-            <img src="{{ asset('img/historicaldoctorate.jpg') }}" alt="A painting of how was the doctorate around the 1800-1900">
-        </div>
-        <div class="main__cards__text-card">
+        <div class="main__cards__image-card"></div>
+        <div class="main__cards__image-card order-physicists"></div>
+        <div class="main__cards__text-card order-works">
             <p>
                 There are really good works that offer a better perspective,
                 and some which I have consulted are referenced at the end of the page.
                 I refer them to whoever this review has sparked their curiosity.
             </p>
-        </div>
-        <div class="main__cards__image-card">
-            <img src="{{ asset('img/physicists.png') }}" alt="An image of the 1930 Solvay conference" class="center-physicists">
         </div>
         <div class="main__cards--background"></div>
     </div>
@@ -63,7 +59,7 @@ sciences
                 <img src="{{ asset('img/1857.jpg') }}" alt="Claudio Moyano, promoter of the Moyano Law" class="time-image">
             </div>
             <div class="swiper-slide">
-                <img src="{{ asset('img/sXIX.jpg') }}" alt="Antonio cánovas del Castillo, historian and politician of the 20th Century" class="time-image">
+                <img src="{{ asset('img/sXIX.jpg') }}" alt="Antonio Cánovas del Castillo, historian and politician of the 20th Century" class="time-image">
             </div>
             <div class="swiper-slide">
                 <img src="{{ asset('img/sXX.jpg') }}" alt="Santiago Ramón y Cajal, spanish scientist" class="time-image">
@@ -74,23 +70,23 @@ sciences
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <p class="time">1559</p>
-                <img src="{{ asset('img/timeline-corner.svg') }}" class="timeline-start">
+                <div class="timeline-start"></div>
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XVIII</p>
-                <img src="{{ asset('img/timeline.svg') }}">
+                <div></div>
             </div>
             <div class="swiper-slide">
                 <p class="time">1857</p>
-                <img src="{{ asset('img/timeline.svg') }}">
+                <div></div>
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XIX</p>
-                <img src="{{ asset('img/timeline.svg') }}">
+                <div></div>
             </div>
             <div class="swiper-slide">
                 <p class="time">s.XX</p>
-                <img src="{{ asset('img/timeline-corner.svg') }}" class="timeline-end">
+                <div class="timeline-end"></div>
             </div>
         </div>
         <div class="swiper__buttons">
@@ -103,7 +99,7 @@ sciences
             <div class="swiper-slide timeline-text">
                 <p>
                     The first hurdle that had the science in Spain it's probably Felipe II's Pragmatic Sanction of november 22, 1559
-                    <a href="https://www.boe.es/biblioteca_juridica/publicacion.php?id=PUB-LH-1993-63">(Novíssima Recopilación, Libro VIII, Tiulo IV, Ley 1)</a>. 
+                    <a href="https://www.boe.es/biblioteca_juridica/publicacion.php?id=PUB-LH-1993-63">(Novísima Recopilación, Libro VIII, Tiulo IV, Ley 1)</a>. 
                     It prohibited, under sentence of exilement, to spanish students and professors to exit to foreign countries because
                     "Since in these our Kingdoms there are distinguished Universities [...] in which there are very learned and capable persons in all the sciences"
                     he didn't see any necesity on getting out the country. We have to take into account that it was the times of the Reformation,
@@ -159,6 +155,15 @@ sciences
             </div>
         </div>
     </div>
+    <h3>Brief history of the doctorate</h3>
+    <p>
+        Nowadays we take for granted that the access to the doctorate title comes with having done an original research.
+        Well, that hasn't been the case in Spain until well into the XX century. This lack of originality, that can shock more than one,
+        is a minor point if it's compared with other facts. In the successive rules of the XIX century it was forbidden time and again to serve
+        "beverages nor rewards of any kind" (rule of the Central University of 1852).
+        In fact, in the Old Regime, in the act of investiture of doctorates were included processions and even bullruns and bullfights.
+        All of that made that only the more influential classes could access the doctorate and the investiture were more a social act than academic.
+    </p>
     <section class="main__thesis-history">
         <img src="{{ asset('img/arch.svg') }}" class="main__thesis-history__arch">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main__thesis-history__year">
