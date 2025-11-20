@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Introduction extends Controller
 {
-    public function index($locale){
+    public function show($locale){
         return view("$locale.introduction");
     }
 }

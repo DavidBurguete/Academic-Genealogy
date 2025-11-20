@@ -3,10 +3,47 @@
 Academic<br>Genealogy
 @endsection
 
+@section('destination')
+account
+@endsection
+
 @section('form')
+    @if(isset($error))
+        <script>
+            let errorType = "{{ $error }}";
+            let error = "";
+            switch (errorType) {
+                case "FieldError": 
+                    error = "Please, complete the fields";
+                    break;
+                case "NameError": 
+                    error = "The specified user does not exist";
+                    break;
+                case "PasswordError": 
+                    error = "The password is incorrect";
+                    break;
+            }
+            Toastify({
+                text: error,
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#DE1919",
+                }
+            }).showToast();
+        </script>
+    @endif
     <h2>Access</h2>
-    <input id="name" type="text" autocomplete="off" placeholder="Full name">
-    <input id="password" type="password" autocomplete="off" placeholder="Password">
+    <input name="name" id="name" type="text" autocomplete="off" placeholder="Full name">
+    <input name="password" id="password" type="password" autocomplete="off" placeholder="Password">
     <div class="actions">
         <a href="{{ url()->previous() }}">
             <img src="{{ asset('/img/return.svg') }}" alt="Return button">

@@ -3,10 +3,47 @@
 Genealogía<br>Académica
 @endsection
 
+@section('destination')
+account
+@endsection
+
 @section('form')
+    @if(isset($error))
+        <script>
+            let errorType = "{{ $error }}";
+            let error = "";
+            switch (errorType) {
+                case "FieldError": 
+                    error = "Por favor, rellene los campos";
+                    break;
+                case "NameError": 
+                    error = "El usuario especificado no existe";
+                    break;
+                case "PasswordError": 
+                    error = "La contraseña es incorrecta";
+                    break;
+            }
+            Toastify({
+                text: error,
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#DE1919",
+                }
+            }).showToast();
+        </script>
+    @endif
     <h2>Acceso</h2>
-    <input id="name" type="text" autocomplete="off" placeholder="Nombre completo">
-    <input id="password" type="password" autocomplete="off" placeholder="Contraseña">
+    <input name="name" id="name" type="text" autocomplete="off" placeholder="Nombre completo" value="{{ isset($request->name) ? $request->name : '' }}">
+    <input name="password" id="password" type="password" autocomplete="off" placeholder="Contraseña" value="{{ isset($request->password) ? $request->password : '' }}">
     <div class="actions">
         <a href="{{ url()->previous() }}">
             <img src="{{ asset('/img/return.svg') }}" alt="Botón de retroceso">

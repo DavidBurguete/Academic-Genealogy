@@ -22,7 +22,11 @@ Buscar
     <button class="header_buttons--close" id="close" type="button">
         <img src="{{ asset('img/cross.svg') }}" alt="icono de cierre de la barra de búsqueda" class="box-shadow">
     </button>
+    @if(Auth::check())
+    <a href="/es/account" class="header_buttons--user">
+    @else
     <a href="/es/login" class="header_buttons--user">
+    @endif
         <img src="{{ asset('img/user.svg') }}" alt="icono de usuario" class="box-shadow">
     </a>
     <button class="header_buttons--languages_selector" id="languages" type="button">

@@ -14,10 +14,13 @@ Route::get('/', function () {
 Route::prefix('{locale}')
     ->where(['locale' => 'en|es|fr'])
     ->group(function () {
-        Route::get('/', [Introduction::class, "index"])->name('introduction');
-        Route::get('/about-directors', [AboutDirectors::class, "index"])->name('about-directors');
-        Route::get('/methodology', [Methodology::class, "index"])->name('methodology');
-        Route::get('/history', [History::class, "index"])->name('history');
-        Route::get('/login', [Login::class, "index"])->name('login');
-        Route::get('/request-access', [RequestAccess::class, "index"])->name('request');
+        Route::get('/', [Introduction::class, "show"])->name('introduction');
+        Route::get('/about-directors', [AboutDirectors::class, "show"])->name('about-directors');
+        Route::get('/methodology', [Methodology::class, "show"])->name('methodology');
+        Route::get('/history', [History::class, "show"])->name('history');
+        Route::get('/login', [Login::class, "show"])->name('login');
+        Route::get('/account', [Login::class, "index"])->name('account');
+        Route::post('/account', [Login::class, "view"])->name('login');
+        Route::get('/logout', [Login::class, "logout"])->name('login');
+        Route::get('/request-access', [RequestAccess::class, "show"])->name('request');
     });
