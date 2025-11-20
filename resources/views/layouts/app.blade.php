@@ -32,7 +32,10 @@
         <nav class="nav header--nav">
             @yield('nav')
         </nav>
-        <form action="/search" method="post">
+        @php
+            $currentParams = request()->route()->parameters();
+        @endphp
+        <form action="/{{ $currentParams['locale'] }}/search" method="post">
             <input type="text" name="search-bar" id="search-bar" class="search-bar box-shadow" placeholder="@yield('search')...">
             <div class="header_buttons">
                 <div class="header_buttons--display" id="display"></div>

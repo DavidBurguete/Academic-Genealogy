@@ -348,7 +348,10 @@
                 width: 100%;
                 margin-top: 11rem;
                 z-index: 10;
-                cursor: pointer;
+
+                img {
+                    cursor: pointer;
+                }
             }
         }
 

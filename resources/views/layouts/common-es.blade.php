@@ -22,7 +22,7 @@ Buscar
     <button class="header_buttons--close" id="close" type="button">
         <img src="{{ asset('img/cross.svg') }}" alt="icono de cierre de la barra de búsqueda" class="box-shadow">
     </button>
-    <a href="/login" class="header_buttons--user">
+    <a href="/es/login" class="header_buttons--user">
         <img src="{{ asset('img/user.svg') }}" alt="icono de usuario" class="box-shadow">
     </a>
     <button class="header_buttons--languages_selector" id="languages" type="button">

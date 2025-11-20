@@ -506,6 +506,8 @@ nav a {
 .suggest textarea {
   width: 100%;
   padding: 1rem 1rem 1rem 3rem;
+  font-family: 'Archivo';
+  font-size: 1rem;
   background-color: rgba(0, 0, 0, 0.7);
   border: 0;
   border-radius: 0.5rem;
@@ -1093,6 +1095,8 @@ a {
     width: 100%;
     margin-top: 11rem;
     z-index: 10;
+  }
+  .main .swiper__buttons img {
     cursor: pointer;
   }
   .main__thesis-history {
