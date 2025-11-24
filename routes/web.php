@@ -21,6 +21,7 @@ Route::prefix('{locale}')
         Route::get('/login', [Login::class, "show"])->name('login');
         Route::get('/account', [Login::class, "index"])->name('account');
         Route::post('/account', [Login::class, "view"])->name('login');
+        Route::put('/change-password', [Login::class, "put"])->name('change-password');
         Route::get('/logout', [Login::class, "logout"])->name('login');
         Route::get('/request-access', [RequestAccess::class, "show"])->name('request');
     });

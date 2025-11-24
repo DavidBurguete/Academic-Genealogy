@@ -21,6 +21,7 @@
     textarea {
         width: 100%;
         padding: 1rem 1rem 1rem 3rem;
+        font-family: 'Archivo';
         font-size: 1rem;
         background-color: rgba(0, 0, 0, 0.7);
         border: 0;
@@ -53,6 +54,7 @@
             &.pharmacy-nutrition { @include form-name( $pharmacy-nutrition ) }
             &.medicine { @include form-name( $medicine ) }
             &.theology { @include form-name( $theology ) }
+            &.unknown { @include form-name( $unknown ) }
         }
 
         &#email {
@@ -67,6 +69,7 @@
             &.pharmacy-nutrition { @include form-email( $pharmacy-nutrition ) }
             &.medicine { @include form-email( $medicine ) }
             &.theology { @include form-email( $theology ) }
+            &.unknown { @include form-email( $unknown ) }
         }
 
         &#subject {
@@ -81,6 +84,7 @@
             &.pharmacy-nutrition { @include form-subject( $pharmacy-nutrition ) }
             &.medicine { @include form-subject( $medicine ) }
             &.theology { @include form-subject( $theology ) }
+            &.unknown { @include form-subject( $unknown ) }
         }
 
         &#message {
@@ -96,6 +100,7 @@
             &.pharmacy-nutrition { @include form-message( $pharmacy-nutrition ) }
             &.medicine { @include form-message( $medicine ) }
             &.theology { @include form-message( $theology ) }
+            &.unknown { @include form-message( $unknown ) }
         }
     }
 

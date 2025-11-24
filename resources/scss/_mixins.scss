@@ -14,6 +14,7 @@ $nursing: #C1C6C8;
 $pharmacy-nutrition: #5C068C;
 $medicine: #FFC72C;
 $theology: #FFFFFF;
+$unknown: black;
 
 $background: '/img/campus.jpg';
 
@@ -41,6 +42,25 @@ $background: '/img/campus.jpg';
         inset: 0;
         background: linear-gradient(270deg, rgba(255, 255, 255, 0) 60%, $color 85%);
     }
+}
+
+@mixin accountbutton ($width, $mw, $bgcolor) {
+    grid-column: 2/5;
+    justify-self: end;
+    align-content: center;
+    height: 3rem;
+    width: $width;
+    max-width: $mw;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Archivo';
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: $bgcolor;
+    cursor: pointer;
 }
 
 @mixin form-name ($color) {
@@ -112,4 +132,9 @@ $background: '/img/campus.jpg';
 .theology {
     background-color: $theology;
     color: black;
+}
+
+.unknown {
+    background-color: $unknown;
+    color: white;
 }

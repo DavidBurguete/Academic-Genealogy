@@ -12,31 +12,32 @@ sciences
 @endsection
 
 @section('nav')
-<a href="/es/about-directors">Sobre los directores</a>
+<a href="/en/about-directors">About the directors</a>
 <hr class="separator">
-<a href="/es/methodology">Metodología</a>
+<a href="/en/methodology">Methodology</a>
 <hr class="separator">
-<a href="/es/history">Algo de historia</a>
+<a href="/en/history">A bit of history</a>
 <hr class="separator">
-<a href="/es/list">Listado</a>
+<a href="/en/list">List of doctors</a>
 @endsection
 
 @section('content')
+
     @if(isset($error))
         <script>
             let errors = Object.values(@json($error->errors())).flat();
             let errorMessage = "";
             if(errors.findIndex(error => error.includes("require")) !== -1) {
-                errorMessage = "Por favor, si quiere cambiar la contraseña, rellene ambos campos";
+                errorMessage = "Please, if you want to change the password, fill in the fields";
             }
             else if(errors.findIndex(error => error.includes("character")) !== -1)  {
-                errorMessage = "La contraseña debe tener un mínimo de 8 caracteres";
+                errorMessage = "The password must have a minimum of 8 characters";
             }
             else if(errors.findIndex(error => error.includes("PasswordError")) !== -1)  {
-                errorMessage = "Las constraseñas deben coincidir";
+                errorMessage = "Both passwords must be equal";
             }
             else {
-                errorMessage = "Ha ocurrido un error. Por favor, inténtelo otra vez";
+                errorMessage = "There was an error. Please, try again";
             }
             Toastify({
                 text: errorMessage,
@@ -59,7 +60,7 @@ sciences
     @if(isset($success))
         <script>
             Toastify({
-                text: "La contraseña ha sido actualizada",
+                text: "The password has been updated",
                 duration: 5000,
                 newWindow: true,
                 close: true,
@@ -78,22 +79,22 @@ sciences
     @endif
     <img src="{{ asset('img/backgroundUNAV.jpg') }}">
     <div class="main__content">
-        <a href="/es/logout"><img src="{{ asset('img/logout.svg') }}" alt="Icono de cierre de sesión"></a>
-        <form action="/es/change-password" method="POST" class="main__content__info">
+        <a href="/en/logout"><img src="{{ asset('img/logout.svg') }}" alt="Logout icon"></a>
+        <form action="/en/change-password" method="POST" class="main__content__info">
             @csrf
             @method('PUT')
             <input type="text" name="name" id="name" value="{{ $user->name }} &nbsp;—&nbsp; {{ $user->email }}" disabled>
             <hr>
-            <input value="{{ isset($passwords[0]) ? $passwords[0] : '' }}" type="password" name="password" id="password" placeholder="Nueva contraseña">
-            <input value="{{ isset($passwords[1]) ? $passwords[1] : '' }}" type="password" name="confirm-password" id="confirm-password" placeholder="Confirmar nueva contraseña">
-            <button type="submit" class="main__content__info--change">Cambiar contraseña</button>
-            <button class="main__content__info--delete" type="button">Eliminar cuenta</button>
+            <input value="{{ isset($passwords[0]) ? $passwords[0] : '' }}" type="password" name="password" id="password" placeholder="New password">
+            <input value="{{ isset($passwords[1]) ? $passwords[1] : '' }}" type="password" name="confirm-password" id="confirm-password" placeholder="Confirm new password">
+            <button type="submit" class="main__content__info--change">Change password</button>
+            <button class="main__content__info--delete" type="button">Delete account</button>
             <button class="main__content__info--show" type="button" id="show">
-                <img src="{{ asset('/img/closedeye.svg') }}" alt="mostrar contraseña" id="closed">
-                <img src="{{ asset('/img/openeye.svg') }}" alt="esconder contraseña" id="open" class="hidden">
+                <img src="{{ asset('/img/closedeye.svg') }}" alt="show password" id="closed">
+                <img src="{{ asset('/img/openeye.svg') }}" alt="hide password" id="open" class="hidden">
             </button>
         </form>
     </div>
 @endsection
 
-@include('layouts.common-es')
+@include('layouts.common-en')
