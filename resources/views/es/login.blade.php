@@ -42,8 +42,8 @@ account
         </script>
     @endif
     <h2>Acceso</h2>
-    <input name="name" id="name" type="text" autocomplete="off" placeholder="Nombre completo" value="{{ isset($request->name) ? $request->name : '' }}">
-    <input name="password" id="password" type="password" autocomplete="off" placeholder="Contraseña" value="{{ isset($request->password) ? $request->password : '' }}">
+    <input name="name" id="name" type="text" placeholder="Nombre completo" value="{{ isset($request->name) ? $request->name : '' }}">
+    <input name="password" id="password" type="password" placeholder="Contraseña" value="{{ isset($request->password) ? $request->password : '' }}">
     <div class="actions">
         <a href="{{ url()->previous() }}">
             <img src="{{ asset('/img/return.svg') }}" alt="Botón de retroceso">

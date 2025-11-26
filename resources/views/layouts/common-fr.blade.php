@@ -41,8 +41,8 @@ Buscar
 
 @section('form-content')
     <p>¿Tienes alguna cosa que quieras sugerir o preguntar? ¡No dudes en escribir!</p>
-    <input id="name" class="@yield('faculty-color')" type="text" autocomplete="off" placeholder="Nombre completo">
-    <input id="email" class="@yield('faculty-color')" type="email" autocomplete="off" placeholder="Dirección de correo">
+    <input id="name" class="@yield('faculty-color')" type="text" placeholder="Nombre completo">
+    <input id="email" class="@yield('faculty-color')" type="email" placeholder="Dirección de correo">
     <input id="subject" class="@yield('faculty-color')" type="text" placeholder="Asunto">
     <textarea id="message" class="@yield('faculty-color')" placeholder="Mensaje" rows="11"></textarea>
 @endsection

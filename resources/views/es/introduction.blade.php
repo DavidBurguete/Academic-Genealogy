@@ -2,6 +2,8 @@
 
 @section('css-js')
     <link rel="stylesheet" href="{{ asset('css/introduction.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 @endsection
 
 @section('faculty-color')
@@ -19,6 +21,26 @@ sciences
 @endsection
 
 @section('content')
+    @if(request()->session()->exists("accountDeleted"))
+        <script>
+            Toastify({
+                text: "La cuenta ha sido borrada con éxito",
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#06EF38",
+                }
+            }).showToast();
+        </script>
+    @endif
     <div class="main__card">
         <p>
             Recibe el libro de la ciencia que te cumple enseñar y adelantar, 

@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="{{ asset('js/show-password.js') }}"></script>
+<script src="{{ asset('js/toggleDeleteAccountModal.js') }}"></script>
 @endsection
 
 @section('faculty-color')
@@ -79,7 +80,14 @@ sciences
     @endif
     <img src="{{ asset('img/backgroundUNAV.jpg') }}">
     <div class="main__content">
-        <a href="/en/logout"><img src="{{ asset('img/logout.svg') }}" alt="Logout icon"></a>
+        @if(hasRoleAtLeast($user->role, "admin"))
+            <div class="main__content__actions">
+                <a href="/en/create-account"><button>Create new user<br>account</button></a>
+                <a href="/en/logout"><img src="{{ asset('img/logout.svg') }}" alt="Logout icon"></a>
+            </div>
+        @else
+            <a href="/en/logout"><img src="{{ asset('img/logout.svg') }}" alt="Logout icon"></a>
+        @endif
         <form action="/en/change-password" method="POST" class="main__content__info">
             @csrf
             @method('PUT')
@@ -88,11 +96,24 @@ sciences
             <input value="{{ isset($passwords[0]) ? $passwords[0] : '' }}" type="password" name="password" id="password" placeholder="New password">
             <input value="{{ isset($passwords[1]) ? $passwords[1] : '' }}" type="password" name="confirm-password" id="confirm-password" placeholder="Confirm new password">
             <button type="submit" class="main__content__info--change">Change password</button>
-            <button class="main__content__info--delete" type="button">Delete account</button>
+            <button class="main__content__info--delete" type="button" id="deleteAccountButton">Delete account</button>
             <button class="main__content__info--show" type="button" id="show">
                 <img src="{{ asset('/img/closedeye.svg') }}" alt="show password" id="closed">
                 <img src="{{ asset('/img/openeye.svg') }}" alt="hide password" id="open" class="hidden">
             </button>
+        </form>
+    </div>
+    <div class="main__modal" id="deleteAccountModal">
+        <h2>Delete account</h2>
+        <hr>
+        <p>
+            You are about to delete your account <b>for good</b>. Are you sure about the decision?
+            This action cannot be undone, and will be effective immediately after agreeing
+        </p>
+        <form action="/en/delete-account" method="POST" class="main__modal__actions">
+            <button type="button" id="closeModal">No, preserve account</button>
+            @csrf
+            <button type="submit">Yes, delete</button>
         </form>
     </div>
 @endsection

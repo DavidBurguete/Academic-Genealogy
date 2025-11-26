@@ -1,4 +1,4 @@
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
     let toggler = document.getElementById("show");
     let open = document.getElementById("open");
     let close = document.getElementById("closed");
@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
     let confirmpassword = document.getElementById("confirm-password");
     let toggled = false;
 
-    toggler.addEventListener("click", function () {
+    toggler.addEventListener("click", () => {
         toggled = !toggled;
         if (toggled) {
             open.classList.remove("hidden");

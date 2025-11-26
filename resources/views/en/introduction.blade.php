@@ -19,6 +19,26 @@ sciences
 @endsection
 
 @section('content')
+    @if(request()->session()->exists("accountDeleted"))
+        <script>
+            Toastify({
+                text: "La cuenta ha sido borrada con éxito",
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#06EF38",
+                }
+            }).showToast();
+        </script>
+    @endif
     <div class="main__card">
         <p>
             Receive the book of science which is your duty to teach and advance,

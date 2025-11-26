@@ -9,8 +9,8 @@ request-access
 
 @section('form')
     <h2>Solicitud</h2>
-    <input name="name" id="name" type="text" autocomplete="off" placeholder="Nombre completo">
-    <input name="email" id="email" type="email" autocomplete="off" placeholder="Dirección de correo">
+    <input name="name" id="name" type="text" placeholder="Nombre completo">
+    <input name="email" id="email" type="email" placeholder="Dirección de correo">
     <div class="actions">
         <a href="{{ url()->previous() }}">
             <img src="{{ asset('/img/return.svg') }}" alt="Botón de retroceso">

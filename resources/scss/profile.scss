@@ -18,6 +18,30 @@
         align-items: end;
         margin: 0 auto;
 
+        &__actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 1rem;
+
+            button {
+                padding: 1rem;
+                border: none;
+                border-radius: 0.5rem;
+                font-family: 'Archivo';
+                font-size: 1rem;
+                color: white;
+                background-color: $confirm;
+            }
+
+            &>a>img {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
         &>a>img {
             width: 2rem;
             height: 2rem;
@@ -111,6 +135,72 @@
             }
         }
     }
+
+    &__modal {
+        position: absolute;
+        top: -100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - 2.5rem);
+        max-width: 45rem;
+        border-radius: 1rem;
+        background-color: $sciences;
+        transition: 0.5s ease-in-out;
+        z-index: 99;
+
+        &.toggle {
+            top: 50%;
+        }
+
+        h2 {
+            padding: 0.875rem 1rem;
+            font-family: 'Oswald';
+            font-weight: 550;
+            font-size: 2.25rem;
+            color: white;
+        }
+
+        p {
+            padding: 1rem;
+            font-family: 'Inter';
+            font-weight: 550;
+            font-size: 1rem;
+            color: white;
+
+            b {
+                text-transform: uppercase;
+            }
+        }
+
+        &__actions {
+            display: flex;
+            flex-direction: column;
+            justify-self: end;
+            gap: 1rem;
+            width: 13rem;
+            margin: 1rem;
+            margin-top: 0;
+
+            button {
+                height: 3rem;
+                border: none;
+                border-radius: 0.5rem;
+                font-family: 'Inter';
+                font-weight: 550;
+                font-size: 1rem;
+                text-align: center;
+                color: white;
+
+                &:first-child {
+                    background-color: $confirm;
+                }
+
+                &:last-child {
+                    background-color: $cancel;
+                }
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -136,6 +226,19 @@
             &>a {
                 position: relative;
                 left: 13.25rem;
+            }
+
+            &__actions {
+                justify-content: space-around;
+            }
+        }
+
+        &__modal__actions {
+            flex-direction: row;
+            width: auto;
+
+            button {
+                width: 12.5rem;
             }
         }
     }
