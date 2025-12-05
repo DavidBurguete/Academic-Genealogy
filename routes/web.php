@@ -6,6 +6,7 @@ use App\Http\Controllers\History;
 use App\Http\Controllers\Introduction;
 use App\Http\Controllers\ListDoctors;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\MakeSuggestion;
 use App\Http\Controllers\Methodology;
 use App\Http\Controllers\RequestAccess;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/es');
 });
+Route::post('/suggest', [MakeSuggestion::class, 'index']);
 Route::prefix('{locale}')
     ->where(['locale' => 'en|es|fr'])
     ->group(function () {

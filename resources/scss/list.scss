@@ -1,0 +1,99 @@
+@import 'mixins';
+@import 'header';
+@import 'footer';
+@import 'styles';
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+
+    h2 {
+        font-family: 'Oswald';
+        font-weight: bold;
+        font-size: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0.25rem;
+
+        &__card {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            width: 100%;
+            max-width: 40rem;
+            padding: 1rem;
+            text-decoration: none;
+            box-shadow: 0 0.5rem 1rem 0 rgba($color: $blur, $alpha: 0.25);
+            cursor: pointer;
+
+            img {
+                width: 33%;
+                height: 100%;
+            }
+
+            &__text {
+                width: auto;
+            }
+        }
+    }
+
+    &__pagination {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        left: -1rem;
+        height: 4rem;
+        width: 100vw;
+        margin: 2rem auto;
+        background: linear-gradient(to bottom, #FFFFFF 0%, #E8E8E8 50%, #FFFFFF 100%);
+
+        a {
+            align-content: center;
+            height: 4rem;
+            width: 4rem;
+            font-family: 'Merriweather';
+            font-size: 2.5rem;
+            text-align: center;
+            text-decoration: none;
+
+            img {
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+    }
+}
+
+.flip {
+    transform: scaleX(-1);
+}
+
+.disabled {
+    opacity: 50%;
+}
+
+@media screen and (min-width: 1000px) {
+    .main {
+
+        h2 {
+            width: 70%;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        &__container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+}

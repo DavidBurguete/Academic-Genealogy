@@ -19,7 +19,7 @@ sciences
 <hr class="separator">
 <a>Algo de historia</a>
 <hr class="separator">
-<a href="/es/list">Listado</a>
+<a href="/es/list?page=1">Listado</a>
 @endsection
 
 @section('content')

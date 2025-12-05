@@ -40,11 +40,31 @@ Buscar
 @endsection
 
 @section('form-content')
+    @if(sizeof($errors) >= 1)
+        <script>
+            Toastify({
+                text: "Por favor, rellene todos los campos",
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#DE1919",
+                }
+            }).showToast();
+        </script>
+    @endif
     <p>¿Tienes alguna cosa que quieras sugerir o preguntar? ¡No dudes en escribir!</p>
-    <input id="name" class="@yield('faculty-color')" type="text" placeholder="Nombre completo">
-    <input id="email" class="@yield('faculty-color')" type="email" placeholder="Dirección de correo">
-    <input id="subject" class="@yield('faculty-color')" type="text" placeholder="Asunto">
-    <textarea id="message" class="@yield('faculty-color')" placeholder="Mensaje" rows="11"></textarea>
+    <input id="name" name="name" value="{{ old('name') }}" class="@yield('faculty-color')" type="text" placeholder="Nombre completo">
+    <input id="email" name="email" value="{{ old('email') }}" class="@yield('faculty-color')" type="email" placeholder="Dirección de correo">
+    <input id="subject" name="subject" value="{{ old('subject') }}" class="@yield('faculty-color')" type="text" placeholder="Asunto">
+    <textarea id="message" name="message" value="{{ old('message') }}" class="@yield('faculty-color')" placeholder="Mensaje" rows="11"></textarea>
 @endsection
 
 @section('submit-button-content')

@@ -10,6 +10,8 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="{{ asset('js/toggle_burger_menu.js') }}"></script>
     <script src="{{ asset('js/change_language.js') }}"></script>
     <script src="{{ asset('js/toggle_search.js') }}"></script>
@@ -56,7 +58,8 @@
     </main>
 
     <footer>
-        <form action="" method="post" class="suggest" id="suggest">
+        <form action="/suggest" method="post" class="suggest" id="suggest">
+            @csrf
             <div>
                 @yield('form-content')
                 <input id="submit" type="submit" value="@yield('submit-button-content')" class="@yield('faculty-color')">

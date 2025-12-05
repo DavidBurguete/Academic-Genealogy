@@ -2,8 +2,6 @@
 
 @section('css-js')
 <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="{{ asset('js/show-password.js') }}"></script>
 <script src="{{ asset('js/toggleDeleteAccountModal.js') }}"></script>
 @endsection
@@ -19,7 +17,7 @@ sciences
 <hr class="separator">
 <a href="/es/history">Algo de historia</a>
 <hr class="separator">
-<a href="/es/list">Listado</a>
+<a href="/es/list?page=1">Listado</a>
 @endsection
 
 @section('content')

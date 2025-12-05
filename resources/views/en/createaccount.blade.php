@@ -2,8 +2,6 @@
 
 @section('css-js')
 <link rel="stylesheet" href="{{ asset('css/createaccount.css') }}">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 @endsection
 
 @section('faculty-color')
@@ -17,7 +15,7 @@ sciences
 <hr class="separator">
 <a href="/en/history">A bit of history</a>
 <hr class="separator">
-<a href="/en/list">List of doctors</a>
+<a href="/en/list?page=1">List of doctors</a>
 @endsection
 
 @section('content')

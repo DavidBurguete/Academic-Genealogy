@@ -15,7 +15,7 @@ sciences
     <hr class="separator">
     <a href="/en/history">A bit of history</a>
     <hr class="separator">
-    <a href="/en/list">List of doctors</a>
+    <a href="/en/list?page=1">List of doctors</a>
 @endsection
 
 @section('content')
