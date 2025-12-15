@@ -45,7 +45,7 @@ sciences
             and let it be a symbol and reminder that, however great your intellect may be,
             you muts show respect and reverence to the teachings of your masters and predecesors
             <br>
-            <span>&emsp;&emsp;(Excerpt from the ceremony for the conferral of honoris causa doctoral students)</span>
+            <span>&nbsp;&nbsp;(Excerpt from the ceremony for the conferral of honoris causa doctoral students)</span>
         </p>
         <img src="{{ asset('img/biretta.png') }}" alt="An image of a biretta from the sciences faculty">
     </div>
@@ -71,7 +71,7 @@ sciences
             Be welcomed, and discover our genealogy!
         </p>
         <p>
-            &emsp;&emsp;Pamplona, September the 13, 2010
+            &nbsp;&nbsp;Pamplona, September the 13, 2010
         </p>
     </div>
 @endsection

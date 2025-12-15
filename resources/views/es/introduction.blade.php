@@ -45,7 +45,7 @@ sciences
             y que él sea para ti significación y aviso de que, por grande que tu ingenio fuere, 
             debes rendir acatamiento y veneración a la doctrina de tus maestros y predecesores
             <br>
-            <span>&emsp;&emsp;(Extracto de la ceremonia de investidura de doctores honoris causa)</span>
+            <span>&nbsp;&nbsp;(Extracto de la ceremonia de investidura de doctores honoris causa)</span>
         </p>
         <img src="{{ asset('img/biretta.png') }}" alt="Imagen de un birrete de la facultad de ciencias">
     </div>
@@ -71,7 +71,7 @@ sciences
             ¡Bienvenido, y descubra nuestra genealogía!
         </p>
         <p>
-            &emsp;&emsp;Pamplona, a 13 de septiembre de 2010
+            &nbsp;&nbsp;Pamplona, a 13 de septiembre de 2010
         </p>
     </div>
 @endsection

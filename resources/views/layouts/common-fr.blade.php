@@ -13,6 +13,7 @@ Buscar
 @php
     $currentRouteName = Route::currentRouteName();
     $currentParams = request()->route()->parameters();
+    $query = request()->query();
 @endphp
 
 @section('header-buttons')
@@ -31,9 +32,9 @@ Buscar
     </a>
     <button class="header_buttons--languages_selector" id="languages" type="button">
         <div class="header_buttons--languages_selector__languages">
-            <a href="{{ route($currentRouteName, array_merge($currentParams, ['locale' => 'en'])) }}"><img src="{{ asset('img/english.png') }}" alt="inglés"></a>
+            <a href="{{ route($currentRouteName, array_merge($currentParams, ['locale' => 'en'])) . (count($query) ? '?' . http_build_query($query) : '') }}"><img src="{{ asset('img/english.png') }}" alt="inglés"></a>
             <img src="{{ asset('img/french.png') }}" alt="francés" class="selected">
-            <a href="{{ route($currentRouteName, array_merge($currentParams, ['locale' => 'es'])) }}"><img src="{{ asset('img/spanish.png') }}" alt="español"></a>
+            <a href="{{ route($currentRouteName, array_merge($currentParams, ['locale' => 'es'])) . (count($query) ? '?' . http_build_query($query) : '') }}"><img src="{{ asset('img/spanish.png') }}" alt="español"></a>
         </div>
         <img src="{{ asset('img/caret-down.png') }}" alt="desplegar idiomas" class="header_buttons--dropdown box-shadow" id="select-language">
     </button>

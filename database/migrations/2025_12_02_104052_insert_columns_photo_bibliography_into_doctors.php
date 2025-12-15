@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('doctors', function (Blueprint $table) {
             $table->string('photo')->nullable();
-            $table->string('bibliography')->nullable();
+            $table->string('biography')->nullable();
         });
     }
 
@@ -24,7 +24,7 @@ return new class extends Migration
     {
         Schema::table('doctors', function (Blueprint $table) {
             $table->dropColumn('photo');
-            $table->dropColumn('bibliography');
+            $table->dropColumn('biography');
         });
     }
 };

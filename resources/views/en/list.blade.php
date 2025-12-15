@@ -23,7 +23,7 @@ sciences
     <h2>List of doctors</h2>
     <div class="main__container">
         @foreach($doctors as $doctor)
-            <a class="main__container__card">
+            <a href="/en/card?id={{ $doctor['id'] }}" class="main__container__card">
                 @if(!$doctor['photo'])
                     <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Missing portrait of doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }}">
                 @else
