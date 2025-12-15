@@ -16,6 +16,31 @@
         text-align: center;
     }
 
+    &__sorting {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        margin: 0 auto;
+
+        a {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            font-family: 'Inter';
+            font-size: 1.5rem;
+            text-decoration: none;
+
+            img {
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+
+        hr {
+            border: 1px solid black;
+        }
+    }
+
     &__container {
         display: flex;
         flex-direction: column;
@@ -87,6 +112,28 @@
             width: 70%;
             text-align: left;
             margin: 0 auto;
+        }
+
+        &__sorting {
+            width: 70%;
+
+            a {
+                display: flex;
+                flex-direction: row;
+                gap: 0.5rem;
+                font-family: 'Inter';
+                font-size: 1.5rem;
+                text-decoration: none;
+
+                img {
+                    height: 2rem;
+                    width: 2rem;
+                }
+            }
+
+            hr {
+                border: 1px solid black;
+            }
         }
 
         &__container {

@@ -114,7 +114,7 @@
             @if(file_exists('biography/es/' . $doctor['biography']))
                 {!! file_get_contents('biography/es/' . $doctor['biography']) !!}
             @elseif(file_exists('biography/en/' . $doctor['biography']) || file_exists('biography/fr/' . $doctor['biography']))
-                <i>Biografía no disponible en español, pero sí en otros idiomas (inglés o francés)</i>
+                <i>Biografía no disponible en español, pero sí en otros idiomas</i>
             @endif
         @else
             <i>Biografía no disponible</i>
