@@ -17,7 +17,7 @@ Buscar
 @endphp
 
 @section('header-buttons')
-    <button class="header_buttons--search" id="search" type="submit">
+    <button class="header_buttons--search" id="search-icon" type="submit">
         <img src="{{ asset('img/magnifyingglass.svg') }}" alt="icono de búsqueda" class="box-shadow">
     </button>
     <button class="header_buttons--close" id="close" type="button">
@@ -73,9 +73,9 @@ Enviar mensaje a javier@unav.es
 @endsection
 
 @section('credits')
-    <p>Creado por <a href="https://linkedin.com/in/javierburguete">Javier Burguete</a> (v1.0.0)</p>
+    <p>Idea original: <a href="https://linkedin.com/in/javierburguete">Javier Burguete</a> (javier@unav.es)</p>
     <hr class="separator">
-    <p>Mejorado por <a href="https://linkedin.com/in/david-burguete">David Burguete</a> (v2.0.0+)</p>
+    <p>Implementación web: <a href="https://linkedin.com/in/david-burguete">David Burguete</a></p>
     <hr class="separator">
     <p>Versión 2.0.0</p>
     <hr>

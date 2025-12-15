@@ -10,6 +10,7 @@ use App\Http\Controllers\Login;
 use App\Http\Controllers\MakeSuggestion;
 use App\Http\Controllers\Methodology;
 use App\Http\Controllers\RequestAccess;
+use App\Http\Controllers\Search;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -25,6 +26,7 @@ Route::prefix('{locale}')
         Route::get('/history', [History::class, "show"])->name('history');
         Route::get('/list', [ListDoctors::class, "index"])->name('list');
         Route::get('/card', [Card::class, "show"])->name('card');
+        Route::get('/search', [Search::class, "index"])->name('search');
 
         Route::get('/login', [Login::class, "show"])->name('login');
         Route::get('/account', [Login::class, "index"])->name('account');

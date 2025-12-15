@@ -37,8 +37,9 @@
         @php
             $currentParams = request()->route()->parameters();
         @endphp
-        <form action="/{{ $currentParams['locale'] }}/search" method="post">
-            <input type="text" name="search-bar" id="search-bar" class="search-bar box-shadow" placeholder="@yield('search')...">
+        <form action="/{{ $currentParams['locale'] }}/search" method="get">
+            <input type="text" name="page" value="1" style="display: none;">
+            <input type="text" name="search" id="search" class="search box-shadow" placeholder="@yield('search')...">
             <div class="header_buttons">
                 <div class="header_buttons--display" id="display"></div>
                 @yield('header-buttons')

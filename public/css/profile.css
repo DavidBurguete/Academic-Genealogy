@@ -329,7 +329,7 @@ nav a {
     --gradient: black;
   }
 }
-.search-bar {
+.search {
   position: absolute;
   align-self: center;
   width: calc(100% - 18.25rem);
@@ -346,16 +346,16 @@ nav a {
   transform: translateY(-4.25rem);
   transition: 0.5s ease-in-out;
 }
-.search-bar::placeholder {
+.search::placeholder {
   color: #FFFFFF;
   letter-spacing: 1.6px;
 }
-.search-bar:focus-visible {
+.search:focus-visible {
   outline-width: 0;
 }
 
 @media screen and (min-width: 1000px) {
-  .search-bar {
+  .search {
     right: 21.5rem;
     width: 12.5rem;
     border: none;
@@ -364,7 +364,7 @@ nav a {
     transition: 0.5s ease-in-out;
     z-index: 99;
   }
-  .search-bar.toggled {
+  .search.toggled {
     right: 24rem;
     transform: scaleX(1);
   }
