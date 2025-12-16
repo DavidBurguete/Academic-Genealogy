@@ -22,19 +22,37 @@ sciences
 @section('content')
     <h2>Listado</h2>
     <div class="main__sorting">
-        <a href="?page={{ request()->get('page') }}{{ request()->has('name') ? (request()->get('name') == 'ascendent' ? '&name=descendent' : '') : '&name=ascendent' }}">
+        <a href="?page={{ 
+            request()->get('page') 
+        }}{{ 
+            request()->has('name') ? (request()->get('name') == 'ascendent' ? '&name=descendent' : '') : '&name=ascendent' 
+        }}{{ 
+            request()->has('search') ? '&search=' . request()->get('search') : '' 
+        }}">
             Nombre
             {!! request()->has('name') && request()->get('name') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
             {!! request()->has('name') && request()->get('name') == 'descendent' ? '<img src="' . asset('img/dropdown.png') . '" style="transform: rotate(180deg);">' : '' !!}
         </a>
         <hr>
-        <a href="?page={{ request()->get('page') }}{{ request()->has('thesis') ? (request()->get('thesis') == 'ascendent' ? '&thesis=descendent' : '') : '&thesis=ascendent' }}">
+        <a href="?page={{ 
+            request()->get('page') 
+        }}{{ 
+            request()->has('thesis') ? (request()->get('thesis') == 'ascendent' ? '&thesis=descendent' : '') : '&thesis=ascendent' 
+        }}{{ 
+            request()->has('search') ? '&search=' . request()->get('search') : '' 
+        }}">
             Tesis
             {!! request()->has('thesis') && request()->get('thesis') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
             {!! request()->has('thesis') && request()->get('thesis') == 'descendent' ? '<img src="' . asset('img/dropdown.png') . '" style="transform: rotate(180deg);">' : '' !!}
         </a>
         <hr>
-        <a href="?page={{ request()->get('page') }}{{ request()->has('date') ? (request()->get('date') == 'ascendent' ? '&date=descendent' : '') : '&date=ascendent' }}">
+        <a href="?page={{ 
+            request()->get('page') 
+        }}{{
+            request()->has('date') ? (request()->get('date') == 'ascendent' ? '&date=descendent' : '') : '&date=ascendent' 
+        }}{{ 
+            request()->has('search') ? '&search=' . request()->get('search') : '' 
+        }}">
             Fecha
             {!! request()->has('date') && request()->get('date') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
             {!! request()->has('date') && request()->get('date') == 'descendent' ? '<img src="' . asset('img/dropdown.png') . '" style="transform: rotate(180deg);">' : '' !!}
@@ -58,118 +76,138 @@ sciences
         @endforeach
     </div>
     <div class="main__pagination">
-        @if($page - 1 >= 1)
-            <a href="?page={{ $page - 1 }}{{ 
-                request()->has('name') ? '&name=' . request()->get('name') : '' 
-            }}{{ 
-                request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
-            }}{{ 
-                request()->has('date') ? '&date=' . request()->get('date') : '' 
-            }}">
-                <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
-            </a>
+        @if(count($doctors) <= 0)
+            <p>No hay ninguna coincidencia</p>
         @else
-            <a class="disabled">
-                <img src="{{ asset('img/arrow.svg') }}" alt="next page">
-            </a>
-        @endif
+            @if($page - 1 >= 1)
+                <a href="?page={{ $page - 1 }}{{ 
+                    request()->has('name') ? '&name=' . request()->get('name') : '' 
+                }}{{ 
+                    request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
+                }}{{ 
+                    request()->has('date') ? '&date=' . request()->get('date') : '' 
+                }}{{ 
+                    request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
+                </a>
+            @else
+                <a class="disabled">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="next page">
+                </a>
+            @endif
 
-        @if($page != 1)
-            <a href="?page=1{{ 
-                request()->has('name') ? '&name=' . request()->get('name') : '' 
-            }}{{ 
-                request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
-            }}{{ 
-                request()->has('date') ? '&date=' . request()->get('date') : '' 
-            }}">
-                1
-            </a>
-        @endif
+            @if($page != 1)
+                <a href="?page=1{{ 
+                    request()->has('name') ? '&name=' . request()->get('name') : '' 
+                }}{{ 
+                    request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
+                }}{{ 
+                    request()->has('date') ? '&date=' . request()->get('date') : '' 
+                }}{{ 
+                    request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}">
+                    1
+                </a>
+            @endif
 
-        @if($page - 3 > 1)
-            <a>...</a>
-        @endif
+            @if($page - 3 > 1)
+                <a>...</a>
+            @endif
 
-        @if($page - 2 > 1)
-            <a href="?page={{ $page - 2 }}{{ 
-                request()->has('name') ? '&name=' . request()->get('name') : '' 
-            }}{{ 
-                request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
-            }}{{ 
-                request()->has('date') ? '&date=' . request()->get('date') : '' 
-            }}">
-                {{ $page - 2 }}
-            </a>
-        @endif
+            @if($page - 2 > 1)
+                <a href="?page={{ $page - 2 }}{{ 
+                    request()->has('name') ? '&name=' . request()->get('name') : '' 
+                }}{{ 
+                    request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
+                }}{{ 
+                    request()->has('date') ? '&date=' . request()->get('date') : '' 
+                }}{{ 
+                    request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}">
+                    {{ $page - 2 }}
+                </a>
+            @endif
 
-        @if($page - 1 > 1)
-            <a href="?page={{ $page - 1 }}{{ 
-                request()->has('name') ? '&name=' . request()->get('name') : '' 
-            }}{{ 
-                request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
-            }}{{ 
-                request()->has('date') ? '&date=' . request()->get('date') : '' 
-            }}">
-                {{ $page - 1 }}
-            </a>
-        @endif
+            @if($page - 1 > 1)
+                <a href="?page={{ $page - 1 }}{{ 
+                    request()->has('name') ? '&name=' . request()->get('name') : '' 
+                }}{{ 
+                    request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
+                }}{{ 
+                    request()->has('date') ? '&date=' . request()->get('date') : '' 
+                }}{{ 
+                    request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}">
+                    {{ $page - 1 }}
+                </a>
+            @endif
 
-        <a><b>{{ $page }}</b></a>
+            <a><b>{{ $page }}</b></a>
 
-        @if($page + 1 < $pages)
-            <a href="?page={{ $page + 1 }}{{ 
-                request()->has('name') ? '&name=' . request()->get('name') : '' 
-            }}{{ 
-                request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
-            }}{{ 
-                request()->has('date') ? '&date=' . request()->get('date') : '' 
-            }}">
-                {{ $page + 1 }}
-            </a>
-        @endif
+            @if($page + 1 < $pages)
+                <a href="?page={{ $page + 1 }}{{ 
+                    request()->has('name') ? '&name=' . request()->get('name') : '' 
+                }}{{ 
+                    request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
+                }}{{ 
+                    request()->has('date') ? '&date=' . request()->get('date') : '' 
+                }}{{ 
+                    request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}">
+                    {{ $page + 1 }}
+                </a>
+            @endif
 
-        @if($page + 2 < $pages)
-            <a href="?page={{ $page + 2 }}{{ 
-                request()->has('name') ? '&name=' . request()->get('name') : '' 
-            }}{{ 
-                request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
-            }}{{ 
-                request()->has('date') ? '&date=' . request()->get('date') : '' 
-            }}">
-                {{ $page + 2 }}
-            </a>
-        @endif
+            @if($page + 2 < $pages)
+                <a href="?page={{ $page + 2 }}{{ 
+                    request()->has('name') ? '&name=' . request()->get('name') : '' 
+                }}{{ 
+                    request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
+                }}{{ 
+                    request()->has('date') ? '&date=' . request()->get('date') : '' 
+                }}{{ 
+                    request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}">
+                    {{ $page + 2 }}
+                </a>
+            @endif
 
-        @if($page + 3 < $pages)
-            <a>...</a>
-        @endif
+            @if($page + 3 < $pages)
+                <a>...</a>
+            @endif
 
-        @if($page != $pages)
-            <a href="?page={{ $pages }}{{ 
-                request()->has('name') ? '&name=' . request()->get('name') : '' 
-            }}{{ 
-                request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
-            }}{{ 
-                request()->has('date') ? '&date=' . request()->get('date') : '' 
-            }}">
-                {{ $pages }}
-            </a>
-        @endif
+            @if($page != $pages)
+                <a href="?page={{ $pages }}{{ 
+                    request()->has('name') ? '&name=' . request()->get('name') : '' 
+                }}{{ 
+                    request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
+                }}{{ 
+                    request()->has('date') ? '&date=' . request()->get('date') : '' 
+                }}{{ 
+                    request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}">
+                    {{ $pages }}
+                </a>
+            @endif
 
-        @if($page + 1 <= $pages)
-            <a class="flip" href="?page={{ $page + 1 }}{{ 
-                request()->has('name') ? '&name=' . request()->get('name') : '' 
-            }}{{ 
-                request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
-            }}{{ 
-                request()->has('date') ? '&date=' . request()->get('date') : '' 
-            }}">
-                <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
-            </a>
-        @else
-            <a class="flip disabled">
-                <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
-            </a>
+            @if($page + 1 <= $pages)
+                <a class="flip" href="?page={{ $page + 1 }}{{ 
+                    request()->has('name') ? '&name=' . request()->get('name') : '' 
+                }}{{ 
+                    request()->has('thesis') ? '&thesis=' . request()->get('thesis') : '' 
+                }}{{ 
+                    request()->has('date') ? '&date=' . request()->get('date') : '' 
+                }}{{ 
+                    request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
+                </a>
+            @else
+                <a class="flip disabled">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
+                </a>
+            @endif
         @endif
     </div>
 @endsection

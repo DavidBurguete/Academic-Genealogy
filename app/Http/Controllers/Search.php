@@ -42,6 +42,6 @@ class Search extends Controller
         $doctors = $doctors->skip(($page - 1) * 10)
                             ->take(10)
                             ->get();
-        return view("$locale.search", compact('doctors', 'page', 'pages'));
+        return view("$locale.list", compact('doctors', 'page', 'pages'));
     }
 }
