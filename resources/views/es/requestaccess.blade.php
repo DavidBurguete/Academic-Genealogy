@@ -8,9 +8,29 @@ request-access
 @endsection
 
 @section('form')
+    @if(sizeof($errors) >= 1)
+        <script>
+            Toastify({
+                text: "Por favor, rellene todos los campos",
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#DE1919",
+                }
+            }).showToast();
+        </script>
+    @endif
     <h2>Solicitud</h2>
-    <input name="name" id="name" type="text" placeholder="Nombre completo">
-    <input name="email" id="email" type="email" placeholder="Dirección de correo">
+    <input name="name" id="name" value="{{ old('name') }}" type="text" placeholder="Nombre completo">
+    <input name="email" id="email" value="{{ old('email') }}" type="email" placeholder="Dirección de correo">
     <div class="actions">
         <a href="{{ url()->previous() }}">
             <img src="{{ asset('/img/return.svg') }}" alt="Botón de retroceso">

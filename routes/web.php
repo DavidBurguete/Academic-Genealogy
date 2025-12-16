@@ -42,4 +42,5 @@ Route::prefix('{locale}')
         Route::post('/delete-account', [CreateAccount::class, "delete"])->name('delete-account');
 
         Route::get('/request-access', [RequestAccess::class, "show"])->name('request');
+        Route::post('/request-access', [RequestAccess::class, "create"])->name('request');
     });
