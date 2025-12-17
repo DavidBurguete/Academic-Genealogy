@@ -3,10 +3,11 @@
 @section('css-js')
     <link rel="stylesheet" href="{{ asset('css/list.css') }}">
     <script src="{{ asset('js/date_formatter.js') }}"></script>
+    <script src="{{ asset('js/redirect_faculty.js') }}"></script>
 @endsection
 
 @section('faculty-color')
-sciences
+{{ request()->has('faculty') ? request()->get('faculty') : 'sciences' }}
 @endsection
 
 @section('nav')
@@ -28,6 +29,8 @@ sciences
             request()->has('name') ? (request()->get('name') == 'ascendent' ? '&name=descendent' : '') : '&name=ascendent' 
         }}{{ 
             request()->has('search') ? '&search=' . request()->get('search') : '' 
+        }}{{ 
+            request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
         }}">
             Nombre
             {!! request()->has('name') && request()->get('name') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
@@ -40,6 +43,8 @@ sciences
             request()->has('thesis') ? (request()->get('thesis') == 'ascendent' ? '&thesis=descendent' : '') : '&thesis=ascendent' 
         }}{{ 
             request()->has('search') ? '&search=' . request()->get('search') : '' 
+        }}{{ 
+            request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
         }}">
             Tesis
             {!! request()->has('thesis') && request()->get('thesis') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
@@ -52,15 +57,33 @@ sciences
             request()->has('date') ? (request()->get('date') == 'ascendent' ? '&date=descendent' : '') : '&date=ascendent' 
         }}{{ 
             request()->has('search') ? '&search=' . request()->get('search') : '' 
+        }}{{ 
+            request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
         }}">
             Fecha
             {!! request()->has('date') && request()->get('date') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
             {!! request()->has('date') && request()->get('date') == 'descendent' ? '<img src="' . asset('img/dropdown.png') . '" style="transform: rotate(180deg);">' : '' !!}
         </a>
+        <hr>
+        <a>Filtro de facultad:</a><select name="faculty" id="faculty">
+            <option value="">-- Selecciona una opción --</option>
+            <option {{ request()->get('faculty') == 'engineering-and-arquitecture' ? 'selected' : '' }} value="engineering-and-arquitecture">Ingeniería y Arquitectura</option>
+            <option {{ request()->get('faculty') == 'sciences' ? 'selected' : '' }} value="sciences">Ciencias</option>
+            <option {{ request()->get('faculty') == 'law' ? 'selected' : '' }} value="law">Derecho</option>
+            <option {{ request()->get('faculty') == 'communication' ? 'selected' : '' }} value="communication">Comunicaciones</option>
+            <option {{ request()->get('faculty') == 'canon' ? 'selected' : '' }} value="canon">Derecho Canónico</option>
+            <option {{ request()->get('faculty') == 'philosophy-literature-education' ? 'selected' : '' }} value="philosophy-literature-education">Filosofía, Literatura y Educación</option>
+            <option {{ request()->get('faculty') == 'economy' ? 'selected' : '' }} value="economy">Economía</option>
+            <option {{ request()->get('faculty') == 'nursing' ? 'selected' : '' }} value="nursing">Enfermería</option>
+            <option {{ request()->get('faculty') == 'pharmacy-nutrition' ? 'selected' : '' }} value="pharmacy-nutrition">Farmacia y Nutrición</option>
+            <option {{ request()->get('faculty') == 'medicine' ? 'selected' : '' }} value="medicine">Medicina</option>
+            <option {{ request()->get('faculty') == 'theology' ? 'selected' : '' }} value="theology">Teología</option>
+            <option {{ request()->get('faculty') == 'unknown' ? 'selected' : '' }} value="unknown">Desconocido</option>
+        </select>
     </div>
     <div class="main__container">
         @foreach($doctors as $doctor)
-            <a href="/es/card?id={{ $doctor['id'] }}" class="main__container__card">
+            <a href="/es/card?id={{ $doctor['id'] }}" class="main__container__card main__container__card--{{ $doctor['faculty'] == '' ? 'unknown' : $doctor['faculty'] }}">
                 @if(!$doctor['photo'])
                     <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Retraro ausente del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }}">
                 @else
@@ -88,6 +111,8 @@ sciences
                     request()->has('date') ? '&date=' . request()->get('date') : '' 
                 }}{{ 
                     request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}{{ 
+                    request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
                     <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
                 </a>
@@ -106,6 +131,8 @@ sciences
                     request()->has('date') ? '&date=' . request()->get('date') : '' 
                 }}{{ 
                     request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}{{ 
+                    request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
                     1
                 </a>
@@ -124,6 +151,8 @@ sciences
                     request()->has('date') ? '&date=' . request()->get('date') : '' 
                 }}{{ 
                     request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}{{ 
+                    request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
                     {{ $page - 2 }}
                 </a>
@@ -138,6 +167,8 @@ sciences
                     request()->has('date') ? '&date=' . request()->get('date') : '' 
                 }}{{ 
                     request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}{{ 
+                    request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
                     {{ $page - 1 }}
                 </a>
@@ -154,6 +185,8 @@ sciences
                     request()->has('date') ? '&date=' . request()->get('date') : '' 
                 }}{{ 
                     request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}{{ 
+                    request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
                     {{ $page + 1 }}
                 </a>
@@ -168,6 +201,8 @@ sciences
                     request()->has('date') ? '&date=' . request()->get('date') : '' 
                 }}{{ 
                     request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}{{ 
+                    request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
                     {{ $page + 2 }}
                 </a>
@@ -186,6 +221,8 @@ sciences
                     request()->has('date') ? '&date=' . request()->get('date') : '' 
                 }}{{ 
                     request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}{{ 
+                    request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
                     {{ $pages }}
                 </a>
@@ -200,6 +237,8 @@ sciences
                     request()->has('date') ? '&date=' . request()->get('date') : '' 
                 }}{{ 
                     request()->has('search') ? '&search=' . request()->get('search') : '' 
+                }}{{ 
+                    request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
                     <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
                 </a>

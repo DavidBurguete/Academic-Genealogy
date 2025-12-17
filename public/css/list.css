@@ -877,7 +877,7 @@ a {
   gap: 1rem;
   margin: 0 auto;
 }
-.main__sorting a {
+.main__sorting a, .main__sorting select {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -885,9 +885,18 @@ a {
   font-size: 1.5rem;
   text-decoration: none;
 }
-.main__sorting a img {
+.main__sorting a img, .main__sorting select img {
   height: 2rem;
   width: 2rem;
+}
+.main__sorting select {
+  border: none;
+  background-color: transparent;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.main__sorting select:focus-visible {
+  outline: none;
 }
 .main__sorting hr {
   border: 1px solid black;
@@ -907,6 +916,46 @@ a {
   max-width: 40rem;
   padding: 1rem;
   text-decoration: none;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+}
+.main__container__card--engineering-and-arquitecture {
+  border-bottom-color: #8B4720;
+}
+.main__container__card--sciences {
+  border-bottom-color: #003DA5;
+}
+.main__container__card--law {
+  border-bottom-color: #FF0000;
+}
+.main__container__card--communication {
+  border-bottom-color: #7C878E;
+}
+.main__container__card--canon {
+  border-bottom-color: #007749;
+}
+.main__container__card--philosophy-literature-education {
+  border-bottom-color: #62B5E5;
+}
+.main__container__card--economy {
+  border-bottom-color: #FA4616;
+}
+.main__container__card--nursing {
+  border-bottom-color: #C1C6C8;
+}
+.main__container__card--pharmacy-nutrition {
+  border-bottom-color: #5C068C;
+}
+.main__container__card--medicine {
+  border-bottom-color: #FFC72C;
+}
+.main__container__card--theology {
+  border-bottom-color: #FFFFFF;
+}
+.main__container__card--unknown {
+  border-bottom-color: #8F2724;
+}
+.main__container__card {
   box-shadow: 0 0.5rem 1rem 0 rgba(34, 34, 34, 0.25);
   cursor: pointer;
 }
@@ -941,6 +990,7 @@ a {
   width: 2rem;
 }
 .main__pagination p {
+  align-self: center;
   font-family: "Merriweather";
   font-size: 2.5rem;
   text-align: center;

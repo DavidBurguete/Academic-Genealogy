@@ -3,7 +3,6 @@ window.addEventListener("load", () => {
     let locale = window.location.pathname.split("/")[1];
     Array.from(dates).forEach(date => {
         let unknownexactdate = date.parentElement.children[2].innerHTML;
-        console.log(unknownexactdate);
         let date_formatted = new Date(date.innerHTML);
         if(date_formatted.toString() !== "Invalid Date"){
             let month = date_formatted.getMonth();

@@ -22,7 +22,7 @@
         gap: 1rem;
         margin: 0 auto;
 
-        a {
+        a, select {
             display: flex;
             flex-direction: row;
             gap: 0.5rem;
@@ -33,6 +33,17 @@
             img {
                 height: 2rem;
                 width: 2rem;
+            }
+        }
+
+        select {
+            border: none;
+            background-color: transparent;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+
+            &:focus-visible {
+                outline: none;
             }
         }
 
@@ -56,6 +67,22 @@
             max-width: 40rem;
             padding: 1rem;
             text-decoration: none;
+            border-bottom-width: 4px;
+            border-bottom-style: solid;
+
+            &--engineering-and-arquitecture { border-bottom-color: $engineering-and-arquitecture; }
+            &--sciences { border-bottom-color: $sciences; }
+            &--law { border-bottom-color: $law; }
+            &--communication { border-bottom-color: $communication; }
+            &--canon { border-bottom-color: $canon; }
+            &--philosophy-literature-education { border-bottom-color: $philosophy-literature-education; }
+            &--economy { border-bottom-color: $economy; }
+            &--nursing { border-bottom-color: $nursing; }
+            &--pharmacy-nutrition { border-bottom-color: $pharmacy-nutrition; }
+            &--medicine { border-bottom-color: $medicine; }
+            &--theology { border-bottom-color: $theology; }
+            &--unknown { border-bottom-color: $unknown; }
+
             box-shadow: 0 0.5rem 1rem 0 rgba($color: $blur, $alpha: 0.25);
             cursor: pointer;
 
@@ -96,6 +123,7 @@
         }
 
         p {
+            align-self: center;
             font-family: 'Merriweather';
             font-size: 2.5rem;
             text-align: center;

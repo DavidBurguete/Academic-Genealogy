@@ -10,9 +10,14 @@ class ListDoctors extends Controller
     public function index($locale, Request $request) {
         if($request->has('page')) {
             $pages = ceil(Doctors::count() / 10);
+            $doctors = Doctors::query();
+            if($request->has('faculty')) {
+                $faculty = $request->get('faculty') == "unknown" ? '' : $request->get('faculty');
+                $pages = $faculty == '' ? ceil(Doctors::whereNull('faculty')->count() / 10) : ceil(Doctors::where('faculty', '=', $faculty)->count() / 10);
+                $doctors = $faculty == '' ? $doctors->whereNull('faculty') : $doctors->where('faculty', '=', $faculty);
+            }
             $page = $request["page"];
             $page = ($page <= 0 || $page > $pages)?: $page;
-            $doctors = Doctors::query();
             if($request->has('name')) {
                 if($request->get('name') == "descendent"){
                     $doctors = $doctors->orderByDesc('name');
