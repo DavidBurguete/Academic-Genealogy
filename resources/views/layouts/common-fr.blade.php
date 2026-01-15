@@ -44,7 +44,7 @@ Buscar
     @if(sizeof($errors) >= 1)
         <script>
             Toastify({
-                text: "Por favor, rellene todos los campos",
+                text: "{{ str_contains(url()->previous(), 'card/edit') ? 'Veuillez indiquer votre Prénom et Nom de famille' : 'Por favor, rellene todos los campos' }}",
                 duration: 5000,
                 newWindow: true,
                 close: true,

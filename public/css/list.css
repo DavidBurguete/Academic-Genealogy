@@ -874,6 +874,8 @@ a {
 .main__sorting {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin: 0 auto;
 }
@@ -892,6 +894,7 @@ a {
 .main__sorting select {
   border: none;
   background-color: transparent;
+  font-size: 1.25rem;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -965,6 +968,21 @@ a {
 }
 .main__container__card__text {
   width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.main__container__card__text b {
+  font-family: "Merriweather";
+  font-size: 1.5rem;
+}
+.main__container__card__text i {
+  font-family: "Archivo";
+  font-size: 1rem;
+}
+.main__container__card__text p {
+  font-family: "Roboto";
+  font-size: 1rem;
 }
 .main__pagination {
   position: relative;
@@ -997,6 +1015,10 @@ a {
   text-decoration: none;
 }
 
+.filter-separator-desktop {
+  display: none;
+}
+
 .flip {
   transform: scaleX(-1);
 }
@@ -1005,6 +1027,11 @@ a {
   opacity: 50%;
 }
 
+@media screen and (min-width: 550px) {
+  .filter-separator-desktop {
+    display: block;
+  }
+}
 @media screen and (min-width: 1000px) {
   .main h2 {
     width: 70%;
@@ -1012,6 +1039,7 @@ a {
     margin: 0 auto;
   }
   .main__sorting {
+    justify-content: left;
     width: 70%;
   }
   .main__sorting a {

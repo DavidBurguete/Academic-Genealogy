@@ -9,7 +9,11 @@ class Search extends Controller
 {
     public function index($locale, Request $request)
     {
-        $doctors = Doctors::whereAny(['name', 'surname1', 'surname2', 'thesistitle'], 'like', "%{$request->search}%");
+        $search_words = preg_split('/\s+/', trim($request->search));
+        $doctors = Doctors::query();
+        foreach ($search_words as $search_word) {
+            $doctors->whereAny(['name', 'surname1', 'surname2', 'thesistitle'], 'like', "%{$search_word}%");
+        }
         $pages = ceil($doctors->count() / 10);
         if ($request->has('faculty')) {
             $faculty = $request->get('faculty') == "unknown" ? '' : $request->get('faculty');

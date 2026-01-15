@@ -19,6 +19,8 @@
     &__sorting {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
         margin: 0 auto;
 
@@ -39,6 +41,7 @@
         select {
             border: none;
             background-color: transparent;
+            font-size: 1.25rem;
             -moz-appearance: none;
             -webkit-appearance: none;
 
@@ -93,6 +96,24 @@
 
             &__text {
                 width: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+
+                b {
+                    font-family: 'Merriweather';
+                    font-size: 1.5rem;
+                }
+
+                i {
+                    font-family: 'Archivo';
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-family: 'Roboto';
+                    font-size: 1rem;
+                }
             }
         }
     }
@@ -132,12 +153,22 @@
     }
 }
 
+.filter-separator-desktop {
+    display: none;
+}
+
 .flip {
     transform: scaleX(-1);
 }
 
 .disabled {
     opacity: 50%;
+}
+
+@media screen and (min-width: 550px) {
+    .filter-separator-desktop {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -150,6 +181,7 @@
         }
 
         &__sorting {
+            justify-content: left;
             width: 70%;
 
             a {

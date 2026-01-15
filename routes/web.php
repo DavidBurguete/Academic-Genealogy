@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutDirectors;
 use App\Http\Controllers\Card;
+use App\Http\Controllers\CardManipulation;
 use App\Http\Controllers\CreateAccount;
 use App\Http\Controllers\History;
 use App\Http\Controllers\Introduction;
@@ -26,6 +27,8 @@ Route::prefix('{locale}')
         Route::get('/history', [History::class, "show"])->name('history');
         Route::get('/list', [ListDoctors::class, "index"])->name('list');
         Route::get('/card', [Card::class, "show"])->name('card');
+        Route::get('/card/edit', [CardManipulation::class, "show"])->name('card-manipulation');
+        Route::post('/card/edit', [CardManipulation::class, "update"])->name('card-manipulation');
         Route::get('/search', [Search::class, "index"])->name('search');
 
         Route::get('/login', [Login::class, "show"])->name('login');

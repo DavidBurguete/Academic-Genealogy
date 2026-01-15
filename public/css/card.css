@@ -864,6 +864,19 @@ a {
   flex-direction: column;
   margin: 2rem 1.25rem;
 }
+.main input[type=submit] {
+  width: 2.25rem;
+  border: none;
+  background-image: url("../img/diskette.svg");
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.main a.discard {
+  padding: 0;
+  background-color: transparent;
+}
 .main .personal-info {
   display: flex;
   flex-direction: column;
@@ -880,6 +893,25 @@ a {
 .main .thesis__text__directors {
   position: relative;
   top: 0.5rem;
+}
+.main input:not([type=radio]):not([type=submit]), .main textarea, .main select {
+  min-width: 3rem;
+  max-width: 100%;
+  border: none;
+  font: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 4px !important;
+  background-color: transparent;
+  field-sizing: content;
+}
+.main input[type=date] {
+  text-decoration: none !important;
+}
+.main input[type=radio] {
+  margin-inline: 0.5rem;
+}
+.main fieldset {
+  border: none;
 }
 .main h2 {
   font-family: "Merriweather";
@@ -914,7 +946,7 @@ a {
   font-family: "Archivo";
   font-size: 1.25rem;
 }
-.main p.faculty {
+.main .faculty-teseo {
   font-family: "Archivo";
   font-size: 1rem;
 }
@@ -934,43 +966,63 @@ a {
 .main ol li::marker {
   content: counter(list-item) ".- ";
 }
-.main a {
+.main p.relations, .main li {
+  font-family: "Roboto";
+  font-size: 1.25rem;
+}
+.main p.relations select, .main li select {
+  text-decoration-thickness: 2px !important;
+}
+.main button {
+  width: fit-content;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  font-family: "Roboto";
+  font-size: 1rem;
+  color: #EEEEEE;
+  background-color: #06EF38;
+}
+.main button.delete {
+  margin-left: 0.75rem;
+  background-color: #DE1919;
+}
+.main a, .main input:not([type=radio]):not([type=submit]), .main textarea, .main select {
   text-decoration-thickness: 0.1rem;
 }
-.main a.engineering-and-arquitecture-underline {
+.main a.engineering-and-arquitecture-underline, .main input:not([type=radio]):not([type=submit]).engineering-and-arquitecture-underline, .main textarea.engineering-and-arquitecture-underline, .main select.engineering-and-arquitecture-underline {
   text-decoration-color: #8B4720;
 }
-.main a.sciences-underline {
+.main a.sciences-underline, .main input:not([type=radio]):not([type=submit]).sciences-underline, .main textarea.sciences-underline, .main select.sciences-underline {
   text-decoration-color: #003DA5;
 }
-.main a.law-underline {
+.main a.law-underline, .main input:not([type=radio]):not([type=submit]).law-underline, .main textarea.law-underline, .main select.law-underline {
   text-decoration-color: #FF0000;
 }
-.main a.communication-underline {
+.main a.communication-underline, .main input:not([type=radio]):not([type=submit]).communication-underline, .main textarea.communication-underline, .main select.communication-underline {
   text-decoration-color: #7C878E;
 }
-.main a.canon-underline {
+.main a.canon-underline, .main input:not([type=radio]):not([type=submit]).canon-underline, .main textarea.canon-underline, .main select.canon-underline {
   text-decoration-color: #007749;
 }
-.main a.philosophy-literature-education-underline {
+.main a.philosophy-literature-education-underline, .main input:not([type=radio]):not([type=submit]).philosophy-literature-education-underline, .main textarea.philosophy-literature-education-underline, .main select.philosophy-literature-education-underline {
   text-decoration-color: #62B5E5;
 }
-.main a.economy-underline {
+.main a.economy-underline, .main input:not([type=radio]):not([type=submit]).economy-underline, .main textarea.economy-underline, .main select.economy-underline {
   text-decoration-color: #FA4616;
 }
-.main a.nursing-underline {
+.main a.nursing-underline, .main input:not([type=radio]):not([type=submit]).nursing-underline, .main textarea.nursing-underline, .main select.nursing-underline {
   text-decoration-color: #C1C6C8;
 }
-.main a.pharmacy-nutrition-underline {
+.main a.pharmacy-nutrition-underline, .main input:not([type=radio]):not([type=submit]).pharmacy-nutrition-underline, .main textarea.pharmacy-nutrition-underline, .main select.pharmacy-nutrition-underline {
   text-decoration-color: #5C068C;
 }
-.main a.medicine-underline {
+.main a.medicine-underline, .main input:not([type=radio]):not([type=submit]).medicine-underline, .main textarea.medicine-underline, .main select.medicine-underline {
   text-decoration-color: #FFC72C;
 }
-.main a.theology-underline {
+.main a.theology-underline, .main input:not([type=radio]):not([type=submit]).theology-underline, .main textarea.theology-underline, .main select.theology-underline {
   text-decoration-color: #FFFFFF;
 }
-.main a.unknown-underline {
+.main a.unknown-underline, .main input:not([type=radio]):not([type=submit]).unknown-underline, .main textarea.unknown-underline, .main select.unknown-underline {
   text-decoration-color: #8F2724;
 }
 .main .biography {
@@ -980,6 +1032,20 @@ a {
 }
 .main .biography > * {
   margin-block: 0.75rem;
+}
+
+.card-manipulation {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  order: -1;
+}
+.card-manipulation img {
+  width: auto;
+  height: 2.25rem;
+  margin: 0;
 }
 
 @media screen and (min-width: 1000px) {
@@ -1006,6 +1072,9 @@ a {
     align-self: center;
     margin-right: 2rem;
   }
+  .main p.life-date {
+    align-self: center;
+  }
   .main hr {
     align-self: center;
     margin: 0 0.5rem;
@@ -1014,6 +1083,16 @@ a {
     width: 20%;
     max-width: none;
     margin: 0;
+  }
+  .card-manipulation {
+    align-self: center;
+    margin-bottom: 0;
+    margin-left: auto;
+    order: inherit;
+  }
+  .card-manipulation img {
+    width: auto;
+    height: 2.25rem;
   }
 }
 

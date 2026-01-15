@@ -2,7 +2,7 @@
 
 @section('css-js')
     <link rel="stylesheet" href="{{ asset('css/list.css') }}">
-    <script src="{{ asset('js/date_formatter.js') }}"></script>
+    <script type="module" src="{{ asset('js/date_formatter.js') }}"></script>
     <script src="{{ asset('js/redirect_faculty.js') }}"></script>
 @endsection
 
@@ -64,7 +64,7 @@
             {!! request()->has('date') && request()->get('date') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
             {!! request()->has('date') && request()->get('date') == 'descendent' ? '<img src="' . asset('img/dropdown.png') . '" style="transform: rotate(180deg);">' : '' !!}
         </a>
-        <hr>
+        <hr class="filter-separator-desktop">
         <a>Filtro de facultad:</a><select name="faculty" id="faculty">
             <option value="">-- Selecciona una opción --</option>
             <option {{ request()->get('faculty') == 'engineering-and-arquitecture' ? 'selected' : '' }} value="engineering-and-arquitecture">Ingeniería y Arquitectura</option>
@@ -114,11 +114,11 @@
                 }}{{ 
                     request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
-                    <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="página previa">
                 </a>
             @else
                 <a class="disabled">
-                    <img src="{{ asset('img/arrow.svg') }}" alt="next page">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="página previa">
                 </a>
             @endif
 
@@ -240,11 +240,11 @@
                 }}{{ 
                     request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
-                    <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="página siguiente">
                 </a>
             @else
                 <a class="flip disabled">
-                    <img src="{{ asset('img/arrow.svg') }}" alt="previous page">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="página siguiente">
                 </a>
             @endif
         @endif

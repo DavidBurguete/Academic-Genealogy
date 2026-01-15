@@ -44,7 +44,8 @@ class CreateAccount extends Controller
         $user->password = $data['password'];
         $user->role = $data['role'];
         User::create($user->toArray());
-        Mail::to($data['email'])->send(new NewUserMail($user, $data['password']));
+        $root = $request->root();
+        Mail::to($data['email'])->send(new NewUserMail($user, $data['password'], $root));
         $success = 1;
         return view("$locale.createaccount", compact("success"));
     }

@@ -2,8 +2,8 @@
 
 @section('css-js')
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
-    <script src="{{ asset('js/date_formatter_cards_students.js') }}"></script>
-    <script src="{{ asset('js/date_formatter_cards_lifedates.js') }}"></script>
+    <script type="module" src="{{ asset('js/date_formatter_cards_students.js') }}"></script>
+    <script type="module" src="{{ asset('js/date_formatter_cards_lifedates.js') }}"></script>
 @endsection
 
 @section('faculty-color')
@@ -21,6 +21,26 @@
 @endsection
 
 @section('content')
+    @if(session('isChanged'))
+        <script>
+            Toastify({
+                text: "Changes saved",
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#06EF38",
+                }
+            }).showToast();
+        </script>
+    @endif
     <div class="personal-info">
         <h2>{{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}</h2>
         @if(isset($doctor['birthdate']))
@@ -34,14 +54,22 @@
         @else
             <p class="life-date"><span style="height: 1rem;"></span></p>
         @endif
+        @if(Auth()->check())
+            <div class="card-manipulation">
+                <a href="/en/card/edit?id={{ $doctor['id'] }}"><img src="{{ asset('img/pen.svg') }}" alt="edit card"></a>
+                @if(hasRoleAtLeast(Auth()->user()->role, "admin"))
+                    <img src="{{ asset('img/trash.svg') }}" alt="delete card">
+                @endif
+            </div>
+        @endif
     </div>
     <div class="thesis">
         <img src="{{ isset($doctor['photo']) ? asset('portrait/' . $doctor['photo']) : asset('portrait/NoPhoto.jpg') }}" alt="Portrait of doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
         <div class="thesis__text">
-            <h3>{{ $doctor['thesistitle'] }}</h3>
+            <h3>{{ isset($doctor['thesistitle']) ? $doctor['thesistitle'] : 'Unknown thesis' }}</h3>
             <p id="unknownexactdate" style="display: none;">{{ $doctor['unknownexactdate'] }}</p>
             <i>Defended at {{ $doctor['university']?:'an unkown university' }}, {{ $doctor['city']?: 'unkown city' }}, <span class="life-date">{{ $doctor['defensedate']?: 'unkown date' }}</span></i>
-            <p class="faculty">
+            <p class="faculty-teseo">
                 Faculty of 
                 @switch($doctor['faculty'])
                     @case('sciences')
@@ -89,7 +117,7 @@
             @else
                 <ol>
                     @foreach($directors as $director)
-                        <li><a class="{{ $director['faculty'] }}-underline" href="?id={{ $director['id'] }}">{{ $director['name'] }} {{ $director['surname1'] }} {{ isset($director['surname2']) ? $director['surname2'] : '' }} [ {!! $director['relationtype'] === 'D' ? '&Dscr;' : '&Mscr;' !!} ]</a></li>
+                        <li><a class="{{ $director['faculty'] == '' ? 'unknown' : $director['faculty'] }}-underline" href="?id={{ $director['id'] }}">{{ $director['name'] }} {{ $director['surname1'] }} {{ isset($director['surname2']) ? $director['surname2'] : '' }} [ {!! $director['relationtype'] === 'D' ? '<span style="line-height: 1rem;">&Dscr;</span>' : '<span style="line-height: 1rem;">&Mscr;</span>' !!} ]</a></li>
                     @endforeach
                 </ol>
             @endif
@@ -103,7 +131,7 @@
     @else
         <ol id="students">
             @foreach($students as $student)
-                <li><a class="{{ $student['faculty'] }}-underline" href="?id={{ $student['id'] }}">{{ $student['name'] }} {{ $student['surname1'] }} {{ isset($student['surname2']) ? $student['surname2'] : '' }}--{{ $student['defensedate'] }}</a></li>
+                <li><a class="{{ $student['faculty'] }}-underline" href="?id={{ $student['id'] }}"><span style="display:none;">{{ $student['unknownexactdate'] }}</span>{{ $student['name'] }} {{ $student['surname1'] }} {{ isset($student['surname2']) ? $student['surname2'] : '' }}--{{ $student['defensedate'] }}</a></li>
             @endforeach
         </ol>
     @endif

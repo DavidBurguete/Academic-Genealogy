@@ -23,8 +23,9 @@ class RequestAccess extends Controller
             "email" => "required|email",
         ]);
         $users = User::whereLike('role', '%admin%')->get();
+        $root = $request->root();
         foreach ($users as $user) {
-            Mail::to($user->email)->send(new MailRequestAccess($request->name, $request->email));
+            Mail::to($user->email)->send(new MailRequestAccess($request->name, $request->email, $root));
         }
         return redirect("$locale");
     }

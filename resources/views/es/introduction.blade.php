@@ -56,8 +56,8 @@ sciences
             por los que esta genealogía es compartida por muchos de los integrantes de este departamento y muchos de sus antiguos doctorandos.
         </p>
         <div class="main__description__images">
-            <img src="{{ asset('img/JavierBurgueteMas.jpg') }}" alt="Front picture of doctor Javier Burguete">
-            <img src="{{ asset('img/CarlosPerezGarcia.jpg') }}" alt="Front picture of doctor Carlos Perez">
+            <img src="{{ asset('img/JavierBurgueteMas.jpg') }}" alt="Foto frontal del doctor Javier Burguete">
+            <img src="{{ asset('img/CarlosPerezGarcia.jpg') }}" alt="Foto frontal del doctor Carlos Perez">
         </div>
         <p>
             Desde ese germen hemos ido desarrollando las ramificaciones que han ido apareciendo, que nos relaciona con otras Universidades españolas y europeas. 

@@ -16,7 +16,7 @@ class RequestAccess extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public String $name, public String $email)
+    public function __construct(public String $name, public String $email, public String $root)
     {
         //
     }

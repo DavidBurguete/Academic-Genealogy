@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Doctors;
-use App\Models\Relations;
 use Illuminate\Http\Request;
 
 class Card extends Controller
@@ -23,7 +22,7 @@ class Card extends Controller
                 $students = Doctors::join('relations', 'relations.studentID', '=', 'doctors.id')
                                     ->where('relations.directorID', '=', $request['id'])
                                     ->orderBy('doctors.defensedate')
-                                    ->select('doctors.id', 'doctors.name', 'doctors.surname1', 'doctors.surname2', 'doctors.faculty', 'doctors.defensedate')
+                                    ->select('doctors.id', 'doctors.name', 'doctors.surname1', 'doctors.surname2', 'doctors.faculty', 'doctors.defensedate', 'doctors.unknownexactdate')
                                     ->get();
                 $doctor['faculty'] = $doctor['faculty']?: 'unknown';
                 return view("$locale.card", compact('doctor', 'directors', 'students'));

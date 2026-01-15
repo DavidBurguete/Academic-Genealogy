@@ -8,6 +8,21 @@
     flex-direction: column;
     margin: 2rem 1.25rem;
 
+    input[type=submit] {
+        width: 2.25rem;
+        border: none;
+        background-image: url('../img/diskette.svg');
+        background-color: transparent;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    a.discard {
+        padding: 0;
+        background-color: transparent;
+    }
+
     .personal-info {
         display: flex;
         flex-direction: column;
@@ -27,6 +42,29 @@
                 top: 0.5rem;
             }
         }
+    }
+
+    input:not([type=radio]):not([type=submit]), textarea, select {
+        min-width: 3rem;
+        max-width: 100%;
+        border: none;
+        font: inherit;
+        text-decoration: underline;
+        text-decoration-thickness: 4px !important;
+        background-color: transparent;
+        field-sizing: content;
+    }
+
+    input[type=date] {
+        text-decoration: none !important;
+    }
+
+    input[type=radio] {
+        margin-inline: 0.5rem;
+    }
+
+    fieldset {
+        border: none;
     }
 
     h2 {
@@ -69,7 +107,7 @@
         font-size: 1.25rem;
     }
 
-    p.faculty {
+    .faculty-teseo {
         font-family: 'Archivo';
         font-size: 1rem;
     }
@@ -94,7 +132,31 @@
         }
     }
 
-    a {
+    p.relations, li {
+        font-family: 'Roboto';
+        font-size: 1.25rem;
+
+        select {
+            text-decoration-thickness: 2px !important;
+        }
+    }
+
+    button {
+        width: fit-content;
+        padding: 0.75rem 1.25rem;
+        border: none;
+        font-family: 'Roboto';
+        font-size: 1rem;
+        color: #EEEEEE;
+        background-color: $confirm;
+
+        &.delete {
+            margin-left: 0.75rem;
+            background-color: $cancel;
+        }
+    }
+
+    a, input:not([type=radio]):not([type=submit]), textarea, select {
         text-decoration-thickness: 0.1rem;
 
         &.engineering-and-arquitecture-underline { text-decoration-color: $engineering-and-arquitecture; }
@@ -119,6 +181,21 @@
         &>* {
             margin-block: 0.75rem;
         }
+    }
+}
+
+.card-manipulation {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    order: -1;
+
+    img {
+        width: auto;
+        height: 2.25rem;
+        margin: 0;
     }
 }
 
@@ -151,6 +228,10 @@
             margin-right: 2rem;
         }
 
+        p.life-date {
+            align-self: center;
+        }
+
         hr {
             align-self: center;
             margin: 0 .5rem;
@@ -160,6 +241,18 @@
             width: 20%;
             max-width: none;
             margin: 0;
+        }
+    }
+
+    .card-manipulation {
+        align-self: center;
+        margin-bottom: 0;
+        margin-left: auto;
+        order: inherit;
+
+        img {
+            width: auto;
+            height: 2.25rem;
         }
     }
 }
