@@ -16,6 +16,24 @@
         text-align: center;
     }
 
+    .content-header {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            margin: 1.5rem auto;
+            padding: 0.75rem;
+            font-family: 'Archivo';
+            text-decoration: none;
+            color: white;
+            background-color: $confirm;
+
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+
     &__sorting {
         display: flex;
         flex-direction: row;
@@ -175,9 +193,18 @@
     .main {
 
         h2 {
-            width: 70%;
             text-align: left;
-            margin: 0 auto;
+        }
+
+        .content-header {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 70%;
+            margin: 0.5rem auto;
+
+            a {
+                margin: 0.1rem 0;
+            }
         }
 
         &__sorting {

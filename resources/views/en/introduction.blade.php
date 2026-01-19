@@ -22,7 +22,7 @@ sciences
     @if(request()->session()->exists("accountDeleted"))
         <script>
             Toastify({
-                text: "La cuenta ha sido borrada con éxito",
+                text: "The account has been deleted succesfully",
                 duration: 5000,
                 newWindow: true,
                 close: true,

@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
-    let student_quantity = parseInt(document.getElementById("student-quantity").innerHTML);
+    let student_quantity = document.getElementById("student-quantity") != null ? parseInt(document.getElementById("student-quantity").innerHTML) : 0;
     let new_student = document.getElementById("new-student");
-    let students = JSON.parse(document.getElementById("students-list").innerHTML);
+    let students = JSON.parse(document.getElementById("students-list") == null ? document.getElementById("everyone-list").innerHTML : document.getElementById("students-list").innerHTML);
     let delete_students = document.querySelectorAll('[data-type=delete]');
     let faculty = document.getElementsByTagName("header")[0].classList[1];
 

@@ -877,6 +877,10 @@ a {
   padding: 0;
   background-color: transparent;
 }
+.main__content__info--delete {
+  padding: 0 !important;
+  background-color: transparent !important;
+}
 .main .personal-info {
   display: flex;
   flex-direction: column;
@@ -1033,6 +1037,63 @@ a {
 .main .biography > * {
   margin-block: 0.75rem;
 }
+.main__modal {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 2.5rem);
+  max-width: 45rem;
+  border-radius: 1rem;
+  background-color: #003DA5;
+  transition: 0.5s ease-in-out;
+  z-index: 99;
+}
+.main__modal.toggle {
+  top: 50%;
+}
+.main__modal h2 {
+  padding: 0.875rem 1rem;
+  font-family: "Oswald";
+  font-weight: 550;
+  font-size: 2.25rem;
+  color: white;
+}
+.main__modal p {
+  padding: 1rem;
+  font-family: "Inter";
+  font-weight: 550;
+  font-size: 1rem;
+  color: white;
+}
+.main__modal p b {
+  text-transform: uppercase;
+}
+.main__modal__actions {
+  display: flex;
+  flex-direction: column;
+  justify-self: end;
+  gap: 1rem;
+  width: 13rem;
+  margin: 1rem;
+  margin-top: 0;
+}
+.main__modal__actions button {
+  height: 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Inter";
+  font-weight: 550;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+}
+.main__modal__actions button:first-child {
+  background-color: #06EF38;
+}
+.main__modal__actions button:last-child {
+  background-color: #DE1919;
+}
 
 .card-manipulation {
   display: flex;
@@ -1083,6 +1144,13 @@ a {
     width: 20%;
     max-width: none;
     margin: 0;
+  }
+  .main__modal__actions {
+    flex-direction: row;
+    width: auto;
+  }
+  .main__modal__actions button {
+    width: 12.5rem;
   }
   .card-manipulation {
     align-self: center;

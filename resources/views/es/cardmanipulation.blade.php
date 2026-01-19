@@ -41,7 +41,11 @@
             @endif
         </div>
         <div class="thesis">
-            <img src="{{ isset($doctor['photo']) ? asset('portrait/' . $doctor['photo']) : asset('portrait/NoPhoto.jpg') }}" alt="Retrato del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+            @if(!$doctor['photo'])
+                <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Retraro ausente del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+            @else
+                <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Retrato del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+            @endif
             <div class="thesis__text">
                 <h3><textarea placeholder="Tesis" class="{{ $doctor['faculty'] }}-underline" type="text" name="thesistitle" id="thesistitle">{{ isset($doctor['thesistitle']) ? $doctor['thesistitle'] : '' }}</textarea></h3>
                 <i>Defendida en 

@@ -871,6 +871,21 @@ a {
   text-transform: uppercase;
   text-align: center;
 }
+.main .content-header {
+  display: flex;
+  flex-direction: column;
+}
+.main .content-header a {
+  margin: 1.5rem auto;
+  padding: 0.75rem;
+  font-family: "Archivo";
+  text-decoration: none;
+  color: white;
+  background-color: #06EF38;
+}
+.main .content-header a span {
+  font-weight: bold;
+}
 .main__sorting {
   display: flex;
   flex-direction: row;
@@ -1034,9 +1049,16 @@ a {
 }
 @media screen and (min-width: 1000px) {
   .main h2 {
-    width: 70%;
     text-align: left;
-    margin: 0 auto;
+  }
+  .main .content-header {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0.5rem auto;
+  }
+  .main .content-header a {
+    margin: 0.1rem 0;
   }
   .main__sorting {
     justify-content: left;

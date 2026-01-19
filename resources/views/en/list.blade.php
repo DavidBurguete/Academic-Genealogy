@@ -21,7 +21,32 @@
 @endsection
 
 @section('content')
-    <h2>List of doctors</h2>
+    @if(request()->session()->exists("cardDeleted"))
+        <script>
+            Toastify({
+                text: "The card has been deleted succesfully",
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#06EF38",
+                }
+            }).showToast();
+        </script>
+    @endif
+    <div class="content-header">
+        <h2>List of doctors</h2>
+        @if(Auth()->check() && hasRoleAtLeast(Auth()->user()->role, "admin"))
+            <a href="/en/create-card"><span>+</span> Create new academic card</a>
+        @endif
+    </div>
     <div class="main__sorting">
         <a href="?page={{ 
             request()->get('page') 

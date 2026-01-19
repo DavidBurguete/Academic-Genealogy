@@ -3,7 +3,7 @@
 @section('css-js')
 <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 <script src="{{ asset('js/show-password.js') }}"></script>
-<script src="{{ asset('js/toggleDeleteAccountModal.js') }}"></script>
+<script src="{{ asset('js/toggleModalDelete.js') }}"></script>
 @endsection
 
 @section('faculty-color')
@@ -94,14 +94,14 @@ sciences
             <input value="{{ isset($passwords[0]) ? $passwords[0] : '' }}" type="password" name="password" id="password" placeholder="New password">
             <input value="{{ isset($passwords[1]) ? $passwords[1] : '' }}" type="password" name="confirm-password" id="confirm-password" placeholder="Confirm new password">
             <button type="submit" class="main__content__info--change">Change password</button>
-            <button class="main__content__info--delete" type="button" id="deleteAccountButton">Delete account</button>
+            <button class="main__content__info--delete" type="button" id="modalDeleteButton">Delete account</button>
             <button class="main__content__info--show" type="button" id="show">
                 <img src="{{ asset('/img/closedeye.svg') }}" alt="show password" id="closed">
                 <img src="{{ asset('/img/openeye.svg') }}" alt="hide password" id="open" class="hidden">
             </button>
         </form>
     </div>
-    <div class="main__modal" id="deleteAccountModal">
+    <div class="main__modal" id="modalDelete">
         <h2>Delete account</h2>
         <hr>
         <p>

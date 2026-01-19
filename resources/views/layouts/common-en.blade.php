@@ -44,7 +44,7 @@ Search
     @if(sizeof($errors) >= 1)
         <script>
             Toastify({
-                text: "{{ str_contains(url()->previous(), 'card/edit') ? 'Fill in name and surname' : 'Please, fill in all the fields' }}",
+                text: "{{ str_contains(url()->previous(), 'card/edit') || str_contains(url()->previous(), 'create-card') ? 'Fill in name and surname' : 'Please, fill in all the fields' }}",
                 duration: 5000,
                 newWindow: true,
                 close: true,

@@ -1,7 +1,7 @@
 window.addEventListener("load", () => {
-    let director_quantity = parseInt(document.getElementById("director-quantity").innerHTML);
+    let director_quantity = document.getElementById("director-quantity") != null ? parseInt(document.getElementById("director-quantity").innerHTML) : 0;
     let new_director = document.getElementById("new-director");
-    let directors = JSON.parse(document.getElementById("directors-list").innerHTML);
+    let directors = JSON.parse(document.getElementById("directors-list") == null ? document.getElementById("everyone-list").innerHTML : document.getElementById("directors-list").innerHTML);
     let delete_directors = document.querySelectorAll('[data-type=delete]');
     let faculty = document.getElementsByTagName("header")[0].classList[1];
 

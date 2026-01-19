@@ -21,7 +21,32 @@
 @endsection
 
 @section('content')
-    <h2>Listado</h2>
+    @if(request()->session()->exists("cardDeleted"))
+        <script>
+            Toastify({
+                text: "La tarjeta ha sido borrada con éxito",
+                duration: 5000,
+                newWindow: true,
+                close: true,
+                gravity: "top",
+                position: "center", 
+                stopOnFocus: true,
+                style: {
+                    padding: '1.2rem',
+                    fontFamily: "Roboto",
+                    fontWeight: 700,
+                    fontSize: "1.2rem",
+                    background: "#06EF38",
+                }
+            }).showToast();
+        </script>
+    @endif
+    <div class="content-header">
+        <h2>Listado</h2>
+        @if(Auth()->check() && hasRoleAtLeast(Auth()->user()->role, "admin"))
+            <a href="/es/create-card"><span>+</span> Crear nueva ficha académica</a>
+        @endif
+    </div>
     <div class="main__sorting">
         <a href="?page={{ 
             request()->get('page') 
@@ -85,9 +110,9 @@
         @foreach($doctors as $doctor)
             <a href="/es/card?id={{ $doctor['id'] }}" class="main__container__card main__container__card--{{ $doctor['faculty'] == '' ? 'unknown' : $doctor['faculty'] }}">
                 @if(!$doctor['photo'])
-                    <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Retraro ausente del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }}">
+                    <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Retraro ausente del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
                 @else
-                    <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Retrato del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }}">
+                    <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Retrato del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
                 @endif
                 <div class="main__container__card__text">
                     <p><b>{{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}</b></p>

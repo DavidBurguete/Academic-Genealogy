@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
-    let deleteButton = document.getElementById("deleteAccountButton");
-    let deleteModal = document.getElementById("deleteAccountModal");
+    let deleteButton = document.getElementById("modalDeleteButton");
+    let deleteModal = document.getElementById("modalDelete");
     let closeModal = document.getElementById("closeModal");
     let body = document.querySelector("body");
 

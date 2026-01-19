@@ -27,6 +27,9 @@ Route::prefix('{locale}')
         Route::get('/history', [History::class, "show"])->name('history');
         Route::get('/list', [ListDoctors::class, "index"])->name('list');
         Route::get('/card', [Card::class, "show"])->name('card');
+        Route::get('/create-card', [Card::class, "create"])->name('card');
+        Route::post('/create-card', [Card::class, "store"])->name('card');
+        Route::post('/delete-card', [Card::class, "destroy"])->name('card');
         Route::get('/card/edit', [CardManipulation::class, "show"])->name('card-manipulation');
         Route::post('/card/edit', [CardManipulation::class, "update"])->name('card-manipulation');
         Route::get('/search', [Search::class, "index"])->name('search');

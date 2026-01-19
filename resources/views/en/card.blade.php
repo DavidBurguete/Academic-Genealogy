@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{{ asset('css/card.css') }}">
     <script type="module" src="{{ asset('js/date_formatter_cards_students.js') }}"></script>
     <script type="module" src="{{ asset('js/date_formatter_cards_lifedates.js') }}"></script>
+    <script src="{{ asset('js/toggleModalDelete.js') }}"></script>
 @endsection
 
 @section('faculty-color')
@@ -58,13 +59,17 @@
             <div class="card-manipulation">
                 <a href="/en/card/edit?id={{ $doctor['id'] }}"><img src="{{ asset('img/pen.svg') }}" alt="edit card"></a>
                 @if(hasRoleAtLeast(Auth()->user()->role, "admin"))
-                    <img src="{{ asset('img/trash.svg') }}" alt="delete card">
+                    <button class="main__content__info--delete" type="button" id="modalDeleteButton"><img src="{{ asset('img/trash.svg') }}" alt="delete card"></button>
                 @endif
             </div>
         @endif
     </div>
     <div class="thesis">
-        <img src="{{ isset($doctor['photo']) ? asset('portrait/' . $doctor['photo']) : asset('portrait/NoPhoto.jpg') }}" alt="Portrait of doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+        @if(!$doctor['photo'])
+            <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Missing portrait of doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }}">
+        @else
+            <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Portrait of doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }}">
+        @endif
         <div class="thesis__text">
             <h3>{{ isset($doctor['thesistitle']) ? $doctor['thesistitle'] : 'Unknown thesis' }}</h3>
             <p id="unknownexactdate" style="display: none;">{{ $doctor['unknownexactdate'] }}</p>
@@ -147,6 +152,19 @@
         @else
             <i>No available biography</i>
         @endif
+    </div>
+    <div class="main__modal" id="modalDelete">
+        <h2>Delete card</h2>
+        <hr>
+        <p>
+            You are about to delete this card. Are you sure about the decision?
+            This action cannot be undone, and will be effective immediately after agreeing
+        </p>
+        <form action="/en/delete-card?id={{ $doctor['id'] }}" method="POST" class="main__modal__actions">
+            <button type="button" id="closeModal">No, preserve card</button>
+            @csrf
+            <button type="submit">Yes, delete</button>
+        </form>
     </div>
 @endsection
 @include('layouts.common-en')

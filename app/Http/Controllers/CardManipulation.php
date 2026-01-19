@@ -22,10 +22,10 @@ class CardManipulation extends Controller
                 return redirect("$locale/card?id=1");
             } else {
                 $fullRelativeDirectors = !$doctor['defensedate'] ?
-                    Doctors::select('id', 'name', 'surname1', 'surname2')->get() :
+                    Doctors::select('id', 'name', 'surname1', 'surname2')->orderBy('name')->get() :
                     Doctors::where('defensedate', '<', $doctor['defensedate'])->orWhereNull('defensedate')->orderBy('name')->select('id', 'name', 'surname1', 'surname2')->get();
                 $fullRelativeStudents = !$doctor['defensedate'] ?
-                    Doctors::select('id', 'name', 'surname1', 'surname2')->get() :
+                    Doctors::select('id', 'name', 'surname1', 'surname2')->orderBy('name')->get() :
                     Doctors::where('defensedate', '>', $doctor['defensedate'])->orWhereNull('defensedate')->orderBy('name')->select('id', 'name', 'surname1', 'surname2')->get();
                 $directors = Doctors::join('relations', 'relations.directorID', '=', 'doctors.id')
                     ->where('relations.studentID', '=', $request['id'])
