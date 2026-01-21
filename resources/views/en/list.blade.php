@@ -43,7 +43,7 @@
     @endif
     <div class="content-header">
         <h2>List of doctors</h2>
-        @if(Auth()->check() && hasRoleAtLeast(Auth()->user()->role, "admin"))
+        @if(Auth()->check())
             <a href="/en/create-card"><span>+</span> Create new academic card</a>
         @endif
     </div>

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CreatedCard;
+use App\Mail\DeletedCard;
 use App\Models\Doctors;
 use App\Models\Relations;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class Card extends Controller
 {
@@ -65,9 +69,7 @@ class Card extends Controller
 
         $relationtypes = $request["relationtypes"];
         $directors = $request["directors"];
-        $directorsToAdd = [];
-        $previousDirectorsIDs = [];
-        $madeChanges = false;
+        $fullDirectors = null;
 
         if (!is_null($directors) && !is_null($relationtypes)) {
             $directors = array_filter(
@@ -84,13 +86,6 @@ class Card extends Controller
             $fullDirectors = array_combine($directors, $relationtypes);
         }
 
-        if (!is_null($directors)) {
-            $newDirectors = array_diff($directors, $previousDirectorsIDs);
-            foreach ($newDirectors as $arrayID => $newDirector) {
-                $directorsToAdd[$newDirector] = $relationtypes[$arrayID];
-            }
-        }
-
         if (!is_null($students)) {
             $students = array_filter(
                 $students,
@@ -105,6 +100,7 @@ class Card extends Controller
         }
 
         $newDoctorID = Doctors::insertGetId($data);
+
         if (!is_null($directors)) {
             foreach ($fullDirectors as $directorID => $relationtype) {
                 Relations::insert([
@@ -124,11 +120,28 @@ class Card extends Controller
                 ]);
             }
         }
+
+        $users = User::whereLike('role', '%admin%')->get();
+        $root = $request->root();
+        foreach ($users as $user) {
+            Mail::to($user->email)->send(new CreatedCard($newDoctorID, $data, $fullDirectors, $students, $root));
+        }
+
         return redirect("$locale/card?id=$newDoctorID");
     }
 
     public function destroy($locale, Request $request) {
         if (Auth::check() && $request->has('id')) {
+            $doctor = Doctors::where('id', $request->get('id'))->first();
+            $directors = Relations::where('studentID', $request->get('id'))->select('directorID', 'relationtype')->get();
+            $students = Relations::where('directorID', $request->get('id'))->select('studentID')->get();
+
+            $users = User::whereLike('role', '%admin%')->get();
+            $root = $request->root();
+            foreach ($users as $user) {
+                Mail::to($user->email)->send(new DeletedCard($doctor, $directors, $students, $root));
+            }
+
             Relations::where('directorID', $request->get('id'))->orWhere('studentID', $request->get('id'))->delete();
             Doctors::where('id', $request->get('id'))->delete();
             return redirect("$locale/list?page=1")->with("cardDeleted");
