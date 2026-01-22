@@ -32,7 +32,7 @@
 @if(!is_null($students))
     <ul>
         @foreach($students as $studentID)
-            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $directorID)->first()->surname1 }})</li>
+            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $studentID)->first()->surname1 }})</li>
         @endforeach
     </ul>
 @else
@@ -73,7 +73,7 @@
 @if(!is_null($students))
     <ul>
         @foreach($students as $studentID)
-            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $directorID)->first()->surname1 }})</li>
+            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $studentID)->first()->surname1 }})</li>
         @endforeach
     </ul>
 @else
@@ -103,7 +103,7 @@
 @if(!is_null($directors))
     <ul>
         @foreach($directors as $directorID => $relationtype)
-            <li>{{ $directorID }} ({{ \App\Models\Doctors::where('id', $directorID)->first()->name }} {{ \App\Models\Doctors::where('id', $directorID)->first()->surname1 }}) - {{ $relationtype == 'D' ? 'D (Directeur)' : 'M (Mentor)' }}</li>
+            <li>{{ $directorID }} ({{ \App\Models\Doctors::where('id', $directorID)->first()->name }} {{ \App\Models\Doctors::where('id', $studentID)->first()->surname1 }}) - {{ $relationtype == 'D' ? 'D (Directeur)' : 'M (Mentor)' }}</li>
         @endforeach
     </ul>
 @else
@@ -114,7 +114,7 @@
 @if(!is_null($students))
     <ul>
         @foreach($students as $studentID)
-            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $directorID)->first()->surname1 }})</li>
+            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $studentID)->first()->surname1 }})</li>
         @endforeach
     </ul>
 @else

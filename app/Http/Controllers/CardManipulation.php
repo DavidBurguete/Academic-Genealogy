@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EditedCard;
 use App\Models\Doctors;
 use App\Models\Relations;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class CardManipulation extends Controller
 {
@@ -128,8 +131,12 @@ class CardManipulation extends Controller
             }
         }
 
+        $users = User::whereLike('role', '%admin%')->get();
+        $root = $request->root();
+        $updateDoctor = Doctors::where('id', $data['id']);
+        $previousDoctor = $updateDoctor->first();
+
         if (sizeof($differ) > 0) {
-            $updateDoctor = Doctors::where('id', $data['id']);
             $updateDoctor->timestamps = false;
             foreach ($differ as $field => $value) {
                 $updateDoctor->update([$field => $value]);
@@ -170,6 +177,12 @@ class CardManipulation extends Controller
                 Relations::where('directorID', $data['id'])->where('studentID', $studentID)->delete();
             }
             $madeChanges = true;
+        }
+        
+        if ($madeChanges) {
+            foreach ($users as $user) {
+                Mail::to($user->email)->send(new EditedCard($previousDoctor, $differ, $directorsToUpdate, $directorsToAdd, $directorsToDelete, $studentsToAdd, $studentsToDelete, $root));
+            }
         }
         
         return redirect("$locale/card?id=" . $data['id'])->with('isChanged', $madeChanges);

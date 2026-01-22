@@ -31,8 +31,8 @@
 <p>ESTUDIANTES:</p>
 @if(!$students->isEmpty())
     <ul>
-        @foreach($students as $studentID)
-            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $directorID)->first()->surname1 }})</li>
+        @foreach($students as $student)
+            <li>{{ $student->studentID }} ({{ \App\Models\Doctors::where('id', $student->studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $student->studentID)->first()->surname1 }})</li>
         @endforeach
     </ul>
 @else
@@ -72,8 +72,8 @@
 <p>STUDENTS:</p>
 @if(!$students->isEmpty())
     <ul>
-        @foreach($students as $studentID)
-            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $directorID)->first()->surname1 }})</li>
+        @foreach($students as $student)
+            <li>{{ $student->studentID }} ({{ \App\Models\Doctors::where('id', $student->studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $student->studentID)->first()->surname1 }})</li>
         @endforeach
     </ul>
 @else
@@ -113,8 +113,8 @@
 <p>ÉTUDIANTS:</p>
 @if(!$students->isEmpty())
     <ul>
-        @foreach($students as $studentID)
-            <li>{{ $studentID }} ({{ \App\Models\Doctors::where('id', $studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $directorID)->first()->surname1 }})</li>
+        @foreach($students as $student)
+            <li>{{ $student->studentID }} ({{ \App\Models\Doctors::where('id', $student->studentID)->first()->name }} {{ \App\Models\Doctors::where('id', $student->studentID)->first()->surname1 }})</li>
         @endforeach
     </ul>
 @else
