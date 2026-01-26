@@ -18,6 +18,31 @@
         background-position: center;
     }
 
+    #portraitlabel {
+        width: 80%;
+        max-width: none;
+        aspect-ratio: 250 / 389;
+        margin: 0 auto;
+        font-family: 'Archivo';
+        font-size: 1rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        
+        .hidden {
+            display: none;
+        }
+
+        .error {
+            color: $cancel;
+            text-align: center;
+        }
+    }
+
+    input[type=file] {
+        display: none;
+    }
+
     a.discard {
         padding: 0;
         background-color: transparent;
@@ -274,6 +299,11 @@
     .main {
         width: 60%;
         margin: 2rem auto;
+
+        #portraitlabel {
+            width: 20%;
+            margin: 0;
+        }
 
         .personal-info {
             flex-direction: row;

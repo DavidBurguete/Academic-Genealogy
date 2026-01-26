@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\Rule;
 
 class Card extends Controller
 {
@@ -51,9 +52,14 @@ class Card extends Controller
         $request->validate([
             "name" => "required",
             "surname1" => "required",
+            "portrait" => Rule::dimensions()
+                            ->minWidth(250)
+                            ->minHeight(250)
+                            ->maxWidth(389)
+                            ->maxHeight(389),
         ]);
 
-        $data = $request->except("_token");
+        $data = $request->except(["_token", "portrait"]);
         $students = $request["students"];
 
         $data = array_filter(
@@ -101,6 +107,14 @@ class Card extends Controller
 
         $newDoctorID = Doctors::insertGetId($data);
 
+        if (isset($request->portrait)) {
+            $portrait = $request->file('portrait');
+            $extension = explode(".", $portrait->getClientOriginalName());
+            $fullname = $newDoctorID . '_' . Doctors::where('id', $newDoctorID)->first()->name . '_' . Doctors::where('id', $newDoctorID)->first()->surname1 . '.' . $extension[sizeof($extension) - 1];
+            Doctors::where('id', $newDoctorID)->update(['photo' => $fullname]);
+            $request->file('portrait')->move('portrait', $fullname);
+        }
+
         if (!is_null($directors)) {
             foreach ($fullDirectors as $directorID => $relationtype) {
                 Relations::insert([
@@ -130,11 +144,13 @@ class Card extends Controller
         return redirect("$locale/card?id=$newDoctorID");
     }
 
-    public function destroy($locale, Request $request) {
+    public function destroy($locale, Request $request)
+    {
         if (Auth::check() && $request->has('id')) {
             $doctor = Doctors::where('id', $request->get('id'))->first();
             $directors = Relations::where('studentID', $request->get('id'))->select('directorID', 'relationtype')->get();
             $students = Relations::where('directorID', $request->get('id'))->select('studentID')->get();
+            unlink("portrait/" . $doctor->photo);
 
             $users = User::whereLike('role', '%admin%')->get();
             $root = $request->root();

@@ -5,6 +5,7 @@
     <script type="module" src="{{ asset('js/date_formatter_cards_students.js') }}"></script>
     <script src="{{ asset('js/director_modification.js') }}"></script>
     <script src="{{ asset('js/student_modification.js') }}"></script>
+    <script src="{{ asset('js/file_storage.js') }}"></script>
 @endsection
 
 @section('faculty-color')
@@ -22,7 +23,7 @@ sciences
 @endsection
 
 @section('content')
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="personal-info">
             <h2>
@@ -41,7 +42,12 @@ sciences
             @endif
         </div>
         <div class="thesis">
-            <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Retraro por definir">
+            <label id="portraitlabel" for="portrait" style="background-image: url({{ asset('portrait/NoPhoto.jpg') }});">
+                <span id="nonapplicablevalue" class="hidden error">La resolución de la imagen no es válida (debe ser 250 × 389 píxeles)</span>
+                <br id="portraittextsepparator" class="hidden">
+                <span id="portraitname">Seleccionar imagen del doctor</span>
+                <input id="portrait" name="portrait" type="file" accept="image/png, image/jpeg">
+            </label>
             <div class="thesis__text">
                 <h3><textarea placeholder="Tesis" class="sciences-underline" type="text" name="thesistitle" id="thesistitle"></textarea></h3>
                 <i>Defendida en 

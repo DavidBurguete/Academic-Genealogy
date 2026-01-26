@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Validation\Rule;
 
 class CardManipulation extends Controller
 {
@@ -51,8 +52,13 @@ class CardManipulation extends Controller
         $request->validate([
             "name" => "required",
             "surname1" => "required",
+            "portrait" => Rule::dimensions()
+                            ->minWidth(250)
+                            ->minHeight(250)
+                            ->maxWidth(389)
+                            ->maxHeight(389),
         ]);
-        $data = $request->except("_token");
+        $data = $request->except(["_token", "portrait"]);
         $doctor = Doctors::where('id', $data['id'])->get()[0];
         $previousDirectors = Relations::where('studentID', $data['id'])->select('directorID', 'relationtype')->get();
         $previousStudents = Relations::where('directorID', $data['id'])->select('studentID')->get();
@@ -183,6 +189,14 @@ class CardManipulation extends Controller
             foreach ($users as $user) {
                 Mail::to($user->email)->send(new EditedCard($previousDoctor, $differ, $directorsToUpdate, $directorsToAdd, $directorsToDelete, $studentsToAdd, $studentsToDelete, $root));
             }
+        }
+
+        if (isset($request->portrait)) {
+            $portrait = $request->file('portrait');
+            $extension = explode(".", $portrait->getClientOriginalName());
+            $fullname = $doctor->id . '_' . $doctor->name . '_' . $doctor->surname1 . '.' . $extension[sizeof($extension) - 1];
+            Doctors::where('id', $doctor->id)->update(['photo' => $fullname]);
+            $request->file('portrait')->move('portrait', $fullname);
         }
         
         return redirect("$locale/card?id=" . $data['id'])->with('isChanged', $madeChanges);

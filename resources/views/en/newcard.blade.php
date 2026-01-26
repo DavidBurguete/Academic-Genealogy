@@ -5,6 +5,7 @@
     <script type="module" src="{{ asset('js/date_formatter_cards_students.js') }}"></script>
     <script src="{{ asset('js/director_modification.js') }}"></script>
     <script src="{{ asset('js/student_modification.js') }}"></script>
+    <script src="{{ asset('js/file_storage.js') }}"></script>
 @endsection
 
 @section('faculty-color')
@@ -22,7 +23,7 @@ sciences
 @endsection
 
 @section('content')
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="personal-info">
             <h2>
@@ -41,7 +42,12 @@ sciences
             @endif
         </div>
         <div class="thesis">
-            <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Portrait to be defined">
+            <label id="portraitlabel" for="portrait" style="background-image: url({{ asset('portrait/NoPhoto.jpg') }});">
+                <span id="nonapplicablevalue" class="hidden error">The image resolution isn't valid (must be 250 × 389 pixels)</span>
+                <br id="portraittextsepparator" class="hidden">
+                <span id="portraitname">Select image of the doctor</span>
+                <input id="portrait" name="portrait" type="file" accept="image/png, image/jpeg">
+            </label>
             <div class="thesis__text">
                 <h3><textarea placeholder="Thesis" class="sciences-underline" type="text" name="thesistitle" id="thesistitle"></textarea></h3>
                 <i>Defendida en 
@@ -91,4 +97,4 @@ sciences
         </p>
     </form>
 @endsection
-@include('layouts.common-es')
+@include('layouts.common-en')

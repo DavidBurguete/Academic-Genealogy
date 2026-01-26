@@ -873,6 +873,27 @@ a {
   background-repeat: no-repeat;
   background-position: center;
 }
+.main #portraitlabel {
+  width: 80%;
+  max-width: none;
+  aspect-ratio: 250/389;
+  margin: 0 auto;
+  font-family: "Archivo";
+  font-size: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.main #portraitlabel .hidden {
+  display: none;
+}
+.main #portraitlabel .error {
+  color: #DE1919;
+  text-align: center;
+}
+.main input[type=file] {
+  display: none;
+}
 .main a.discard {
   padding: 0;
   background-color: transparent;
@@ -1113,6 +1134,10 @@ a {
   .main {
     width: 60%;
     margin: 2rem auto;
+  }
+  .main #portraitlabel {
+    width: 20%;
+    margin: 0;
   }
   .main .personal-info {
     flex-direction: row;

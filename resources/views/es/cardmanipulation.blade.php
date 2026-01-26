@@ -5,6 +5,7 @@
     <script type="module" src="{{ asset('js/date_formatter_cards_students.js') }}"></script>
     <script src="{{ asset('js/director_modification.js') }}"></script>
     <script src="{{ asset('js/student_modification.js') }}"></script>
+    <script src="{{ asset('js/file_storage.js') }}"></script>
 @endsection
 
 @section('faculty-color')
@@ -22,7 +23,7 @@
 @endsection
 
 @section('content')
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="personal-info">
             <h2>
@@ -41,11 +42,12 @@
             @endif
         </div>
         <div class="thesis">
-            @if(!$doctor['photo'])
-                <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Retraro ausente del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
-            @else
-                <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Retrato del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
-            @endif
+            <label id="portraitlabel" for="portrait" style="background-image: url({{ !$doctor['photo'] ? asset('portrait/NoPhoto.jpg') : asset('portrait/' . $doctor['photo']) }} );">
+                <span id="nonapplicablevalue" class="hidden error">La resolución de la imagen no es válida (debe ser 250 × 389 píxeles)</span>
+                <br id="portraittextsepparator" class="hidden">
+                <span id="portraitname">Seleccionar imagen del doctor</span>
+                <input id="portrait" name="portrait" type="file" accept="image/png, image/jpeg">
+            </label>
             <div class="thesis__text">
                 <h3><textarea placeholder="Tesis" class="{{ $doctor['faculty'] }}-underline" type="text" name="thesistitle" id="thesistitle">{{ isset($doctor['thesistitle']) ? $doctor['thesistitle'] : '' }}</textarea></h3>
                 <i>Defendida en 
