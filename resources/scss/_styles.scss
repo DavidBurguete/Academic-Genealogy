@@ -20,6 +20,13 @@ a {
     color: inherit;
 }
 
+input{
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
 @media screen and (min-width: 1000px) {
     html, * {
         scroll-margin-top: 10rem;

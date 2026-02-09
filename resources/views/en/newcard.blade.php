@@ -23,7 +23,7 @@ sciences
 @endsection
 
 @section('content')
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form autocomplete="off" action="" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="personal-info">
             <h2>
@@ -42,12 +42,16 @@ sciences
             @endif
         </div>
         <div class="thesis">
-            <label id="portraitlabel" for="portrait" style="background-image: url({{ asset('portrait/NoPhoto.jpg') }});">
+            <div class="thesis__image">
                 <span id="nonapplicablevalue" class="hidden error">The image resolution isn't valid (must be 250 × 389 pixels)</span>
                 <br id="portraittextsepparator" class="hidden">
                 <span id="portraitname">Select image of the doctor</span>
-                <input id="portrait" name="portrait" type="file" accept="image/png, image/jpeg">
-            </label>
+                <label id="portraitlabel" for="portrait" style="background-image: url({{ asset('portrait/NoPhoto.jpg')}} );">
+                    <input id="portrait" name="portrait" type="file" accept="image/png, image/jpeg">
+                </label>
+                <input id="portraitinputname" name="portraitinputname" type="hidden" value="{{ isset($doctor['photo']) ? $doctor['photo'] : '' }}">
+                <button id="portraitremover" class="thesis__image--remove" type="button">Remove image</button>
+            </div>
             <div class="thesis__text">
                 <h3><textarea placeholder="Thesis" class="sciences-underline" type="text" name="thesistitle" id="thesistitle"></textarea></h3>
                 <i>Defendida en 

@@ -13,13 +13,13 @@
 @endsection
 
 @section('nav')
-    <a href="/en/about-directors">About the directors</a>
+    <a href="/fr/about-directors">À propos des directeurs</a>
     <hr class="separator">
-    <a href="/en/methodology">Methodology</a>
+    <a href="/fr/methodology">Méthodologie</a>
     <hr class="separator">
-    <a href="/en/history">A bit of history</a>
+    <a href="/fr/history">Bref historique</a>
     <hr class="separator">
-    <a href="/en/list?page=1">List of doctors</a>
+    <a href="/fr/list?page=1">Liste</a>
 @endsection
 
 @section('content')
@@ -27,66 +27,66 @@
         @csrf
         <div class="personal-info">
             <h2>
-                <input placeholder="Name" class="{{ $doctor['faculty'] }}-underline" type="text" name="name" id="name" value="{{ $doctor['name'] }}">
-                <input placeholder="Surname 1" class="{{ $doctor['faculty'] }}-underline" type="text" name="surname1" id="surname1" value="{{ $doctor['surname1'] }}">
-                <input placeholder="Surname 2" class="{{ $doctor['faculty'] }}-underline" type="text" name="surname2" id="surname2" value="{{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+                <input placeholder="Prénom" class="{{ $doctor['faculty'] }}-underline" type="text" name="name" id="name" value="{{ $doctor['name'] }}">
+                <input placeholder="Nom 1" class="{{ $doctor['faculty'] }}-underline" type="text" name="surname1" id="surname1" value="{{ $doctor['surname1'] }}">
+                <input placeholder="Nom 2" class="{{ $doctor['faculty'] }}-underline" type="text" name="surname2" id="surname2" value="{{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
             </h2>
             <p class="life-date"><input type="date" name="birthdate" id="birthdate" value="{{ isset($doctor['birthdate']) ? $doctor['birthdate'] : '' }}"></p>
             <hr class="date-separator">
             <p class="life-date"><input type="date" name="deathdate" id="deathdate" value="{{ isset($doctor['deathdate']) ? $doctor['deathdate'] : '' }}"></p>
             @if(Auth()->check())
                 <div class="card-manipulation">
-                    <input type="submit" value="" title="Save changes">
-                    <a href="/en/card?id={{ $doctor['id'] }}" class="discard" title="Discard changes"><img src="{{ asset('img/trash.svg') }}" alt="delete card"></a>
+                    <input type="submit" value="" title="Sauver les modifications">
+                    <a href="/fr/card?id={{ $doctor['id'] }}" class="discard" title="Effaçer les modifications"><img src="{{ asset('img/trash.svg') }}" alt="eliminar tarjeta"></a>
                 </div>
             @endif
         </div>
         <div class="thesis">
             <div class="thesis__image">
-                <span id="nonapplicablevalue" class="hidden error">The image resolution isn't valid (must be 250 × 389 pixels)</span>
+                <span id="nonapplicablevalue" class="hidden error">La résolution de l'image n'est pas valide (elle doit être de 250 × 389 pixels)</span>
                 <br id="portraittextsepparator" class="hidden">
-                <span id="portraitname">Select image of the doctor</span>
+                <span id="portraitname">Sélectionner l'image du docteur</span>
                 <label id="portraitlabel" for="portrait" style="background-image: url({{ !$doctor['photo'] ? asset('portrait/NoPhoto.jpg') : asset('portrait/' . $doctor['photo']) }} );">
                     <input id="portrait" name="portrait" type="file" accept="image/png, image/jpeg">
                 </label>
                 <input id="portraitinputname" name="portraitinputname" type="hidden" value="{{ isset($doctor['photo']) ? $doctor['photo'] : '' }}">
-                <button id="portraitremover" class="thesis__image--remove" type="button">Remove image</button>
+                <button id="portraitremover" class="thesis__image--remove" type="button">Effacer l'image</button>
             </div>
             <div class="thesis__text">
-                <h3><textarea placeholder="Thesis" class="{{ $doctor['faculty'] }}-underline" type="text" name="thesistitle" id="thesistitle">{{ isset($doctor['thesistitle']) ? $doctor['thesistitle'] : '' }}</textarea></h3>
-                <i>Defended at 
-                    <input placeholder="University" class="{{ $doctor['faculty'] }}-underline" type="text" name="university" id="university" value="{{ isset($doctor['university']) ? $doctor['university'] : '' }}">, 
-                    <input placeholder="City" class="{{ $doctor['faculty'] }}-underline" type="text" name="city" id="city" value="{{ isset($doctor['city']) ? $doctor['city'] : '' }}">, 
+                <h3><textarea placeholder="Thèse" class="{{ $doctor['faculty'] }}-underline" type="text" name="thesistitle" id="thesistitle">{{ isset($doctor['thesistitle']) ? $doctor['thesistitle'] : '' }}</textarea></h3>
+                <i>Soutenue à l' 
+                    <input placeholder="l'Université" class="{{ $doctor['faculty'] }}-underline" type="text" name="university" id="university" value="{{ isset($doctor['university']) ? $doctor['university'] : '' }}">, 
+                    <input placeholder="Ville" class="{{ $doctor['faculty'] }}-underline" type="text" name="city" id="city" value="{{ isset($doctor['city']) ? $doctor['city'] : '' }}">, 
                     <input class="{{ $doctor['faculty'] }}-underline" type="date" name="defensedate" id="defensedate" value="{{ isset($doctor['defensedate']) ? $doctor['defensedate'] : '' }}">
                 </i>
                 <fieldset id="unknownexactdate">
-                    <label class="faculty-teseo" for="exact"><input type="radio" value="" id="exact" name="unknownexactdate" {{ $doctor['unknownexactdate'] == '' ? 'checked' : '' }}>Exact date</label>
-                    <label class="faculty-teseo" for="unknowmonth"><input type="radio" value="month" id="unknowmonth" name="unknownexactdate" {{ $doctor['unknownexactdate'] == 'month' ? 'checked' : '' }}>Unknown month</label>
-                    <label class="faculty-teseo" for="unknownday"><input type="radio" value="day" id="unknownday" name="unknownexactdate" {{ $doctor['unknownexactdate'] == 'day' ? 'checked' : '' }}>Unknown day</label>
+                    <label class="faculty-teseo" for="exact"><input type="radio" value="" id="exact" name="unknownexactdate" {{ $doctor['unknownexactdate'] == '' ? 'checked' : '' }}>Date exacte</label>
+                    <label class="faculty-teseo" for="unknowmonth"><input type="radio" value="month" id="unknowmonth" name="unknownexactdate" {{ $doctor['unknownexactdate'] == 'month' ? 'checked' : '' }}>Mois inconnu</label>
+                    <label class="faculty-teseo" for="unknownday"><input type="radio" value="day" id="unknownday" name="unknownexactdate" {{ $doctor['unknownexactdate'] == 'day' ? 'checked' : '' }}>Jour inconnu</label>
                 </fieldset>
                 <p class="faculty-teseo">
-                    Faculty of 
+                    Faculté de 
                     <select class="{{ $doctor['faculty'] }}-underline" name="faculty" id="faculty">
-                        <option value="">-- Choose an option --</option>
-                        <option {{ $doctor['faculty'] == 'engineering-and-arquitecture' ? 'selected' : '' }} value="engineering-and-arquitecture">Sciences</option>
-                        <option {{ $doctor['faculty'] == 'sciences' ? 'selected' : '' }} value="sciences">Engineering and Arquitecture</option>
-                        <option {{ $doctor['faculty'] == 'law' ? 'selected' : '' }} value="law">Law</option>
-                        <option {{ $doctor['faculty'] == 'communication' ? 'selected' : '' }} value="communication">Communication</option>
-                        <option {{ $doctor['faculty'] == 'canon' ? 'selected' : '' }} value="canon">Canon Law</option>
-                        <option {{ $doctor['faculty'] == 'philosophy-literature-education' ? 'selected' : '' }} value="philosophy-literature-education">Philosophy, Literature and Education</option>
-                        <option {{ $doctor['faculty'] == 'economy' ? 'selected' : '' }} value="economy">Economy</option>
-                        <option {{ $doctor['faculty'] == 'nursing' ? 'selected' : '' }} value="nursing">Nursing</option>
-                        <option {{ $doctor['faculty'] == 'pharmacy-nutrition' ? 'selected' : '' }} value="pharmacy-nutrition">Pharmacy and Nutrition</option>
-                        <option {{ $doctor['faculty'] == 'medicine' ? 'selected' : '' }} value="medicine">Medicine</option>
-                        <option {{ $doctor['faculty'] == 'theology' ? 'selected' : '' }} value="theology">Theology</option>
-                        <option {{ $doctor['faculty'] == 'unknown' ? 'selected' : '' }} value="unknown">Unknown</option>
+                        <option value="">-- Choisir une option --</option>
+                        <option {{ $doctor['faculty'] == 'engineering-and-arquitecture' ? 'selected' : '' }} value="engineering-and-arquitecture">Ingénierie et Architecture</option>
+                        <option {{ $doctor['faculty'] == 'sciences' ? 'selected' : '' }} value="sciences">Sciences</option>
+                        <option {{ $doctor['faculty'] == 'law' ? 'selected' : '' }} value="law">Droit</option>
+                        <option {{ $doctor['faculty'] == 'communication' ? 'selected' : '' }} value="communication">Communications</option>
+                        <option {{ $doctor['faculty'] == 'canon' ? 'selected' : '' }} value="canon">Droit Canonique</option>
+                        <option {{ $doctor['faculty'] == 'philosophy-literature-education' ? 'selected' : '' }} value="philosophy-literature-education">Philosophie, Littérature et Éducation</option>
+                        <option {{ $doctor['faculty'] == 'economy' ? 'selected' : '' }} value="economy">Économie</option>
+                        <option {{ $doctor['faculty'] == 'nursing' ? 'selected' : '' }} value="nursing">Soins Infirmiers</option>
+                        <option {{ $doctor['faculty'] == 'pharmacy-nutrition' ? 'selected' : '' }} value="pharmacy-nutrition">Pharmacie et Nutrition</option>
+                        <option {{ $doctor['faculty'] == 'medicine' ? 'selected' : '' }} value="medicine">Médecine</option>
+                        <option {{ $doctor['faculty'] == 'theology' ? 'selected' : '' }} value="theology">Théologie</option>
+                        <option {{ $doctor['faculty'] == 'unknown' ? 'selected' : '' }} value="unknown">Inconnu</option>
                     </select>
                 </p>
                 <p class="faculty-teseo">
                     TESEO: <input placeholder="id" class="{{ $doctor['faculty'] }}-underline" type="number" name="teseoid" id="teseoid" min="1" value="{{ isset($doctor['teseoid']) ? $doctor['teseoid'] : '' }}">
                 </p>
                 <hr>
-                <h3 class="uppercase thesis__text__directors">Directors:</h3>
+                <h3 class="uppercase thesis__text__directors">Directeurs:</h3>
                 @php
                     $i = 0;
                 @endphp
@@ -111,7 +111,7 @@
                         $i += 1;
                     @endphp
                 @endforeach
-                <button type="button" id="new-director">+ Add new director</button>
+                <button type="button" id="new-director">+ Ajouter un nouveau directeur</button>
             </div>
             <p id="director-quantity" style="display: none;">{{ $i }}</p>
             <p id="directors-list" style="display: none;">
@@ -120,7 +120,7 @@
         </div>
         <br>
         <br>
-        <h3 class="uppercase">Students:</h3>
+        <h3 class="uppercase">Étudiants:</h3>
         <ol id="students">
             @php
                 $i = 0;
@@ -138,7 +138,7 @@
                     $i += 1;
                 @endphp
             @endforeach
-            <button type="button" id="new-student">+ Add new student</button>
+            <button type="button" id="new-student">+ Ajouter un nouvel étudiant</button>
         </ol>
         <p id="student-quantity" style="display: none;">{{ $i }}</p>
         <p id="students-list" style="display: none;">
@@ -146,4 +146,4 @@
         </p>
     </form>
 @endsection
-@include('layouts.common-en')
+@include('layouts.common-fr')

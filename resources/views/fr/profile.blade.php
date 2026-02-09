@@ -11,13 +11,13 @@ sciences
 @endsection
 
 @section('nav')
-<a href="/en/about-directors">About the directors</a>
+<a href="/fr/about-directors">À propos des directeurs</a>
 <hr class="separator">
-<a href="/en/methodology">Methodology</a>
+<a href="/fr/methodology">Méthodologie</a>
 <hr class="separator">
-<a href="/en/history">A bit of history</a>
+<a href="/fr/history">Bref historique</a>
 <hr class="separator">
-<a href="/en/list?page=1">List of doctors</a>
+<a href="/fr/list?page=1">Liste</a>
 @endsection
 
 @section('content')
@@ -27,16 +27,16 @@ sciences
             let errors = Object.values(@json($error->errors())).flat();
             let errorMessage = "";
             if(errors.findIndex(error => error.includes("require")) !== -1) {
-                errorMessage = "Please, if you want to change the password, fill in the fields";
+                errorMessage = "Veuillez remplir les deux champs si vous souhaitez modifier votre mot de passe";
             }
             else if(errors.findIndex(error => error.includes("character")) !== -1)  {
-                errorMessage = "The password must have a minimum of 8 characters";
+                errorMessage = "Le mot de passe doit comporter au moins 8 caractères";
             }
             else if(errors.findIndex(error => error.includes("PasswordError")) !== -1)  {
-                errorMessage = "Both passwords must be equal";
+                errorMessage = "Les mots de passe doivent correspondre";
             }
             else {
-                errorMessage = "There was an error. Please, try again";
+                errorMessage = "Une erreur s'est produite. Veuillez réessayer";
             }
             Toastify({
                 text: errorMessage,
@@ -59,7 +59,7 @@ sciences
     @if(isset($success))
         <script>
             Toastify({
-                text: "The password has been updated",
+                text: "Le mot de passe a été mis à jour",
                 duration: 5000,
                 newWindow: true,
                 close: true,
@@ -80,40 +80,40 @@ sciences
     <div class="main__content">
         @if(hasRoleAtLeast($user->role, "admin"))
             <div class="main__content__actions">
-                <a href="/en/create-account"><button>Create new user<br>account</button></a>
-                <a href="/en/logout"><img src="{{ asset('img/logout.svg') }}" alt="Logout icon"></a>
+                <a href="/fr/create-account"><button>Créer un nouveau<br>compte utilisateur</button></a>
+                <a href="/fr/logout"><img src="{{ asset('img/logout.svg') }}" alt="Icône de déconnexion"></a>
             </div>
         @else
-            <a href="/en/logout"><img src="{{ asset('img/logout.svg') }}" alt="Logout icon"></a>
+            <a href="/fr/logout"><img src="{{ asset('img/logout.svg') }}" alt="Icône de déconnexion"></a>
         @endif
-        <form autocomplete="off" action="/en/change-password" method="POST" class="main__content__info">
+        <form autocomplete="off" action="/fr/change-password" method="POST" class="main__content__info">
             @csrf
             @method('PUT')
             <input type="text" name="name" id="name" value="{{ $user->name }} &nbsp;—&nbsp; {{ $user->email }}" disabled>
             <hr>
-            <input value="{{ isset($passwords[0]) ? $passwords[0] : '' }}" type="password" name="password" id="password" placeholder="New password">
-            <input value="{{ isset($passwords[1]) ? $passwords[1] : '' }}" type="password" name="confirm-password" id="confirm-password" placeholder="Confirm new password">
-            <button type="submit" class="main__content__info--change">Change password</button>
-            <button class="main__content__info--delete" type="button" id="modalDeleteButton">Delete account</button>
+            <input value="{{ isset($passwords[0]) ? $passwords[0] : '' }}" type="password" name="password" id="password" placeholder="Nouveau mot de passe">
+            <input value="{{ isset($passwords[1]) ? $passwords[1] : '' }}" type="password" name="confirm-password" id="confirm-password" placeholder="Confirmer le nouveau mot de passe">
+            <button type="submit" class="main__content__info--change">Modifier le mot de passe</button>
+            <button class="main__content__info--delete" type="button" id="modalDeleteButton">Supprimer le compte</button>
             <button class="main__content__info--show" type="button" id="show">
-                <img src="{{ asset('/img/closedeye.svg') }}" alt="show password" id="closed">
-                <img src="{{ asset('/img/openeye.svg') }}" alt="hide password" id="open" class="hidden">
+                <img src="{{ asset('/img/closedeye.svg') }}" alt="Afficher le mot de passe" id="closed">
+                <img src="{{ asset('/img/openeye.svg') }}" alt="Masquer le mot de passe" id="open" class="hidden">
             </button>
         </form>
     </div>
     <div class="main__modal" id="modalDelete">
-        <h2>Delete account</h2>
+        <h2>Supprimer le compte</h2>
         <hr>
         <p>
-            You are about to delete your account <b>for good</b>. Are you sure about the decision?
-            This action cannot be undone, and will be effective immediately after agreeing
+            Vous êtes sur le point de supprimer <b>définitivement</b> votre compte. Êtes-vous sûr de votre décision?
+            Cette action est irréversible et prendra effet immédiatement après validation
         </p>
-        <form autocomplete="off" action="/en/delete-account" method="POST" class="main__modal__actions">
-            <button type="button" id="closeModal">No, preserve account</button>
+        <form autocomplete="off" action="/fr/delete-account" method="POST" class="main__modal__actions">
+            <button type="button" id="closeModal">Non, conserver le compte</button>
             @csrf
-            <button type="submit">Yes, delete</button>
+            <button type="submit">Oui, supprimer</button>
         </form>
     </div>
 @endsection
 
-@include('layouts.common-en')
+@include('layouts.common-fr')

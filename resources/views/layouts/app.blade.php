@@ -37,7 +37,7 @@
         @php
             $currentParams = request()->route()->parameters();
         @endphp
-        <form action="/{{ $currentParams['locale'] }}/search" method="get">
+        <form autocomplete="off" action="/{{ $currentParams['locale'] }}/search" method="get">
             <input type="text" name="page" value="1" style="display: none;">
             <input type="text" name="search" id="search" class="search box-shadow" placeholder="@yield('search')...">
             <div class="header_buttons">
@@ -59,7 +59,7 @@
     </main>
 
     <footer>
-        <form action="/suggest" method="post" class="suggest" id="suggest">
+        <form autocomplete="off" action="/suggest" method="post" class="suggest" id="suggest">
             @csrf
             <div>
                 @yield('form-content')

@@ -160,7 +160,7 @@
             You are about to delete this card. Are you sure about the decision?
             This action cannot be undone, and will be effective immediately after agreeing
         </p>
-        <form action="/en/delete-card?id={{ $doctor['id'] }}" method="POST" class="main__modal__actions">
+        <form autocomplete="off" action="/en/delete-card?id={{ $doctor['id'] }}" method="POST" class="main__modal__actions">
             <button type="button" id="closeModal">No, preserve card</button>
             @csrf
             <button type="submit">Yes, delete</button>

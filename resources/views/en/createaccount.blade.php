@@ -73,7 +73,7 @@ sciences
             }).showToast();
         </script>
     @endif
-    <form action="/en/account-created" method="POST">
+    <form autocomplete="off" action="/en/account-created" method="POST">
         @csrf
         <h2>Create new user</h2>
         <input type="text" name="name" id="name" placeholder="User name" value="{{ old('name') }}">

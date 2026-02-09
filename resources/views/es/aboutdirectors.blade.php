@@ -30,7 +30,7 @@ sciences
         de manera más marcada, o simplemente no existe tal director.
     </p>
     <p>
-        En este análisis aparecen bajo la figura de directores tanto los que relamente lo fueron como los que influyeron fuertemente en la formación y desarrollo de alguno de los investigadores. 
+        En este análisis aparecen bajo la figura de directores tanto los que realmente lo fueron como los que influyeron fuertemente en la formación y desarrollo de alguno de los investigadores. 
         En los casos en que esto ocurre está detallado en la Mini-Biografía.
     </p>
     <p>

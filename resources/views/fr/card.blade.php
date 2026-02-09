@@ -12,20 +12,20 @@
 @endsection
 
 @section('nav')
-    <a href="/es/about-directors">Sobre los directores</a>
+    <a href="/fr/about-directors">À propos des directeurs</a>
     <hr class="separator">
-    <a href="/es/methodology">Metodología</a>
+    <a href="/fr/methodology">Méthodologie</a>
     <hr class="separator">
-    <a href="/es/history">Algo de historia</a>
+    <a href="/fr/history">Bref historique</a>
     <hr class="separator">
-    <a href="/es/list?page=1">Listado</a>
+    <a href="/fr/list?page=1">Liste</a>
 @endsection
 
 @section('content')
     @if(session('isChanged'))
         <script>
             Toastify({
-                text: "Cambios guardados",
+                text: "Modifications enregistrées",
                 duration: 5000,
                 newWindow: true,
                 close: true,
@@ -57,68 +57,68 @@
         @endif
         @if(Auth()->check())
             <div class="card-manipulation">
-                <a href="/es/card/edit?id={{ $doctor['id'] }}"><img src="{{ asset('img/pen.svg') }}" alt="editar tarjeta"></a>
+                <a href="/fr/card/edit?id={{ $doctor['id'] }}"><img src="{{ asset('img/pen.svg') }}" alt="Modifier la fiche"></a>
                 @if(hasRoleAtLeast(Auth()->user()->role, "admin"))
-                    <button class="main__content__info--delete" type="button" id="modalDeleteButton"><img src="{{ asset('img/trash.svg') }}" alt="eliminar tarjeta"></button>
+                    <button class="main__content__info--delete" type="button" id="modalDeleteButton"><img src="{{ asset('img/trash.svg') }}" alt="Supprimer la fiche"></button>
                 @endif
             </div>
         @endif
     </div>
     <div class="thesis">
         @if(!$doctor['photo'])
-            <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Retraro ausente del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+            <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Portrait du Dr {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }} manquant">
         @else
-            <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Retrato del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+            <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Portrait du Dr {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
         @endif
         <div class="thesis__text">
-            <h3>{{ isset($doctor['thesistitle']) ? $doctor['thesistitle'] : 'Tesis desconocida' }}</h3>
+            <h3>{{ isset($doctor['thesistitle']) ? $doctor['thesistitle'] : 'Thèse inconnue' }}</h3>
             <p id="unknownexactdate" style="display: none;">{{ $doctor['unknownexactdate'] }}</p>
-            <i>Defendida en {{ $doctor['university']?:'universidad desconocida' }}, {{ $doctor['city']?: 'ciudad desconocida' }}, <span class="life-date">{{ $doctor['defensedate']?: 'día desconocido' }}</span></i>
+            <i>Soutenue à l'{{ $doctor['university']?:'université inconnue' }}, {{ $doctor['city']?: 'ville inconnue' }}, <span class="life-date">{{ $doctor['defensedate']?: 'date inconnue' }}</span></i>
             <p class="faculty-teseo">
-                Facultad de 
+                Faculté de 
                 @switch($doctor['faculty'])
                     @case('sciences')
-                        Ciencias
+                        Sciences
                         @break
                     @case('engineering-and-arquitecture')
-                        Ingeniería y Arquitectura
+                        Ingénierie et Architecture
                         @break
                     @case('law')
-                        Derecho
+                        Droit
                         @break
                     @case('communication')
-                        Comunicaciones
+                        Communications
                         @break
                     @case('canon')
-                        Derecho canónico
+                        Droit Canonique
                         @break
                     @case('philosophy-literature-education')
-                        Filosofía, Literatura y Educación
+                        Philosophie, Littérature et Éducation
                         @break
                     @case('economy')
-                        Economía
+                        Économie
                         @break
                     @case('nursing')
-                        Enfermería
+                        Soins Infirmiers
                         @break
                     @case('pharmacy-nutrition')
-                        Farmacia y Nutrición
+                        Pharmacie et Nutrition
                         @break
                     @case('medicine')
-                        Medicina
+                        Médecine
                         @break
                     @case('theology')
-                        Teología
+                        Théologie
                         @break
                     @default
-                        (facultad desconocida)
+                        (faculté inconnue)
                 @endswitch
                 {!! isset($doctor['teseoid']) ? '&nbsp;—&nbsp;TESEO: <a class="' . $doctor['faculty'] . '-underline" href="https://aplicaciones.ciencia.gob.es/teseo/#/tesis/O' . $doctor["teseoid"] . '/detalle">' . $doctor["teseoid"] . '</a>' : '' !!}
             </p>
             <hr>
-            <h3 class="uppercase thesis__text__directors">Directores:</h3>
+            <h3 class="uppercase thesis__text__directors">Directeurs:</h3>
             @if(sizeof($directors) === 0)
-                <i>Director/es desconocido/s</i>
+                <i>Directeur(s) inconnu(s)</i>
             @else
                 <ol>
                     @foreach($directors as $director)
@@ -130,9 +130,9 @@
     </div>
     <br>
     <br>
-    <h3 class="uppercase">Estudiantes:</h3>
+    <h3 class="uppercase">Étudiants:</h3>
     @if(sizeof($students) === 0)
-        <i>Estudiante/s desconocido/s</i>
+        <i>Étudiants inconnus</i>
     @else
         <ol id="students">
             @foreach($students as $student)
@@ -141,30 +141,30 @@
         </ol>
     @endif
     <br>
-    <h3 class="uppercase">Biografía:</h3>
+    <h3 class="uppercase">Biographie:</h3>
     <div class="biography">
         @if(isset($doctor['biography']))
-            @if(file_exists('biography/es/' . $doctor['biography']))
-                {!! file_get_contents('biography/es/' . $doctor['biography']) !!}
-            @elseif(file_exists('biography/en/' . $doctor['biography']) || file_exists('biography/fr/' . $doctor['biography']))
-                <i>Biografía no disponible en español, pero sí en otros idiomas</i>
+            @if(file_exists('biography/fr/' . $doctor['biography']))
+                {!! file_get_contents('biography/fr/' . $doctor['biography']) !!}
+            @elseif(file_exists('biography/en/' . $doctor['biography']) || file_exists('biography/es/' . $doctor['biography']))
+                <i>Biographie non disponible en français, mais disponible dans d'autres langues</i>
             @endif
         @else
-            <i>Biografía no disponible</i>
+            <i>Biographie non disponible</i>
         @endif
     </div>
     <div class="main__modal" id="modalDelete">
-        <h2>Eliminar tarjeta</h2>
+        <h2>Supprimer la fiche</h2>
         <hr>
         <p>
-            Estás a punto de eliminar esta tarjeta. ¿Estás seguro de la decisión?
-            Esta acción no se puede deshacer, y se hará efectiva inmediatamente después de aceptar
+            Vous êtes sur le point de supprimer cette fiche. Êtes-vous sûr de votre décision?
+            Cette action est irréversible et prendra effet immédiatement après validation
         </p>
-        <form autocomplete="off" action="/es/delete-card?id={{ $doctor['id'] }}" method="POST" class="main__modal__actions">
-            <button type="button" id="closeModal">No, conservar tarjeta</button>
+        <form autocomplete="off" action="/fr/delete-card?id={{ $doctor['id'] }}" method="POST" class="main__modal__actions">
+            <button type="button" id="closeModal">Non, conserver la fiche</button>
             @csrf
-            <button type="submit">Si, eliminar</button>
+            <button type="submit">Oui, supprimer</button>
         </form>
     </div>
 @endsection
-@include('layouts.common-es')
+@include('layouts.common-fr')

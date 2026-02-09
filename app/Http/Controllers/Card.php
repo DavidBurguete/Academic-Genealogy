@@ -53,13 +53,13 @@ class Card extends Controller
             "name" => "required",
             "surname1" => "required",
             "portrait" => Rule::dimensions()
-                            ->minWidth(250)
-                            ->minHeight(250)
-                            ->maxWidth(389)
-                            ->maxHeight(389),
+                ->minWidth(250)
+                ->maxWidth(250)
+                ->minHeight(389)
+                ->maxHeight(389),
         ]);
 
-        $data = $request->except(["_token", "portrait"]);
+        $data = $request->except(["_token", "portrait", "portraitinputname"]);
         $students = $request["students"];
 
         $data = array_filter(
@@ -110,7 +110,7 @@ class Card extends Controller
         if (isset($request->portrait)) {
             $portrait = $request->file('portrait');
             $extension = explode(".", $portrait->getClientOriginalName());
-            $fullname = $newDoctorID . '_' . Doctors::where('id', $newDoctorID)->first()->name . '_' . Doctors::where('id', $newDoctorID)->first()->surname1 . '.' . $extension[sizeof($extension) - 1];
+            $fullname = $newDoctorID . '_' . str_replace(' ', '%20', Doctors::where('id', $newDoctorID)->first()->name) . '_' . str_replace(' ', '%20', Doctors::where('id', $newDoctorID)->first()->surname1) . '.' . $extension[sizeof($extension) - 1];
             Doctors::where('id', $newDoctorID)->update(['photo' => $fullname]);
             $request->file('portrait')->move('portrait', $fullname);
         }
@@ -150,7 +150,9 @@ class Card extends Controller
             $doctor = Doctors::where('id', $request->get('id'))->first();
             $directors = Relations::where('studentID', $request->get('id'))->select('directorID', 'relationtype')->get();
             $students = Relations::where('directorID', $request->get('id'))->select('studentID')->get();
-            unlink("portrait/" . $doctor->photo);
+            if (!is_null($doctor->photo)) {
+                unlink("portrait/" . $doctor->photo);
+            }
 
             $users = User::whereLike('role', '%admin%')->get();
             $root = $request->root();

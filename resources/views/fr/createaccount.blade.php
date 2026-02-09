@@ -9,13 +9,13 @@ sciences
 @endsection
 
 @section('nav')
-<a href="/es/about-directors">Sobre los directores</a>
+<a href="/fr/about-directors">À propos des directeurs</a>
 <hr class="separator">
-<a href="/es/methodology">Metodología</a>
+<a href="/fr/methodology">Méthodologie</a>
 <hr class="separator">
-<a href="/es/history">Algo de historia</a>
+<a href="/fr/history">Bref historique</a>
 <hr class="separator">
-<a href="/es/list?page=1">Listado</a>
+<a href="/fr/list?page=1">Liste</a>
 @endsection
 
 @section('content')
@@ -24,16 +24,16 @@ sciences
             let errors = Object.values(@json($errors->toArray())).flat();
             let errorMessage = "";
             if(errors.findIndex(error => error.includes("require")) !== -1) {
-                errorMessage = "Para crear un usuario, se requieren todos los campos";
+                errorMessage = "Pour créer un utilisateur, tous les champs sont obligatoires";
             }
             else if(errors.findIndex(error => error.includes("character")) !== -1)  {
-                errorMessage = "El usuario debe tener un mínimo de 5 caracteres y la contraseña un mínimo de 8";
+                errorMessage = "Le nom d'utilisateur doit comporter au moins 5 caractères et le mot de passe au moins 8 caractères";
             }
             else if(errors.findIndex(error => error.includes("selected")) !== -1)  {
-                errorMessage = "El rol seleccionado no es un rol válido";
+                errorMessage = "Le rôle sélectionné n'est pas valide";
             }
             else {
-                errorMessage = "Ha ocurrido un error. Por favor, inténtelo otra vez";
+                errorMessage = "Une erreur s'est produite. Veuillez réessayer";
             }
             Toastify({
                 text: errorMessage,
@@ -56,7 +56,7 @@ sciences
     @if(isset($success))
         <script>
             Toastify({
-                text: "¡Usuario creado con éxito!",
+                text: "Utilisateur créé avec succès!",
                 duration: 5000,
                 newWindow: true,
                 close: true,
@@ -73,17 +73,17 @@ sciences
             }).showToast();
         </script>
     @endif
-    <form autocomplete="off" action="/es/account-created" method="POST">
+    <form autocomplete="off" action="/fr/account-created" method="POST">
         @csrf
-        <h2>Crear nuevo usuario</h2>
-        <input type="text" name="name" id="name" placeholder="Nombre de usuario" value="{{ old('name') }}">
-        <input type="email" name="email" id="email" placeholder="Correo" value="{{ old('email') }}">
-        <input type="text" name="password" id="password" placeholder="Contraseña" value="{{ old('password') }}">
+        <h2>Créer un nouvel utilisateur</h2>
+        <input type="text" name="name" id="name" placeholder="Nom d'utilisateur" value="{{ old('name') }}">
+        <input type="email" name="email" id="email" placeholder="Courrier" value="{{ old('email') }}">
+        <input type="text" name="password" id="password" placeholder="Mot de passe" value="{{ old('password') }}">
         <select name="role" id="role">
             <option value="base" {{ old('role') === 'base' ? 'selected' : '' }}>Base</option>
-            <option value="admin" {{ old('role') === 'admin' ? 'selected' : '' }}>Administrador</option>
+            <option value="admin" {{ old('role') === 'admin' ? 'selected' : '' }}>Administrateur</option>
         </select>
-        <button type="submit">Crear</button>
+        <button type="submit">Créer</button>
     </form>
 @endsection
-@include('layouts.common-es')
+@include('layouts.common-fr')

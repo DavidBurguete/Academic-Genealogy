@@ -11,20 +11,20 @@
 @endsection
 
 @section('nav')
-    <a href="/es/about-directors">Sobre los directores</a>
+    <a href="/fr/about-directors">À propos des directeurs</a>
     <hr class="separator">
-    <a href="/es/methodology">Metodología</a>
+    <a href="/fr/methodology">Méthodologie</a>
     <hr class="separator">
-    <a href="/es/history">Algo de historia</a>
+    <a href="/fr/history">Bref historique</a>
     <hr class="separator">
-    <a>Listado</a>
+    <a>Liste</a>
 @endsection
 
 @section('content')
     @if(request()->session()->exists("cardDeleted"))
         <script>
             Toastify({
-                text: "La tarjeta ha sido borrada con éxito",
+                text: "La fiche a été effacé avec succèss",
                 duration: 5000,
                 newWindow: true,
                 close: true,
@@ -42,9 +42,9 @@
         </script>
     @endif
     <div class="content-header">
-        <h2>Listado</h2>
+        <h2>Liste</h2>
         @if(Auth()->check())
-            <a href="/es/create-card"><span>+</span> Crear nueva ficha académica</a>
+            <a href="/fr/create-card"><span>+</span> Créer une nouvelle fiche académique</a>
         @endif
     </div>
     <div class="main__sorting">
@@ -57,7 +57,7 @@
         }}{{ 
             request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
         }}">
-            Nombre
+            Nom
             {!! request()->has('name') && request()->get('name') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
             {!! request()->has('name') && request()->get('name') == 'descendent' ? '<img src="' . asset('img/dropdown.png') . '" style="transform: rotate(180deg);">' : '' !!}
         </a>
@@ -71,7 +71,7 @@
         }}{{ 
             request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
         }}">
-            Tesis
+            Thèse
             {!! request()->has('thesis') && request()->get('thesis') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
             {!! request()->has('thesis') && request()->get('thesis') == 'descendent' ? '<img src="' . asset('img/dropdown.png') . '" style="transform: rotate(180deg);">' : '' !!}
         </a>
@@ -85,47 +85,47 @@
         }}{{ 
             request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
         }}">
-            Fecha
+            Date
             {!! request()->has('date') && request()->get('date') == 'ascendent' ? '<img src="' . asset('img/dropdown.png') . '">' : '' !!}
             {!! request()->has('date') && request()->get('date') == 'descendent' ? '<img src="' . asset('img/dropdown.png') . '" style="transform: rotate(180deg);">' : '' !!}
         </a>
         <hr class="filter-separator-desktop">
-        <a>Filtro de facultad:</a><select name="faculty" id="faculty">
-            <option value="">-- Selecciona una opción --</option>
-            <option {{ request()->get('faculty') == 'engineering-and-arquitecture' ? 'selected' : '' }} value="engineering-and-arquitecture">Ingeniería y Arquitectura</option>
-            <option {{ request()->get('faculty') == 'sciences' ? 'selected' : '' }} value="sciences">Ciencias</option>
-            <option {{ request()->get('faculty') == 'law' ? 'selected' : '' }} value="law">Derecho</option>
-            <option {{ request()->get('faculty') == 'communication' ? 'selected' : '' }} value="communication">Comunicaciones</option>
-            <option {{ request()->get('faculty') == 'canon' ? 'selected' : '' }} value="canon">Derecho Canónico</option>
-            <option {{ request()->get('faculty') == 'philosophy-literature-education' ? 'selected' : '' }} value="philosophy-literature-education">Filosofía, Literatura y Educación</option>
-            <option {{ request()->get('faculty') == 'economy' ? 'selected' : '' }} value="economy">Economía</option>
-            <option {{ request()->get('faculty') == 'nursing' ? 'selected' : '' }} value="nursing">Enfermería</option>
-            <option {{ request()->get('faculty') == 'pharmacy-nutrition' ? 'selected' : '' }} value="pharmacy-nutrition">Farmacia y Nutrición</option>
-            <option {{ request()->get('faculty') == 'medicine' ? 'selected' : '' }} value="medicine">Medicina</option>
-            <option {{ request()->get('faculty') == 'theology' ? 'selected' : '' }} value="theology">Teología</option>
-            <option {{ request()->get('faculty') == 'unknown' ? 'selected' : '' }} value="unknown">Desconocido</option>
+        <a>Filtre par faculté:</a><select name="faculty" id="faculty">
+            <option value="">-- Sélectionner une option --</option>
+            <option {{ request()->get('faculty') == 'engineering-and-arquitecture' ? 'selected' : '' }} value="engineering-and-arquitecture">Ingénierie et Architecture</option>
+            <option {{ request()->get('faculty') == 'sciences' ? 'selected' : '' }} value="sciences">Sciences</option>
+            <option {{ request()->get('faculty') == 'law' ? 'selected' : '' }} value="law">Droit</option>
+            <option {{ request()->get('faculty') == 'communication' ? 'selected' : '' }} value="communication">Communication</option>
+            <option {{ request()->get('faculty') == 'canon' ? 'selected' : '' }} value="canon">Droit Canonique</option>
+            <option {{ request()->get('faculty') == 'philosophy-literature-education' ? 'selected' : '' }} value="philosophy-literature-education">Philosophie, Littérature et Éducation</option>
+            <option {{ request()->get('faculty') == 'economy' ? 'selected' : '' }} value="economy">Économie</option>
+            <option {{ request()->get('faculty') == 'nursing' ? 'selected' : '' }} value="nursing">Soins Infirmiers</option>
+            <option {{ request()->get('faculty') == 'pharmacy-nutrition' ? 'selected' : '' }} value="pharmacy-nutrition">Pharmacie et Nutrition</option>
+            <option {{ request()->get('faculty') == 'medicine' ? 'selected' : '' }} value="medicine">Médecine</option>
+            <option {{ request()->get('faculty') == 'theology' ? 'selected' : '' }} value="theology">Théologie</option>
+            <option {{ request()->get('faculty') == 'unknown' ? 'selected' : '' }} value="unknown">Inconnu</option>
         </select>
     </div>
     <div class="main__container">
         @foreach($doctors as $doctor)
-            <a href="/es/card?id={{ $doctor['id'] }}" class="main__container__card main__container__card--{{ $doctor['faculty'] == '' ? 'unknown' : $doctor['faculty'] }}">
+            <a href="/fr/card?id={{ $doctor['id'] }}" class="main__container__card main__container__card--{{ $doctor['faculty'] == '' ? 'unknown' : $doctor['faculty'] }}">
                 @if(!$doctor['photo'])
-                    <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Retrato ausente del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+                    <img src="{{ asset('portrait/NoPhoto.jpg') }}" alt="Portrait du Dr {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }} manquant">
                 @else
-                    <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Retrato del doctor {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
+                    <img src="{{ asset('portrait/' . $doctor['photo']) }}" alt="Portrait du Dr {{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}">
                 @endif
                 <div class="main__container__card__text">
                     <p><b>{{ $doctor['name'] }} {{ $doctor['surname1'] }} {{ isset($doctor['surname2']) ? $doctor['surname2'] : '' }}</b></p>
-                    <i>{{ $doctor['defensedate']?:'Fecha desconocida' }}</i>
+                    <i>{{ $doctor['defensedate']?:'Date inconnue' }}</i>
                     <p data-type="unknownexactdate" style="display: none;">{{ $doctor['unknownexactdate'] }}</p>
-                    <p>TESIS: {{ $doctor['thesistitle'] ?: 'Desconocida' }}</p>
+                    <p>THÈSE: {{ $doctor['thesistitle'] ?: 'Inconnue' }}</p>
                 </div>
             </a>
         @endforeach
     </div>
     <div class="main__pagination">
         @if(count($doctors) <= 0)
-            <p>No hay ninguna coincidencia</p>
+            <p>Aucun résultat trouvé</p>
         @else
             @if($page - 1 >= 1)
                 <a href="?page={{ $page - 1 }}{{ 
@@ -139,11 +139,11 @@
                 }}{{ 
                     request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
-                    <img src="{{ asset('img/arrow.svg') }}" alt="página previa">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="Page précédente">
                 </a>
             @else
                 <a class="disabled">
-                    <img src="{{ asset('img/arrow.svg') }}" alt="página previa">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="Page précédente">
                 </a>
             @endif
 
@@ -265,14 +265,14 @@
                 }}{{ 
                     request()->has('faculty') ? '&faculty=' . request()->get('faculty') : '' 
                 }}">
-                    <img src="{{ asset('img/arrow.svg') }}" alt="página siguiente">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="Page suivante">
                 </a>
             @else
                 <a class="flip disabled">
-                    <img src="{{ asset('img/arrow.svg') }}" alt="página siguiente">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="Page suivante">
                 </a>
             @endif
         @endif
     </div>
 @endsection
-@include('layouts.common-es')
+@include('layouts.common-fr')

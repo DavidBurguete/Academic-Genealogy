@@ -86,7 +86,7 @@ sciences
         @else
             <a href="/es/logout"><img src="{{ asset('img/logout.svg') }}" alt="Icono de cierre de sesión"></a>
         @endif
-        <form action="/es/change-password" method="POST" class="main__content__info">
+        <form autocomplete="off" action="/es/change-password" method="POST" class="main__content__info">
             @csrf
             @method('PUT')
             <input type="text" name="name" id="name" value="{{ $user->name }} &nbsp;—&nbsp; {{ $user->email }}" disabled>
@@ -108,7 +108,7 @@ sciences
             Estás a punto de eliminar <b>definitivamente</b> tu cuenta. ¿Estás seguro de la decisión?
             Esta acción no se puede deshacer, y se hará efectiva inmediatamente después de aceptar
         </p>
-        <form action="/es/delete-account" method="POST" class="main__modal__actions">
+        <form autocomplete="off" action="/es/delete-account" method="POST" class="main__modal__actions">
             <button type="button" id="closeModal">No, conservar la cuenta</button>
             @csrf
             <button type="submit">Si, eliminar</button>

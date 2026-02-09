@@ -34,7 +34,7 @@ sciences
         <div class="main__faculties__faculty law"></div>
     </div>
     <p>
-        No obstante, aunque sea un aficionado he intentado verificar cada uno de los datos aquí incluidos y no conformarme con un "dato" que pueda aparecer en una página web. 
+        No obstante, aunque sea un aficionado, he intentado verificar cada uno de los datos aquí incluidos y no conformarme con un "dato" que pueda aparecer en una página web. 
         Cuando ha sido posible, he intentado consultar las fuentes originales (tesis o testimonios de primera mano) y cuando no, 
         bien fuentes escritas (necrológicas de Sociedades científicas, biografías u homenajes) o bases de datos (para las tesis modernas, TESEO, 
         para las muy antiguas de la Universidad Central, la base de datos PARES del ministerio y el Archivo Histórico Nacional).

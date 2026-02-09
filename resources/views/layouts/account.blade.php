@@ -24,7 +24,7 @@
         <img src="{{ asset('img/logoUNAV.svg') }}">
         <h1 id="title">@yield('website-name')</h1>
     </a>
-    <form action="/{{ $currentParams['locale'] }}/@yield('destination')" method="POST">
+    <form autocomplete="off" action="/{{ $currentParams['locale'] }}/@yield('destination')" method="POST">
         @csrf
         @yield('form')
     </form>

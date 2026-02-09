@@ -18,27 +18,6 @@
         background-position: center;
     }
 
-    #portraitlabel {
-        width: 80%;
-        max-width: none;
-        aspect-ratio: 250 / 389;
-        margin: 0 auto;
-        font-family: 'Archivo';
-        font-size: 1rem;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        
-        .hidden {
-            display: none;
-        }
-
-        .error {
-            color: $cancel;
-            text-align: center;
-        }
-    }
-
     input[type=file] {
         display: none;
     }
@@ -61,6 +40,45 @@
     .thesis {
         display: flex;
         flex-direction: column;
+
+        &__image {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin: 0.5rem auto;
+            font-family: 'Roboto';
+            font-size: 1rem;
+
+            #portraitlabel {
+                width: 100%;
+                max-width: none;
+                aspect-ratio: 250 / 389;
+                font-family: 'Archivo';
+                font-size: 1rem;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+
+            #portraitname, #portraitlabel {
+                cursor: pointer;
+            }
+                
+            .hidden {
+                display: none;
+            }
+
+            .error {
+                color: $cancel;
+                text-align: center;
+            }
+
+            &--remove {
+                width: 100%;
+                margin: 1rem auto;
+                background-color: $cancel;
+            }
+        }
 
         &__text {
             display: flex;
@@ -300,11 +318,6 @@
         width: 60%;
         margin: 2rem auto;
 
-        #portraitlabel {
-            width: 20%;
-            margin: 0;
-        }
-
         .personal-info {
             flex-direction: row;
             gap: 1rem;
@@ -317,6 +330,11 @@
 
             img {
                 align-self: center;
+            }
+
+            &__image {
+                width: 20%;
+                margin: 0;
             }
 
             &__text {

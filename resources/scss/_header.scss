@@ -170,10 +170,6 @@
         color: $theology;
         letter-spacing: 1.6px;
     }
-
-    &:focus-visible {
-        outline-width: 0;
-    }
 }
 
 @media screen and (min-width: 1000px) {
