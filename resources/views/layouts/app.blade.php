@@ -68,6 +68,8 @@
         </form>
         <div class="credits">
             @yield('credits')
+            <hr>
+            <p>Genealogia physicae in Hispania</p>
         </div>
     </footer>
 </body>

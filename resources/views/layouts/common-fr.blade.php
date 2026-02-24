@@ -78,6 +78,4 @@ Envoyer un message à javier@unav.es
     <p>Mise en oeuvre web: <a href="https://linkedin.com/in/david-burguete">David Burguete</a></p>
     <hr class="separator">
     <p>Version 2.0.0</p>
-    <hr>
-    <p>Universitas Studiorum Navarrensis</p>
 @endsection
